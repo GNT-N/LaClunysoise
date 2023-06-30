@@ -16,13 +16,13 @@ Installing assets
 npm run watch
 ```
 
-BDD creation / migration
+BDD 
 ```sh
-symfony console doctrine:database:create (Création de la BDD en ayant renseigner le .ENV)
+symfony console doctrine:database:create (Create the database by filling in the. ENV)
 ```
 ```sh
-symfony console make:migration (Création d'une nouvelle migration)
+symfony console make:migration (Creating a new migration)
 ```
 ```sh
-symfony console doctrine:migrations:migrate (Application de la migration)
+symfony console doctrine:migrations:migrate (Applying migration)
 ```
