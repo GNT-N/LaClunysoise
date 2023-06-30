@@ -16,9 +16,12 @@ Installing assets
 npm run watch
 ```
 
-BDD 
+Entities / Database
 ```sh
 symfony console doctrine:database:create (Create the database by filling in the. ENV)
+```
+```sh
+symfony console make:entity (Create entities)
 ```
 ```sh
 symfony console make:migration (Creating a new migration)
