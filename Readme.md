@@ -29,3 +29,8 @@ symfony console make:migration (Creating a new migration)
 ```sh
 symfony console doctrine:migrations:migrate (Applying migration)
 ```
+
+Controller
+```sh
+symfony console make:controller (Create controllers)
+```
