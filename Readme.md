@@ -18,10 +18,10 @@ npm run watch
 
 Entities / Database
 ```sh
-symfony console doctrine:database:create (Create the database by filling in the. ENV)
+symfony console doctrine:database:create (DB creation)
 ```
 ```sh
-symfony console make:entity (Create entities)
+symfony console make:entity (Entities Creation)
 ```
 ```sh
 symfony console make:migration (Creating a new migration)
