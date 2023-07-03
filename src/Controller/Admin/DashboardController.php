@@ -38,8 +38,8 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::subMenu('Acceuil', 'fa fa-home')->setSubItems([
-                MenuItem::linkToCrud('Nouveau post', 'fas fa-plus', Post::class)->setAction(Crud::PAGE_NEW),
-                MenuItem::linkToCrud('Voir post', 'fas fa-eye', Post::class)
+            MenuItem::linkToCrud('Nouveau post', 'fas fa-plus', Post::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Voir post', 'fas fa-eye', Post::class)
         ]);
 
         yield MenuItem::subMenu('A propos', 'fa fa-people-group')->setSubItems([
