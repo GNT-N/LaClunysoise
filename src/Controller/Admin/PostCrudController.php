@@ -37,8 +37,12 @@ class PostCrudController extends AbstractCrudController
                     ->setBasePath(self::POSTS_BASE_PATH)
                     ->setUploadDir(self::POSTS_UPLOAD_DIR),
 
-                DateTimeField::new('createdAt')->hideOnForm(),
-                DateTimeField::new('updatedAt')->hideOnForm(),
+                DateTimeField::new('createdAt')
+                ->hideOnForm()
+                ->setTimezone('Europe/Paris'),
+                DateTimeField::new('updatedAt')
+                ->hideOnForm()
+                ->setTimezone('Europe/Paris'),
 
                 SlugField::new('slug')
                 ->setTargetFieldName('title')
