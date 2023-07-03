@@ -24,7 +24,10 @@ class PostCrudController extends AbstractCrudController
         public function configureFields(string $pageName): iterable
         {
             return [
-                IdField::new('id')->hideOnForm(),
+                IdField::new('id')
+                ->hideOnIndex()
+                ->hideOnForm(),
+                
                 BooleanField::new('visible'),
                 TextEditorField::new('title'),
                 TextEditorField::new('content'),
