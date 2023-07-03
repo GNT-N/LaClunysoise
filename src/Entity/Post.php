@@ -14,9 +14,6 @@ class Post
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?bool $visible = null;
-
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
@@ -38,14 +35,12 @@ class Post
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
+    #[ORM\Column]
+    private ?bool $visible = null;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function isVisible(): ?bool
-    {
-        return $this->visible;
     }
 
     public function getTitle(): ?string
@@ -132,4 +127,15 @@ class Post
         return $this;
     }
 
+    public function isVisible(): ?bool
+    {
+        return $this->visible;
+    }
+
+    public function setVisible(bool $visible): static
+    {
+        $this->visible = $visible;
+
+        return $this;
+    }
 }
