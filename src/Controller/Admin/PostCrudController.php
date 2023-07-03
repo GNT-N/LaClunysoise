@@ -66,14 +66,5 @@ class PostCrudController extends AbstractCrudController
             parent::persistEntity($entityManager, $entityInstance);
         }
 
-        public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
-        {
-            if ($entityInstance instanceof Category) return;
-    
-            $entityInstance->setUpdatedAt(new \DateTimeImmutable);      
-    
-            parent::updateEntity($entityManager, $entityInstance);
-        }
-
         
 }
