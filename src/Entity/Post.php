@@ -38,6 +38,9 @@ class Post
     #[ORM\Column]
     private ?bool $visible = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $page = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -135,6 +138,18 @@ class Post
     public function setVisible(bool $visible): static
     {
         $this->visible = $visible;
+
+        return $this;
+    }
+
+    public function getPage(): ?string
+    {
+        return $this->page;
+    }
+
+    public function setPage(string $page): static
+    {
+        $this->page = $page;
 
         return $this;
     }
