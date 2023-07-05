@@ -29,7 +29,8 @@ class PostCrudController extends AbstractCrudController
                 IdField::new('id')
                 ->hideOnForm()
                 ->hideOnIndex(),
-                BooleanField::new('visible', 'Visible'),
+                BooleanField::new('visible', 'Visible')
+                ->renderAsSwitch(true),
                 TextField::new('title', 'Titre'),
                 TextField::new('description', 'Description'),
                 TextEditorField::new('content', 'Contenu'),

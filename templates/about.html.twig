@@ -6,10 +6,17 @@
     <section class="row">
         <div class="col-12">
 
-            {{ dump (post) }}
+            {% for item in post %}
 
+            {{ item.title }}
+            {{ item.description }}
+            {{ item.content }}
+            {{ item.mediaUrl }}
+
+
+            {% endfor %}
         </div>
     </section>
 </main>
 
-{% endblock %}
+{% endblock %} 

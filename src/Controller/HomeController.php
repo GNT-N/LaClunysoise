@@ -13,7 +13,7 @@ class HomeController extends AbstractController
     public function acceuil(PostRepository $postRepository): Response
     {
         return $this->render('home/accueil.html.twig', [
-            'post' => $postRepository->findBy(array('page' => 'accueil'))
+            'post' => $postRepository->findBy(array('page' => 'accueil', 'visible' => true)),
         ]);
     }
 
@@ -21,7 +21,7 @@ class HomeController extends AbstractController
     public function about(PostRepository $postRepository): Response
     {
         return $this->render('/about.html.twig', [
-            'post' => $postRepository->findBy(array('page' => 'a-propos'))
+            'post' => $postRepository->findBy(array('page' => 'a-propos', 'visible' => true)),
         ]);
     }
 }
