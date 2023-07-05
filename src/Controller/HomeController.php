@@ -12,7 +12,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'home')]
     public function acceuil(PostRepository $postRepository): Response
     {
-        return $this->render('home/index.html.twig', [
+        return $this->render('home/accueil.html.twig', [
             'post' => $postRepository->findBy(array('page' => 'accueil'))
         ]);
     }
