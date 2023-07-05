@@ -38,7 +38,7 @@ class DashboardController extends AbstractDashboardController
         {
             yield MenuItem::subMenu('Publications', 'fa fa-newspaper')->setSubItems([
             MenuItem::linkToCrud('Nouveau post', 'fas fa-plus', Post::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Voir post', 'fas fa-eye', Post::class)
+            MenuItem::linkToCrud('Voir post', 'fas fa-eye', Post::class),
         ]);
         }
 }

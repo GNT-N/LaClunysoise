@@ -1,22 +1,32 @@
 {% extends 'base.html.twig' %}
 
+{% block header %}
+
+
+{% endblock %}
+
+
 {% block body %}
 
 <main class="container">
     <section class="row">
         <div class="col-12">
 
-            {% for item in post %}
+            {% for posts in post %}
 
-            {{ item.title }}
-            {{ item.description }}
-            {{ item.content }}
-            {{ item.mediaUrl }}
+            {{ posts.title }}
+            {{ posts.description | striptags }}
+            {{ posts.content | striptags }}
+            <img src="upload/images/{{ asset(posts.mediaUrl) }}">
 
 
             {% endfor %}
         </div>
     </section>
 </main>
+
+{% endblock %} 
+
+{% block footer %}
 
 {% endblock %} 
