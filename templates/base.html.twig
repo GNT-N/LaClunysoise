@@ -3,6 +3,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" type="image/svg" href="{{ asset('favicon.svg') }}"/>
+
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -11,11 +12,14 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
+
     {{ include("header.html.twig") }}
     <body>
         {% block body %}
 
+        <script src="https://kit.fontawesome.com/f785a57bb7.js" crossorigin="anonymous"></script>
         {% endblock %}
     </body>
     {{ include("footer.html.twig") }}
+    
 </html>

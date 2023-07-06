@@ -1,16 +1,8 @@
-import '../assets/styles/app.scss';
+// any CSS you import will output into a single css file (app.css in this case)
+import './styles/app.scss';
 
+// Chargement de la bibliothèque jQuery
 const $ = require('jquery');
+
+// Chargement de la partie JS de bootstrap
 require('bootstrap');
-
-$(document).ready(function() {
-    $('[data-toggle="popover"]').popover();
-});
-
-document.addEventListener('turbo:load', function (e) {
-
-    let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new Tooltip(tooltipTriggerEl)
-    });
-});

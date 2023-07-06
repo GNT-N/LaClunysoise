@@ -1,10 +1,42 @@
 {% block header %}
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar navbar-Light bg-Light" aria-label="Light offcanvas navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="#"><img src="{{ asset('Logo_T.png') }}"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="offcanvas offcanvas-end text-bg-Light" tabindex="-1" id="offcanvasNavbarDark" aria-labelledby="offcanvasNavbarDarkLabel">
+
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">La Clunysoise</h5>
+      </div>
+
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">A Propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Prise en charge</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Nous rejoindre</a>
+          </li>
+                    <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Vos rendez-vous</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Contacts</a>
+          </li>
+        </ul>
+      </div>
       
-      Bootstrap
-    </a>
+    </div>
+
   </div>
 </nav>
 
