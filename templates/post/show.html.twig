@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block body %}
+
+    <h1 class="display-4 fst-italic text-center">La Clunysoise</h1>
+
+<div class="pt-4">
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                    <article class="card mb-4">
+
+                        <div class="card-header text-uppercase text-center">
+                            <h1>{{ post.title }}</h1>
+                        </div>
+
+                        <div class="card-body d-flex justify-content-center align-content-center">
+                            <img src="upload/images/{{ asset(post.mediaUrl) }}">
+                        </div>
+                        <p class="mx-4 my-4">{{ post.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                    
+                        <div class="card-footer text-muted py-2 fw-normal text-center">
+                            Publié le <span class="text-warning-emphasis-">{{ post.createdAt|date('d/m/Y à H\\hi') }}</span><br/>
+                            {% if post.updatedAt %}
+                                Modifié le <span class="text-warning-emphasis">{{ post.updatedAt|date('d/m/Y à H\\hi') }}</span>
+                            {% endif %}
+                        </div>
+
+                    </article>
+
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

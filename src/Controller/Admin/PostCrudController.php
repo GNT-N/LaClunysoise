@@ -13,8 +13,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
 use Symfony\Component\String\Slugger\SluggerInterface;
 
+
+#[Route('/articles',  name: 'app_posts_' )]
 class PostCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -106,6 +111,14 @@ class PostCrudController extends AbstractCrudController
             }
 
             parent::deleteEntity($entityManager, $entityInstance);
+        }
+
+        #[Route('/{slug}', name: 'show', methods: ['GET'])]
+        public function show(Post $post): Response
+        {
+            return $this->render('post/show.html.twig', [
+                'post' => $post,
+            ]);
         }
         
         private $slugger;

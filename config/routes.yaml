@@ -3,3 +3,10 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+
+app_posts_show:
+    path: /{slug}
+    controller: App\Controller\Admin\PostCrudController::show
+    requirements:
+        slug: '[a-z0-9-]+'
