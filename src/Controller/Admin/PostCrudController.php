@@ -34,8 +34,9 @@ class PostCrudController extends AbstractCrudController
                 ->renderAsSwitch(true),
 
                 ImageField::new('mediaUrl')
-                    ->setBasePath(self::POSTS_BASE_PATH)
-                    ->setUploadDir(self::POSTS_UPLOAD_DIR),
+                ->setBasePath(self::POSTS_BASE_PATH)
+                ->setUploadDir(self::POSTS_UPLOAD_DIR)
+                ->setUploadedFileNamePattern('[slug]-[uuid].[extension]'),
 
                 TextField::new('title', 'Titre'),
 
@@ -81,13 +82,6 @@ class PostCrudController extends AbstractCrudController
             parent::persistEntity($entityManager, $entityInstance);
         }
 
-        
-        private $slugger;
-        public function __construct(SluggerInterface $slugger)
-        {
-            $this->slugger = $slugger;
-        }
-
         public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
         {
             if ($entityInstance instanceof Category) return;
@@ -95,6 +89,29 @@ class PostCrudController extends AbstractCrudController
             $entityInstance->setUpdatedAt(new \DateTimeImmutable);      
     
             parent::updateEntity($entityManager, $entityInstance);
+        }
+
+        public function deleteEntity(EntityManagerInterface $entityManager, $entityInstance): void
+        {
+            if (!$entityInstance instanceof Post) {
+                return;
+            }
+
+            $imageName = $entityInstance->getMediaUrl();
+            if ($imageName) {
+                $imagePath = $this->getParameter('kernel.project_dir'). '/public/upload/images/'. $imageName;
+                if (file_exists($imagePath)) {
+                    unlink($imagePath);
+                }
+            }
+
+            parent::deleteEntity($entityManager, $entityInstance);
+        }
+        
+        private $slugger;
+        public function __construct(SluggerInterface $slugger)
+        {
+            $this->slugger = $slugger;
         }
 
 }
