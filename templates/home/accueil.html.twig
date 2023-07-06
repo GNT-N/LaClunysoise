@@ -8,22 +8,90 @@
 
 {% block body %}
 
-<main class="container">
-    <section class="row">
-        <div class="col-12">
-
-            {% for posts in post %}
-
-            {{ posts.title }}
-            {{ posts.description | striptags }}
-            {{ posts.content | striptags }}
-            <img src="upload/images/{{ asset(posts.mediaUrl) }}">
+    <div class="row">
+        <h1 class="col-12 text-center  mt-3 mb-5">La Clunysoise</h1>
+    </div>
 
 
-            {% endfor %}
+    <div class="row  p-2">
+        <h2 class="  text-center col-12 my-3">Actus</h2>
+
+        <p class="col-12 col-md-10 offset-md-1 text-center my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad asperiores aut commodi consequatur, cupiditate, dolor dolorum est, explicabo in iste mollitia natus necessitatibus odio officia possimus quasi quia quibusdam ratione reiciendis sed sequi soluta suscipit unde vel veritatis voluptate? Aperiam dolorem porro quo ut voluptas.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad asperiores aut commodi consequatur, cupiditate, dolor dolorum est, explicabo in iste mollitia natus necessitatibus odio officia possimus quasi quia quibusdam ratione reiciendis sed sequi soluta suscipit unde vel veritatis voluptate? Aperiam dolorem porro quo ut voluptas.</p>
+    </div>
+
+
+    <main class="main pt-4">
+        <section class="container">
+            <div class="row">
+
+                <div class="row">
+                    <h2 class="col-12 text-secondary text-center mb-4">Nos {{post|length}} dernières publications</h2>
+                </div>
+
+
+                {% for posts in post %}
+
+                        <div class="col-6">
+
+                            <div class="card my-3 bg-body-tertiary">
+                                <div class="card-header  text-uppercase">
+                                    <h1>{{ posts.title }}</h1>
+                                </div>
+
+                                <div class="card-body">
+                                    <img src="upload/images/{{ asset(posts.mediaUrl) }}"> 
+                                    <p>{{ posts.description | striptags }}</p>
+                                </div>
+                          
+                                <div class="card-footer  text-muted py-2 fw-normal">
+                                    Publié le <span class="text-warning-emphasis">{{ posts.createdAt|date('d/m/Y à H\\hi') }}</span>
+                                    {% if posts.updatedAt %}
+                                        et modifié le <span class="text-warning">{{ posts.updatedAt|date('d/m/Y à H\\hi') }}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                        </div>
+
+                {% else %}
+                    <div class="row">
+                        <p class="col-12 text-center alert alert-warning">Aucune publication à afficher.</p>
+                    </div>
+                {% endfor %}    
+
+            </div>
+        </section>
+    </main>
+
+{# -------------------------------- DISPOSITIO 2 -------------------------------- #}
+
+{# <main class="main pt-4">
+    <section class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <article class="card mb-4">
+                        {% for posts in posts %}
+
+                        <header class="card-header">
+                            <h1>{{ posts.title }}</h1>
+                            {{ posts.description | striptags }}
+                        </header>
+
+                        <img src="upload/images/{{ asset(posts.mediaUrl) }}"> 
+                        <p>{{ posts.content | striptags }}</p>
+
+                        <div class="card-footer">
+                            Publié le <span>{{ posts.createdAt|date('d/m/Y à H\\hi') }}</span>
+                        </div>
+
+                        {% endfor %}
+                </article>
+            </div>
+
         </div>
     </section>
-</main>
+</main> #}
 
 {% endblock %} 
 

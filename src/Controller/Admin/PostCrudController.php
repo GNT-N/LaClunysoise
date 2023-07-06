@@ -29,24 +29,29 @@ class PostCrudController extends AbstractCrudController
                 IdField::new('id')
                 ->hideOnForm()
                 ->hideOnIndex(),
+
                 BooleanField::new('visible', 'Visible')
                 ->renderAsSwitch(true),
-                TextField::new('title', 'Titre'),
-                TextField::new('description', 'Description'),
-                TextEditorField::new('content', 'Contenu'),
 
                 ImageField::new('mediaUrl')
                     ->setBasePath(self::POSTS_BASE_PATH)
                     ->setUploadDir(self::POSTS_UPLOAD_DIR),
 
+                TextField::new('title', 'Titre'),
+
+                TextField::new('description', 'Description'),
+
+                TextEditorField::new('content', 'Contenu'),
+
                 DateTimeField::new('createdAt', 'Date/Heure de Création')
                 ->hideOnForm()
                 ->setTimezone('Europe/Paris'),
+                
                 DateTimeField::new('updatedAt', 'Date/Heure de Modification')
                 ->hideOnForm()
                 ->setTimezone('Europe/Paris'),
 
-            ChoiceField::new('page', 'Page')
+                ChoiceField::new('page', 'Page')
                 ->setChoices([
                     'Accueil' => 'accueil',
                     'À propos' => 'a-propos',
