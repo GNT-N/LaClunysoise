@@ -32,13 +32,14 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('La Clunysoise Administration');
+            ->setTitle('La Clunysoise Administration'); 
     }
         public function configureMenuItems(): iterable
         {
             yield MenuItem::subMenu('Publications', 'fa fa-newspaper')->setSubItems([
             MenuItem::linkToCrud('Nouveau post', 'fas fa-plus', Post::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Voir post', 'fas fa-eye', Post::class),
+            MenuItem::linkToUrl('Accéder au site', 'fa fa-globe', '/')
         ]);
         }
 }

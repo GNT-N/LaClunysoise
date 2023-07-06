@@ -32,6 +32,12 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Contacts</a>
           </li>
+
+          {% if is_granted('ROLE_ADMIN') %}
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="/admin">Gestion admin</a></li>
+          {% endif %}
+
+
         </ul>
       </div>
       
