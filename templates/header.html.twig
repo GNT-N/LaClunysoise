@@ -1,5 +1,5 @@
 {% block header %}
-<nav class="navbar navbar-Light bg-Light" aria-label="Light offcanvas navbar">
+<nav class="navbar navbar-Light bg-bg-transparent" aria-label="Light offcanvas navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><img src="{{ asset('Logo_T.png') }}"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark" aria-label="Toggle navigation">
@@ -14,6 +14,7 @@
 
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        
           <li class="nav-item">
             <a class="nav-link" href="/">Accueil</a>
           </li>
@@ -37,7 +38,6 @@
               <li class="nav-item"><a class="nav-link active" aria-current="page" href="/admin">Gestion admin</a></li>
           {% endif %}
 
-
         </ul>
       </div>
       
@@ -47,13 +47,3 @@
 </nav>
 
 {% endblock %}
-
-
-{% block body %}
-
-{% endblock %}
-
-
-{% block footer %}
-
-{% endblock %} 

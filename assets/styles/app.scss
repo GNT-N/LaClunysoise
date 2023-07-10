@@ -6,6 +6,12 @@ body {
     background-color: lightgray;
 }
 
+img {
+    max-width: 300px;
+    max-height: 500px;
+}
+
+// ------------------------------ LOGIN ------------------------------
 /* Login page gradient */
 .gradient-custom {
 /* fallback for old browsers */
@@ -17,12 +23,14 @@ background: -webkit-linear-gradient(90deg, rgba(58,119,180,1) 0%, rgba(29,212,25
 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 background: linear-gradient(90deg, rgba(58,119,180,1) 0%, rgba(29,212,253,0) 50%, rgba(252,69,69,1) 100%);
 }
+// ------------------------------ LOGIN ------------------------------
 
-body {
-
+// ------------------------------ Home - Compteur ------------------------------
+.count
+{
+  line-height: 100px;
+  color:black;
+  margin-left:30px;
+  font-size:25px;
 }
-
-img {
-    max-width: 300px;
-    max-height: 500px;
-}
+// ------------------------------ Home - Compteur ------------------------------
