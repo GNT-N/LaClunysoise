@@ -76,7 +76,7 @@ class PostCrudController extends AbstractCrudController
 
         public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
         {
-            if ($entityInstance instanceof Category) return;
+            if (!$entityInstance instanceof Post) return;
     
             $entityInstance->setCreatedAt(new \DateTimeImmutable);
 
@@ -89,7 +89,7 @@ class PostCrudController extends AbstractCrudController
 
         public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
         {
-            if ($entityInstance instanceof Category) return;
+            if (!$entityInstance instanceof Post) return;
     
             $entityInstance->setUpdatedAt(new \DateTimeImmutable);      
     
