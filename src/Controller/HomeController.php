@@ -37,4 +37,40 @@ class HomeController extends AbstractController
             'post' => $postRepository->findBy(array('page' => 'a-propos', 'visible' => true)),
         ]);
     }
+
+    // Définition de la route '/prise-en-charge' avec le nom 'support'
+    #[Route('/prise-en-charge', name: 'support')]
+    public function support(PostRepository $postRepository): Response
+    {
+        // Rendu du template '/support.html.twig' avec les posts filtrés par page et visibilité
+        return $this->render('main/support.html.twig', [
+            'post' => $postRepository->findBy(array('page' => 'prise-en-charge', 'visible' => true)),
+        ]);
+    }
+
+    // Définition de la route '/join' avec le nom 'join'
+    #[Route('/nous-rejoindre', name: 'join')]
+    public function join(PostRepository $postRepository): Response
+    {
+        // Rendu du template '/join.html.twig' avec les posts filtrés par page et visibilité
+        return $this->render('main/join.html.twig', [
+            'post' => $postRepository->findBy(array('page' => 'nous-rejoindre', 'visible' => true)),
+        ]);
+    }
+
+    // Définition de la route '/vos-rendez-vous' avec le nom 'appointment'
+    #[Route('/vos-rendez-vous', name: 'appointment')]
+    public function appointment(PostRepository $postRepository): Response
+    {
+        // Rendu du template '/appointment.html.twig' avec les posts filtrés par page et visibilité
+        return $this->render('main/appointment.html.twig');
+    }
+
+    // Définition de la route '/contact' avec le nom 'contact'
+    #[Route('/contact', name: 'contact')]
+    public function contact(PostRepository $postRepository): Response
+    {
+        // Rendu du template '/contact.html.twig' avec les posts filtrés par page et visibilité
+        return $this->render('main/contact.html.twig');
+    }
 }

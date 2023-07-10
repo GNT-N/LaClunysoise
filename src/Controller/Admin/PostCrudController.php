@@ -115,6 +115,7 @@ class PostCrudController extends AbstractCrudController
             parent::persistEntity($entityManager, $entityInstance);
         }
 
+
         // Méthode pour mettre à jour une entité dans la base de données
         public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
         {
@@ -127,6 +128,7 @@ class PostCrudController extends AbstractCrudController
             // Appel de la méthode parent pour mettre à jour l'entité
             parent::updateEntity($entityManager, $entityInstance);
         }
+
 
         // Méthode pour supprimer une entité de la base de données
         public function deleteEntity(EntityManagerInterface $entityManager, $entityInstance): void
@@ -151,6 +153,7 @@ class PostCrudController extends AbstractCrudController
             parent::deleteEntity($entityManager, $entityInstance);
         }
 
+
         // Définition de la route '/articles/{slug}' pour afficher un post spécifique
         #[Route('/{slug}', name: 'show', methods: ['GET'])]
         public function show(Post $post): Response
@@ -159,6 +162,7 @@ class PostCrudController extends AbstractCrudController
                 'post' => $post,
             ]);
         }
+        
         
         // Propriété privée pour l'objet SluggerInterface utilisé pour générer les slugs
         private $slugger;
