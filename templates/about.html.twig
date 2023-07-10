@@ -2,21 +2,29 @@
 
 {% block body %}
 
-<main class="container">
-    <section class="row">
-        <div class="col-12">
+<div class="pt-4">
+    <section class="container">
+        <div class="row">
+            {% for posts in post %}
+                <div class="col-md-4">
 
-            {% for item in post %}
+                        <article class="card mb-4" id="art1">
+                            <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}">
 
-            {{ item.title }}
-            {{ item.description }}
-            {{ item.content }}
-            <img src="{{ item.mediaUrl }}">
+                            <div class="card-body d-flex justify-content-center align-content-center">
+                            {% if posts.mediaUrl is not null %}
+                                <img src="upload/images/{{ asset(posts.mediaUrl) }}">
+                            {% endif %}
+                            </div>
+                            <p class="mx-4 text-center">{{ posts.description | striptags }}</p>
 
+                            </a>
+                        </article>
 
-            {% endfor %}
+                </div>
+            {% endfor %}  
         </div>
     </section>
-</main>
+</div>
 
 {% endblock %} 
