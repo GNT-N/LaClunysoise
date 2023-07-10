@@ -60,6 +60,16 @@ class PostCrudController extends AbstractCrudController
                 ->setUploadDir(self::POSTS_UPLOAD_DIR)
                 ->setUploadedFileNamePattern('[slug]-[uuid].[extension]'),
 
+                // Champ de choix pour la page (affiché sous forme de liste déroulante)
+                ChoiceField::new('page', 'Page')
+                ->setChoices([
+                    'Accueil' => 'accueil',
+                    'À propos' => 'a-propos',
+                    'Prise en charge' => 'prise-en-charge',
+                    'Nous rejoindre' => 'nous-rejoindre',
+                ])
+                ->renderExpanded(),
+
                 // Champ de texte pour le titre
                 TextField::new('title', 'Titre'),
 
@@ -78,16 +88,6 @@ class PostCrudController extends AbstractCrudController
                 DateTimeField::new('updatedAt', 'Date/Heure de Modification')
                 ->hideOnForm()
                 ->setTimezone('Europe/Paris'),
-
-                // Champ de choix pour la page (affiché sous forme de liste déroulante)
-                ChoiceField::new('page', 'Page')
-                ->setChoices([
-                    'Accueil' => 'accueil',
-                    'À propos' => 'a-propos',
-                    'Prise en charge' => 'prise-en-charge',
-                    'Nous rejoindre' => 'nous-rejoindre',
-                ])
-                ->renderExpanded(),
 
                 // Champ de slug généré à partir du titre (masqué sur le formulaire et l'index)
                 SlugField::new('slug')
