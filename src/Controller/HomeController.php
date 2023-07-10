@@ -27,21 +27,11 @@ class HomeController extends AbstractController
     #[Route('/', name: 'main')] 
     public function acceuil(PostRepository $postRepository): Response
     {
-        // Rendu du template 'home/accueil.html.twig'
-        return $this->render('home/accueil.html.twig', [ 
+        // Rendu du template 'main/accueil.html.twig'
+        return $this->render('main/accueil.html.twig', [ 
             // Récupération des entités 'Post' par le biais du 'PostRepository' avec des critères de recherche spécifiques
             'post' => $postRepository->findBy(array('page' => 'accueil', 'visible' => true)), 
         ]);
     }
 
-    // Annotation de route pour la méthode about()
-    #[Route('/about', name: 'about')] 
-    public function about(PostRepository $postRepository): Response
-    {
-        // Rendu du template '/about.html.twig'
-        return $this->render('/about.html.twig', [ 
-            // Récupération des entités 'Post' par le biais du 'PostRepository' avec des critères de recherche spécifiques
-            'post' => $postRepository->findBy(array('page' => 'a-propos', 'visible' => true)), 
-        ]);
-    }
 }
