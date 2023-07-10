@@ -24,13 +24,6 @@
                         </div>
                         
                         <p class="mx-4 my-4 text-center">{{ post.content|striptags|replace({'&nbsp;': ''}) }}</p>
-                    
-                        {# <div class="card-footer text-muted py-2 fw-normal text-center">
-                            Publié le <span class="text-warning-emphasis-">{{ post.createdAt|date('d/m/Y à H\\hi') }}</span><br/>
-                            {% if post.updatedAt %}
-                                Modifié le <span class="text-warning-emphasis">{{ post.updatedAt|date('d/m/Y à H\\hi') }}</span>
-                            {% endif %}
-                        </div> #}
 
                     </article>
 
