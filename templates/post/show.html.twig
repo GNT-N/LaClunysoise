@@ -18,7 +18,9 @@
                         </div>
 
                         <div class="card-body d-flex justify-content-center align-content-center">
+                        {% if post.mediaUrl is not null %}
                             <img src="upload/images/{{ asset(post.mediaUrl) }}">
+                        {% endif %}
                         </div>
                         
                         <p class="mx-4 my-4 text-center">{{ post.content|striptags|replace({'&nbsp;': ''}) }}</p>
