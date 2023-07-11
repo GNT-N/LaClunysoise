@@ -71,60 +71,65 @@
     <div class="container">
         <div class="row">
 
-            {% set switchBox = false %}
+            {% set switchBox = false %}  <!-- Initialisation de la variable switchBox à false -->
 
-            {% for posts in post %}
-                {% if loop.index is odd %}
-                    {% if switchBox %}
-                        <div class="box" id="boxTwo">
+            {% for posts in post %}  <!-- Boucle pour chaque post dans la liste post -->
+                {% if loop.index is odd %}  <!-- Vérifie si l'index de la boucle est impair -->
+
+                    {% if switchBox %}  <!-- Vérifie la valeur de switchBox -->
+                        <div class="box" id="boxTwo">  <!-- Début de la boîte boxTwo -->
                     {% else %}
-                        <div class="box" id="boxOne">
+                        <div class="box" id="boxOne">  <!-- Début de la boîte boxOne -->
                     {% endif %}
-                        <!-- Contenu pour les posts avec un ID pair -->
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    {% if posts.mediaUrl is not null %}
-                                        <img src="upload/images/{{ asset(posts.mediaUrl) }}">
-                                    {% endif %}
+
+                            <!-- Contenu pour les posts avec un ID pair -->
+                            <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}">  <!-- Liens vers l'URL du post -->
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        {% if posts.mediaUrl is not null %}  <!-- Vérifie si l'URL du média existe -->
+                                            <img src="upload/images/{{ asset(posts.mediaUrl) }}">  <!-- Affiche l'image du média -->
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p>{{ posts.description | striptags }}</p>  <!-- Affiche la description du post -->
+                                    </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <p>{{ posts.description | striptags }}</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>  <!-- Fermeture de la boîte -->
+
                 {% else %}
+
                     {% if switchBox %}
-                        <div class="box" id="boxOne">
+                        <div class="box" id="boxOne">  <!-- Début de la boîte boxOne -->
                     {% else %}
-                        <div class="box" id="boxTwo">
+                        <div class="box" id="boxTwo">  <!-- Début de la boîte boxTwo -->
                     {% endif %}
-                        <!-- Contenu pour les posts avec un ID impair -->
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    {% if posts.mediaUrl is not null %}
-                                        <img src="upload/images/{{ asset(posts.mediaUrl) }}">
-                                    {% endif %}
-                                    <p class="m-3">{{ posts.description | striptags }}</p>
+
+                            <!-- Contenu pour les posts avec un ID impair -->
+                            <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}">  <!-- Liens vers l'URL du post -->
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        {% if posts.mediaUrl is not null %}  <!-- Vérifie si l'URL du média existe -->
+                                            <img src="upload/images/{{ asset(posts.mediaUrl) }}">  <!-- Affiche l'image du média -->
+                                        {% endif %}
+                                        <p class="m-3">{{ posts.description | striptags }}</p>  <!-- Affiche la description du post -->
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>  <!-- Fermeture de la boîte -->
+
                 {% endif %}
 
-                {% if loop.index is divisible by 2 %}
-                    {% set switchBox = not switchBox %}
+                {% if loop.index is divisible by 2 %}  <!-- Vérifie si l'index de la boucle est divisible par 2 -->
+                    {% set switchBox = not switchBox %}  <!-- Inverse la valeur de switchBox -->
                 {% endif %}
-            {% endfor %}
+            {% endfor %}  <!-- Fin de la boucle -->
 
-        </div>
-        <!--.row-->
+        </div>  <!-- Fermeture de la div.row -->
 
-    </div>
-    <!--.container-->
-</section>
+    </div>  <!-- Fermeture de la div.container -->
+</section>  <!-- Fermeture de la section -->
+
 
 
 {% endblock %} 
