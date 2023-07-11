@@ -4,7 +4,7 @@
 {% block body %}
 
 
-<section class="text-center">
+<section class="text-center" id="Compteur">
 
     <span><span class="count">421 </span> interventions / jours </span>
     <span><span class="count">45</span> urgences / jours </span>
@@ -15,18 +15,17 @@
 
 </section>
 
-<section class="container">
-    <div class="row rounded text-body-emphasis bg-body-secondary">
-
+<section class="container w-100" id="FirstScreen">
+    <div class="row">
         <div class="col-6">
             <h1 class="display-4 fst-italic text-center">La Clunysoise</h1>
-            <p class="lead my-3">L’entreprise « La Clunysoise » est une société d’ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis.La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d’interventions d’urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d’appel 15.</p>
+            <p class="lead">L’entreprise « La Clunysoise » est une société d’ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis.La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d’interventions d’urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d’appel 15.</p>
         </div>
         
-        <div class="col-6">
+        <div class="col-6"
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
 
-                <div class="carousel-inner text-center my-5 py-5">
+                <div class="carousel-inner text-center">
 
                     <div class="carousel-item active">
                         <div style="display: flex; justify-content: center; align-items: center;">
@@ -61,7 +60,7 @@
 
             </div>
         </div>
-        
+
     </div>
 </section>
 
@@ -90,7 +89,7 @@
                                             <img src="upload/images/{{ asset(posts.mediaUrl) }}">  <!-- Affiche l'image du média -->
                                         {% endif %}
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div>
                                         <p>{{ posts.description | striptags }}</p>  <!-- Affiche la description du post -->
                                     </div>
                                 </div>
@@ -112,7 +111,9 @@
                                         {% if posts.mediaUrl is not null %}  <!-- Vérifie si l'URL du média existe -->
                                             <img src="upload/images/{{ asset(posts.mediaUrl) }}">  <!-- Affiche l'image du média -->
                                         {% endif %}
-                                        <p class="m-3">{{ posts.description | striptags }}</p>  <!-- Affiche la description du post -->
+                                        <div>
+                                            <p>{{ posts.description | striptags }}</p>  <!-- Affiche la description du post -->
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -129,7 +130,6 @@
 
     </div>  <!-- Fermeture de la div.container -->
 </section>  <!-- Fermeture de la section -->
-
 
 
 {% endblock %} 
