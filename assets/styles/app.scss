@@ -22,3 +22,57 @@ img {
     max-width: 300px;
     max-height: 500px;
 }
+
+
+#gridGallery {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.box {
+    background-position: center center;
+    background-size: cover;
+    border: 1px solid #fff;
+    transition: opacity .25s;
+    overflow: hidden;
+}
+   
+#boxOne,#boxTwo,
+#boxSeven,#boxEight {
+    height: 300px;
+}
+  
+#boxThree,#boxFour,
+#boxFive,#boxSix {
+    height: 150px;
+}
+  
+#gridGallery > .row {
+    margin: 0;
+}
+
+  
+  @media (max-width: 768px) {
+    #boxThree,
+    #boxFour,
+    #boxFive,
+    #boxSix {
+      height: 300px;
+    }
+
+    .box {
+      max-height: 150px !important;
+    }
+
+    #gridGallery .row {
+      background-color: transparent;
+    }
+
+    .mobileFunction {
+      float: left;
+      height: 150px;
+      width: 100%;
+    }
+
+  }

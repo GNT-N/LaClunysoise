@@ -9,50 +9,63 @@
 
 
 <section class="text-center">
+
     <span><span class="count">421 </span> interventions / jours </span>
     <span><span class="count">45</span> urgences / jours </span>
     <span><span class="count">28</span> salariés </span>
     <span><span class="count">5</span> ambualnces </span>
     <span><span class="count">10</span> VSL </span>
     <span><span class="count">8</span> Taxi </span>
+
 </section>
 
 <section class="container">
     <div class="row rounded text-body-emphasis bg-body-secondary">
+
         <div class="col-6">
             <h1 class="display-4 fst-italic text-center">La Clunysoise</h1>
             <p class="lead my-3">L’entreprise « La Clunysoise » est une société d’ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis.La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d’interventions d’urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d’appel 15.</p>
         </div>
+        
         <div class="col-6">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+
                 <div class="carousel-inner text-center my-5 py-5">
+
                     <div class="carousel-item active">
                         <div style="display: flex; justify-content: center; align-items: center;">
                             <img src="{{ asset('Logo_C.png') }}" class="d-block w-100 center-block" alt="...">
                         </div>
+
                         <div class="carousel-caption d-none d-md-block text-dark">
                             <h2>Ambulance</h2>
                             <p>Some representative placeholder content for the first slide.</p>
                         </div>
                     </div>
+
                     <div class="carousel-item">
-                    <h2> VSL </h2>
+                        <h2> VSL </h2>
                     </div>
+
                     <div class="carousel-item">
-                    <h2> Taxi </h2>
+                        <h2> Taxi </h2>
                     </div>
+
                 </div>
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
+
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
+
             </div>
         </div>
+        
     </div>
 </section>
 
@@ -77,6 +90,85 @@
             </div>
         {% endfor %}  
     </div>
+</section>
+
+
+<section id="gridGallery">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-6 col-xs-6 box" id="boxOne">
+                <div class="toggleIcon"></div>
+                <div class="col-sm-6 captionBox hiddenText">
+                    <h3>Here is some text</h3>
+                    <p>1.</p>
+                    <p>1.1</p>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-6 box" id="boxTwo">
+                <div class="toggleIcon"></div>
+                <div class="col-sm-6 captionBox hiddenText">
+                    <h3>Here is some text</h3>
+                    <p>2</p>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-6 box" id="boxThree">
+                <div class="toggleIcon"></div>
+                <div class="col-sm-6 captionBox hiddenText">
+                    <h3>Here is some text</h3>
+                    <p>3</p>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-6 box" id="boxFour">
+                <div class="toggleIcon"></div>
+                <div class="col-sm-6 captionBox hiddenText">
+                    <h3>Here is some text</h3>
+                    <p>4</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-xs-6 pull-right box" id="boxEight">
+                <div class="toggleIcon"></div>
+                <div class="col-sm-6 captionBox hiddenText">
+                    <h3>Here is some text</h3>
+                    <p>5.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-6 pull-right box" id="boxSeven">
+                <div class="toggleIcon"></div>
+                <div class="col-sm-6 captionBox hiddenText">
+                    <h3>Here is some text</h3>
+                    <p>6</p>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-6 box" id="boxFive">
+                <div class="toggleIcon"></div>
+                <div class="col-sm-6 captionBox hiddenText bottomRight">
+                    <h3>Here is some text</h3>
+                    <p>7</p>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-6 box" id="boxSix">
+                <div class="toggleIcon"></div>
+                <div class="col-sm-6 captionBox hiddenText bottomRight">
+                    <h3>Here is some text</h3>
+                    <p>8</p>
+                </div>
+            </div>
+
+        </div>
+        <!--.row-->
+
+    </div>
+    <!--.container-->
+
+
 </section>
 
 
