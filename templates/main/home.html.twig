@@ -75,53 +75,34 @@
                 {% if loop.index is odd %}  <!-- Vérifie si l'index de la boucle est impair -->
       
                     {% if switchBox %}  <!-- Vérifie la valeur de switchBox -->
-                        <div class="col-6 box-image" id="boxTwo" style="background-image: url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
+                        <div class="col-6 box-image d-flex align-items-center justify-content-center" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
                     {% else %}
-                        <div class="col-6 box-image" id="boxOne" style="background-image: url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
+                        <div class="col-6 box-image d-flex align-items-center justify-content-center" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
                     {% endif %}
-                            <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="d-inline-block w-100 h-100">  <!-- Liens vers l'URL du post -->
+
                             <!-- Contenu pour les posts avec un ID pair -->
-                                <div class="row">
-                                
-                                    {# <div class="col-6">
-                                        {% if posts.mediaUrl is not null %}  <!-- Vérifie si l'URL du média existe -->
-                                            <img src="upload/images/{{ asset(posts.mediaUrl) }}">  <!-- Affiche l'image du média -->
-                                        {% endif %}
-                                    </div> #}
-
-                                    <div>
-                                        <p>{{ posts.description | striptags }}</p>  <!-- Affiche la description du post -->
-                                    </div>
-
-                                </div>
+                            <div class="text-white">
+                            <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="d-inline-block w-100 h-100 text-decoration-none">  <!-- Liens vers l'URL du post -->
+                                <p class="text-white">{{ posts.description | striptags | slice(0, 360)}}</p>  <!-- Affiche la description du post -->
                             </a>
+                            </div>
                         </div>  <!-- Fermeture de la boîte -->
  
 
                 {% else %}
 
                     {% if switchBox %}
-                        <div class="col-6 box-image" id="boxOne" style="background-image: url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
+                        <div class="col-6 box-image d-flex align-items-center justify-content-center" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
                     {% else %}
-                        <div class="col-6 box-image" id="boxTwo" style="background-image: url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
+                        <div class="col-6 box-image d-flex align-items-center justify-content-center" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
                     {% endif %}
 
                             <!-- Contenu pour les posts avec un ID impair -->
-                            <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="d-inline-block w-100 h-100">  <!-- Liens vers l'URL du post -->
-                                <div class="row">
-
-                                    {# <div class="col-6">
-                                        {% if posts.mediaUrl is not null %}  <!-- Vérifie si l'URL du média existe -->
-                                            <img src="upload/images/{{ asset(posts.mediaUrl) }}">  <!-- Affiche l'image du média -->
-                                        {% endif %}
-                                    </div> #}
-
-                                    <div>
-                                        <p>{{ posts.description | striptags }}</p>  <!-- Affiche la description du post -->
-                                    </div>
-
-                                </div>
+                            <div class="text-white">
+                            <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="d-inline-block w-100 h-100 text-decoration-none">  <!-- Liens vers l'URL du post -->
+                                <p class="text-white">{{ posts.description | striptags | slice(0, 360)}}</p>  <!-- Affiche la description du post -->
                             </a>
+                            </div>
                         </div>  <!-- Fermeture de la boîte -->
 
                 {% endif %}
@@ -132,7 +113,6 @@
             {% endfor %}  <!-- Fin de la boucle -->
 
         </div>  <!-- Fermeture de la div.row -->
-
     </div>  <!-- Fermeture de la div.container -->
 </section>  <!-- Fermeture de la section -->
 

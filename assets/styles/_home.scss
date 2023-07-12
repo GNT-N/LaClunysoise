@@ -10,23 +10,24 @@ body #compteur {
 #boxOne {
     width: 800px!important;
     height: 400px!important;
+    overflow: hidden;
 }
 
 #boxTwo {
     width: 350px!important;
     height: 400px!important;
+    overflow: hidden;
 }
 
 #gridGallery img {
     max-width: 300px;
     max-height: 330px;
     margin: 10px;
+    
 }
 
 #gridGallery p {
-    margin-top: 100px;
-    color: 0059C6;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center!important;
 }
@@ -40,8 +41,7 @@ body #compteur {
     background-size:cover;
     background-position: center center;
     margin: 10px;
-    border-radius: 5px;
-    border: 3px solid white;
+    border-radius: 25px;
 }
 
 @media (min-width: 1400px) {
