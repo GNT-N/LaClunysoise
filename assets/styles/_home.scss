@@ -7,30 +7,44 @@ body #compteur {
     margin: 3rem;
 }
 
-.box {
-    border: 1px solid goldenrod;
-    border-radius: 5px;
-    margin: 1rem;
-    align-items: center;
-    justify-content: center;
-}
-
 #boxOne {
-    width: 850px;
-    height: 400px;
+    width: 800px!important;
+    height: 400px!important;
 }
 
 #boxTwo {
-    width: 350px;
-    height: 400px;
-    float: left;
+    width: 350px!important;
+    height: 400px!important;
 }
 
 #gridGallery img {
     max-width: 300px;
     max-height: 330px;
-    margin: 1rem;
+    margin: 10px;
 }
+
+#gridGallery p {
+    margin-top: 100px;
+    color: 0059C6;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center!important;
+}
+
+.box {
+    align-items: center;
+    justify-content: center;
+  }
+  
+.box-image {
+    background-size:cover;
+    background-position: center center;
+    margin: 10px;
+    border-radius: 5px;
+    border: 3px solid white;
+}
+
+
 
 @media (min-width: 1400px) {
     #firstScreen {
@@ -38,3 +52,4 @@ body #compteur {
         height: 100vh;
     }
 }
+

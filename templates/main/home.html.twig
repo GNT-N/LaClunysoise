@@ -3,7 +3,6 @@
 
 {% block body %}
 
-
 <section class="text-center" id="compteur">
 
     <span><span class="count">421 </span> interventions / jours </span>
@@ -74,47 +73,53 @@
 
             {% for posts in post %}  <!-- Boucle pour chaque post dans la liste post -->
                 {% if loop.index is odd %}  <!-- Vérifie si l'index de la boucle est impair -->
-
+      
                     {% if switchBox %}  <!-- Vérifie la valeur de switchBox -->
-                        <div class="box" id="boxTwo">  <!-- Début de la boîte boxTwo -->
+                        <div class="col-6 box-image" id="boxTwo" style="background-image: url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
                     {% else %}
-                        <div class="box" id="boxOne">  <!-- Début de la boîte boxOne -->
+                        <div class="col-6 box-image" id="boxOne" style="background-image: url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
                     {% endif %}
-
-                            <!-- Contenu pour les posts avec un ID pair -->
                             <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}">  <!-- Liens vers l'URL du post -->
+                            <!-- Contenu pour les posts avec un ID pair -->
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                
+                                    {# <div class="col-6">
                                         {% if posts.mediaUrl is not null %}  <!-- Vérifie si l'URL du média existe -->
                                             <img src="upload/images/{{ asset(posts.mediaUrl) }}">  <!-- Affiche l'image du média -->
                                         {% endif %}
-                                    </div>
+                                    </div> #}
+
                                     <div>
                                         <p>{{ posts.description | striptags }}</p>  <!-- Affiche la description du post -->
                                     </div>
+
                                 </div>
                             </a>
                         </div>  <!-- Fermeture de la boîte -->
+ 
 
                 {% else %}
 
                     {% if switchBox %}
-                        <div class="box" id="boxOne">  <!-- Début de la boîte boxOne -->
+                        <div class="col-6 box-image" id="boxOne" style="background-image: url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
                     {% else %}
-                        <div class="box" id="boxTwo">  <!-- Début de la boîte boxTwo -->
+                        <div class="col-6 box-image" id="boxTwo" style="background-image: url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
                     {% endif %}
 
                             <!-- Contenu pour les posts avec un ID impair -->
                             <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}">  <!-- Liens vers l'URL du post -->
                                 <div class="row">
-                                    <div class="col-sm-6">
+
+                                    {# <div class="col-6">
                                         {% if posts.mediaUrl is not null %}  <!-- Vérifie si l'URL du média existe -->
                                             <img src="upload/images/{{ asset(posts.mediaUrl) }}">  <!-- Affiche l'image du média -->
                                         {% endif %}
-                                        <div>
-                                            <p>{{ posts.description | striptags }}</p>  <!-- Affiche la description du post -->
-                                        </div>
+                                    </div> #}
+
+                                    <div>
+                                        <p>{{ posts.description | striptags }}</p>  <!-- Affiche la description du post -->
                                     </div>
+
                                 </div>
                             </a>
                         </div>  <!-- Fermeture de la boîte -->
