@@ -22,8 +22,8 @@ class HomeController extends AbstractController
     #[Route('/', name: 'main')]
     public function acceuil(PostRepository $postRepository): Response
     {
-        // Rendu du template 'home/accueil.html.twig' avec les posts filtrés par page et visibilité
-        return $this->render('main/accueil.html.twig', [
+        // Rendu du template 'main/home.html.twig' avec les posts filtrés par page et visibilité
+        return $this->render('main/home.html.twig', [
             'post' => $postRepository->findBy(array('page' => 'accueil', 'visible' => true)),
         ]);
     }
