@@ -1,33 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Posts{% endblock %}
 
 {% block body %}
 
-<h1 class="display-4 fst-italic text-center">La Clunysoise</h1>
 
-<div class="pt-4">
-    <section class="container">
-        <div class="row">
-            <div class="col-md-12">
+<article>
+    <div class="text-center">
+        <h1>{{ post.title }}</h1>
+    </div>
 
-                    <article class="card mb-4">
+    <div class="row">
 
-                        <div class="card-header text-uppercase text-center">
-                            <h1>{{ post.title }}</h1>
-                        </div>
-
-                        <div class="card-body d-flex justify-content-center align-content-center">
-                        {% if post.mediaUrl is not null %}
-                            <img src="upload/images/{{ asset(post.mediaUrl) }}">
-                        {% endif %}
-                        </div>
-                        <p class="mx-4 my-4">{{ post.content|striptags|replace({'&nbsp;': ''}) }}</p>
-
-                    </article>
-
-            </div>
+        <div class="col-5">
+            {% if post.mediaUrl is not null %}
+            <img src="upload/images/{{ asset(post.mediaUrl) }}">
+            {% endif %}
         </div>
-    </section>
-</div>
+
+        <div class="col-7">
+            <p>{{ post.content|striptags|replace({'&nbsp;': ''}) }}</p>
+        </div>
+
+    </div>
+</article>
+
+
 {% endblock %}
