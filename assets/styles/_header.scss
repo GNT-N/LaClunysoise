@@ -1,8 +1,45 @@
 .offcanvas {
-    background-color: #495867!important;
+    background-color: #ffffff!important;
+}
+
+nav {
+    background-color: #ffffff;
 }
 
 .navbar {
     padding: 0!important;
     margin: 0!important;
+}
+
+#menuButton {
+    background-color: #0059C6!important;
+}
+
+.rounded {
+    border-radius: 5px 0 0 5px!important;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    position: relative!important;
+}
+
+/* Menu icon centered */
+.navbar-toggler {
+    margin: 0!important;
+    position: absolute!important;
+    top: 50%!important;
+    left: 50%!important;
+    margin-right: -50%!important;
+    transform: translate(-50%, -50%)!important;
+}
+
+.navbar-toggler-icon {
+    width: 2rem!important;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.offcanvas.offcanvas-end {
+    width: 50vw!important;
 }

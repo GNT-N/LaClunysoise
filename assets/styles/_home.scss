@@ -1,5 +1,7 @@
-#firstScreen {
-    width: 100%;
+#home {
+    background-color: #F7F7FF;
+    max-width: 100vw;
+    height: 100vh;
 }
 
 body #compteur {
@@ -42,12 +44,5 @@ body #compteur {
     background-position: center center;
     margin: 10px;
     border-radius: 25px;
-}
-
-@media (min-width: 1400px) {
-    #firstScreen {
-        max-width: 100vw;
-        height: 100vh;
-    }
 }
 
