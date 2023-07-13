@@ -103,14 +103,14 @@
                 {% if loop.index is odd %}  <!-- Vérifie si l'index de la boucle est impair -->
       
                     {% if switchBox %}  <!-- Vérifie la valeur de switchBox -->
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="col-6 box-image d-flex align-items-center justify-content-center" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="col-6 box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
                     {% else %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="col-6 box-image d-flex align-items-center justify-content-center" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="col-6 box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
                     {% endif %}
 
                         <!-- Contenu pour les posts avec un ID pair -->
                         <div class="text-white">
-                            <p class="text-white">{{ posts.description | striptags | slice(0, 360)}}</p>  <!-- Affiche la description du post -->
+                            <p class="text-white">{{ posts.description | striptags | slice(0, 310)}}</p>  <!-- Affiche la description du post -->
                         </div>
                     </a>  <!-- Fermeture de la balise a -->
 
@@ -118,14 +118,14 @@
                 {% else %}
 
                     {% if switchBox %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="col-6 box-image d-flex align-items-center justify-content-center" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="col-6 box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
                     {% else %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="col-6 box-image d-flex align-items-center justify-content-center" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="col-6 box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
                     {% endif %}
 
                         <!-- Contenu pour les posts avec un ID impair -->
                         <div class="text-white">
-                            <p class="text-white">{{ posts.description | striptags | slice(0, 360)}}</p>  <!-- Affiche la description du post -->
+                            <p class="text-white">{{ posts.description | striptags | slice(0, 310)}}</p>  <!-- Affiche la description du post -->
                         </div>
                     </a>  <!-- Fermeture de la balise a -->
 
