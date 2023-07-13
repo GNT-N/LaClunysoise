@@ -43,7 +43,7 @@ class DashboardController extends AbstractDashboardController
         return $this->redirect($url);
     }
 
-    // Configuration du tableau de bord
+    // Configuration du tableau de bord 1
     public function configureDashboard(): Dashboard
     {
         // Création d'un nouvel objet Dashboard et définition de son titre
@@ -67,4 +67,7 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToUrl('Accéder au site', 'fa fa-globe', '/')
         ]);
         }
+
+
+
 }
