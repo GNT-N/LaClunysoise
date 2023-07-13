@@ -1,12 +1,19 @@
-#home {
-    background-color: #ffffff;
-    max-width: 100vw;
-    height: 100vh;
+.row {
+    margin: 0!important;
+    padding: 0!important;
+    --bs-gutter-x: 0!important;
 }
 
-body #compteur {
-    font-size: 30px!important;
-    margin: 3rem;
+#home {
+    --bs-gutter-x: 0!important;
+    max-width: 100vw;
+    height: 100vh!important;
+    background-color: #ffffff;
+    max-width: 100vw;
+}
+
+.carousel-inner img {
+    max-height: 100vh!important;
 }
 
 #boxOne {
