@@ -36,7 +36,7 @@ class Post
     private ?string $slug = null;
 
     #[ORM\Column]
-    private ?bool $visible = null;
+    private ?bool $visible = true;
 
     #[ORM\Column(length: 255)]
     private ?string $page = null;

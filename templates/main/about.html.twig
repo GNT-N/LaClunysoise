@@ -6,34 +6,45 @@
 {% set counter = 0 %}
 
 {% for posts in post %}
+
     {% if counter is divisible by(2) %}
-    <article>
-        <div class="row">
-            <div class="col-5 d-flex">
-                {% if posts.mediaUrl is not null %}
-                    <img class="align-middle" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                {% endif %}
+
+        <section class="about_boxone">
+            <div class="row">
+
+                <div class="col-5 d-flex justify-content-center align-middle">
+                    {% if posts.mediaUrl is not null %}
+                        <img src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    {% endif %}
+                </div>
+
+                <div class="col-7">
+                    <h1 class="text-center">{{ posts.title }}</h1>
+                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                </div>
+
             </div>
-            <div class="col-7">
-                <h1>{{ posts.title }}</h1>
-                <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+        </section>
+
+        {% else %}
+
+        <section class="about_boxone">
+            <div class="row">
+
+                <div class="col-7">
+                    <h1 class="text-center">{{ posts.title }}</h1>
+                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                </div>
+
+                <div class="col-5 d-flex justify-content-center align-middle">
+                    {% if posts.mediaUrl is not null %}
+                        <img src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    {% endif %}
+                </div>
+
             </div>
-        </div>
-    </article>
-    {% else %}
-    <article>
-        <div class="row">
-            <div class="col-7">
-                <h1>{{ posts.title }}</h1>
-                <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
-            </div>
-            <div class="col-5 d-flex">
-                {% if posts.mediaUrl is not null %}
-                    <img class="align-middle" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                {% endif %}
-            </div>
-        </div>
-    </article>
+        </section>
+        
     {% endif %}
     
     {% set counter = counter + 1 %}

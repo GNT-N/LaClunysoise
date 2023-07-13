@@ -1,29 +1,29 @@
-article {
-    margin-top: 5rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90vw;
-    height: 100vh;
+.about_boxone {
+    margin-top: 5rem!important;
+    margin-left: 1rem!important;
+    margin-right: 1rem!important;
+    max-height: 100vh!important;
 }
 
-article h1 {
-    margin: 3rem
-}
-
-article img {
-    margin-top: 3rem;
+.about_boxone img {
+    padding: 0;
+    margin: 10px!important;
     margin-left: 0;
     margin-right: 0;
-    width: 450px!important;
-    height: auto;
-    margin: 10px!important;
-    padding: 0;
+    max-width: 700px!important;
     border-radius: 15px;
+    max-height: 90vh!important;
 }
 
-article p {
+.about_boxone h1 {
+    margin: 0.8rem;
+}
+
+.about_boxone p {
     margin-top: 3rem!important;
-    text-align: left;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    text-align: center;
     color: white;
     font-weight: bold;
 }
