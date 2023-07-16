@@ -73,4 +73,13 @@ class HomeController extends AbstractController
         // Rendu du template '/contact.html.twig' avec les posts filtrés par page et visibilité
         return $this->render('main/contact.html.twig');
     }
+
+    // Définition de la route '/articles/{slug}' pour afficher un post spécifique
+    #[Route('/{slug}', name: 'show', methods: ['GET'])]
+    public function show(Post $post): Response
+    {
+        return $this->render('post/show.html.twig', [
+            'post' => $post,
+        ]);
+    }
 }

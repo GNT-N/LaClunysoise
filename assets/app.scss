@@ -6,6 +6,9 @@
 @import "assets/styles/_show.scss";
 @import "assets/styles/_about.scss";
 @import "assets/styles/_support.scss";
+@import "assets/styles/_contact.scss";
+@import "assets/styles/_join.scss";
+@import "assets/styles/_appointment.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -13,6 +16,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    line-height: 2.0em;
+    line-height: 1.8em;
     font-family: 'Poppins', sans-serif;
 }

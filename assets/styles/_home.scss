@@ -6,10 +6,9 @@
 
 #home {
     --bs-gutter-x: 0!important;
-    max-width: 100vw;
-    height: 100vh!important;
     background-color: #ffffff;
     max-width: 100vw;
+    height: 700px!important;
 }
 
 #home p, 
@@ -20,6 +19,20 @@
 .carousel-inner img {
     width: 50vw!important;
     height: 700px!important;
+}
+
+
+#buttons {
+    border-radius: 25px!important;
+    margin-top: 2rem!important;
+    margin-bottom: 2rem!important;
+    margin-left: 2rem!important;
+    margin-right: 2rem!important;
+}
+
+.btn {
+    margin: 5rem!important;
+    padding: 1rem!important;
 }
 
 #boxOne {

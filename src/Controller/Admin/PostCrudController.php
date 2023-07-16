@@ -152,16 +152,6 @@ class PostCrudController extends AbstractCrudController
             // Appel de la méthode parent pour supprimer l'entité
             parent::deleteEntity($entityManager, $entityInstance);
         }
-
-
-        // Définition de la route '/articles/{slug}' pour afficher un post spécifique
-        #[Route('/{slug}', name: 'show', methods: ['GET'])]
-        public function show(Post $post): Response
-        {
-            return $this->render('post/show.html.twig', [
-                'post' => $post,
-            ]);
-        }
         
         
         // Propriété privée pour l'objet SluggerInterface utilisé pour générer les slugs
