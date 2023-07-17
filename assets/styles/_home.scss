@@ -28,8 +28,12 @@
 
 
 #buttons {
-    margin-top: 2rem!important;
     margin-bottom: 2rem!important;
+}
+
+#buttons button:hover, 
+#buttons button:focus {
+    background-color: #5C84B7!important;
 }
 
 .btn {
@@ -37,16 +41,27 @@
     padding: 1rem!important;
 }
 
-#boxOne {
+.boxOne {
     width: 800px!important;
     height: 400px!important;
     overflow: hidden;
+    background-size: cover;
+    background-position: center center;
 }
 
-#boxTwo {
+.boxTwo {
     width: 350px!important;
     height: 400px!important;
     overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+}
+
+#gridGallery {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 #gridGallery img {

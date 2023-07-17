@@ -67,13 +67,12 @@
     </div>
 </section>
 
-<section class="d-flex justify-content-center" id="buttons" style="background-image:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);">
-    <button type="button" class="btn btn-outline-primary"><a class="text-white text-decoration-none" href="/contact">Contactez Nous</a></button>
-    <button type="button" class="btn btn-outline-info"><a class="text-white text-decoration-none" href="/vos-rendez-vous">Prenez Rendez-Vous</a></button>
-    <button type="button" class="btn btn-outline-light"><a class="text-white text-decoration-none" href="/nous-rejoindre">Rejoignez Nous</a></button>
-</section>
-
-<section id="gridGallery">
+<section id="gridGallery" style="background-image: url('{{ asset("background.png") }}');">
+    <section class="d-flex justify-content-center" id="buttons">
+        <button type="button" class="btn bg-primary"><a class="text-white text-decoration-none" href="/contact">Contactez Nous</a></button>
+        <button type="button" class="btn bg-primary"><a class="text-white text-decoration-none" href="/vos-rendez-vous">Prenez Rendez-Vous</a></button>
+        <button type="button" class="btn bg-primary"><a class="text-white text-decoration-none" href="/nous-rejoindre">Rejoignez Nous</a></button>
+    </section>
     <h2 class="text-center pt-5">Nos services</h2>
     <div class="container">
         <div class="row justify-content-center">
@@ -82,9 +81,9 @@
             {% for posts in post %}
                 {% if loop.index is odd %}
                     {% if switchBox %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                     {% else %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                     {% endif %}
                         <div>
                             <p class="text-white">{{ posts.description | striptags | slice(0, 310)}}</p>
@@ -92,9 +91,9 @@
                     </a>
                 {% else %}
                     {% if switchBox %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                     {% else %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                     {% endif %}
                         <div>
                             <p class="text-white">{{ posts.description | striptags | slice(0, 310)}}</p>
@@ -108,7 +107,7 @@
             {% endfor %}
         </div>
     </div>
-    <h2 class="pb-3 text-center">Où nous trouver</h2>
 </section>
+<h2 class="pb-3 pt-3 text-center">Où nous trouver</h2>
 
 {% endblock %}
