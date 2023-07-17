@@ -4,50 +4,6 @@
 
 <section class="container" id="home">
     <div class="row">
-        <nav class="navbar fixed-top" aria-label="Light offcanvas navbar">
-            <div class="container-fluid g-0">
-              <a class="navbar-brand m-0 p-0" href="/"><img id="logo" src="{{ asset('logo2.png') }}"></a>
-              <div class="square rounded" id="menuButton">
-                <button class="navbar-toggler me-3 border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark" aria-label="Toggle navigation">
-                  <span class="text-white">Menu</span>
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-              </div>
-          
-              <div class="offcanvas offcanvas-end text-bg-Light" tabindex="-1" id="offcanvasNavbarDark" aria-labelledby="offcanvasNavbarDarkLabel">
-                <div class="offcanvas-body pt-5">
-                  <img src="{{ asset('ClunyTextWhite.png') }}" id="menuLogo">
-                  <hr class="border border-white opacity-100 border-1 m-5">
-                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 pt-5 ps-3">
-                    <li class="nav-item">
-                      <a class="nav-link text-white fs-5" href="/">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white fs-5" href="/a-propos">A Propos</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white fs-5" href="/prise-en-charge">Conditions de prise en charge</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white fs-5" href="/nous-rejoindre">Nous rejoindre</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white fs-5" href="/vos-rendez-vous">Vos rendez-vous</a>
-                    </li>
-                    <li class="nav-item pb-5">
-                      <a class="nav-link text-white fs-5" href="/contact">Contacts</a>
-                    </li>
-                    <hr class="border border-white opacity-100 border-1 m-5">
-                    {% if is_granted('ROLE_ADMIN') %}
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/admin">Gestion admin</a></li>
-                    {% endif %}
-          
-                  </ul>
-                </div>
-              </div>
-          
-            </div>
-          </nav>
         <div class="col-6" id="homeDescription" style="background-image: url('{{ asset("test.jpg") }}')">
             <h1 class="display-4 fst-italic text-center text-white">La Clunysoise c'est</h1>
             <section class="text-center" id="compteur">
@@ -152,6 +108,7 @@
             {% endfor %}
         </div>
     </div>
+    <h2 class="pb-3 text-center">Où nous trouver</h2>
 </section>
 
 {% endblock %}
