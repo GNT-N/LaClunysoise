@@ -15,6 +15,14 @@
     margin-top: 150px!important;
 }
 
+.boxOne, .boxTwo {
+  transition: transform 0.2s ease-in-out;
+}
+
+.boxOne:hover, .boxTwo:hover {
+  transform: scale(1.05);
+}
+
 #home p {
     margin-top: 100px!important;
 }
