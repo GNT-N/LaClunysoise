@@ -1,147 +1,110 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
 
 <section class="container" id="home">
     <div class="row">
-        <div class="col-6" id"home_description" style="background-image: url('{{ asset("test.jpg") }}')">
+        <div class="col-6" id="homedescription" style="background-image: url('{{ asset("test.jpg") }}')">
             <h1 class="display-4 fst-italic text-center text-white">La Clunysoise</h1>
             <p class="lead text-center text-white">L'entreprise « La Clunysoise » est une société d'ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis.La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d'interventions d'urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d'appel 15.</p>
         </div>
-        
+
         <div class="col-6">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-
                 <div class="carousel-inner text-center">
-
                     <div class="carousel-item active">
                         <a href="/a-propos">
-
-                        <div class="d-flex justify-content-center align-items-center">
-                            <img src="{{ asset('car1.jpg') }}" class="d-block w-100 center-block" alt="...">
-                        </div>
-
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2>Ambulance</h2>
-                            <p>Nos ambulances</p>
-                        </div>
-
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('car1.jpg') }}" class="d-block w-100 center-block" alt="...">
+                            </div>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2>Ambulance</h2>
+                                <p>Nos ambulances</p>
+                            </div>
                         </a>
                     </div>
-
-
                     <div class="carousel-item">
                         <a href="/a-propos">
-
-                        <div class="d-flex justify-content-center align-items-center">
-                            <img src="{{ asset('car2.jpg') }}" class="d-block w-100 center-block" alt="...">
-                        </div>
-
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2> VSL </h2>
-                            <p>Nos vehicules sanitaires légés</p>
-                        </div>
-
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('car2.jpg') }}" class="d-block w-100 center-block" alt="...">
+                            </div>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2> VSL </h2>
+                                <p>Nos vehicules sanitaires légers</p>
+                            </div>
                         </a>
                     </div>
-
-  
                     <div class="carousel-item">
                         <a href="/a-propos">
-                        
-                        <div class="d-flex justify-content-center align-items-center">
-                            <img src="{{ asset('car3.jpg') }}" class="d-block w-100 center-block" alt="...">
-                        </div>
-
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2> Taxi </h2>
-                            <p>Nos taxi</p>
-                        </div>
-                        
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('car3.jpg') }}" class="d-block w-100 center-block" alt="...">
+                            </div>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2> Taxi </h2>
+                                <p>Nos taxis</p>
+                            </div>
                         </a>
                     </div>
-
                 </div>
-
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-
             </div>
         </div>
-
     </div>
 </section>
 
-<section class="d-flex justify-content-center" id="buttons" style="background-image:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);')">
-    
+<section class="d-flex justify-content-center" id="buttons" style="background-image:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);">
     <button type="button" class="btn btn-outline-primary"><a class="text-white text-decoration-none" href="/contact">Contactez Nous</a></button>
     <button type="button" class="btn btn-outline-info"><a class="text-white text-decoration-none" href="/vos-rendez-vous">Prenez Rendez-Vous</a></button>
     <button type="button" class="btn btn-outline-light"><a class="text-white text-decoration-none" href="/nous-rejoindre">Rejoignez Nous</a></button>
-
 </section>
 
 <section id="gridGallery">
-    <div class="container d-flex">
-        <div class="row align-items-center justify-content-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            {% set switchBox = false %}
 
-            {% set switchBox = false %}  <!-- Initialisation de la variable switchBox à false -->
-
-            {% for posts in post %}  <!-- Boucle pour chaque post dans la liste post -->
-                {% if loop.index is odd %}  <!-- Vérifie si l'index de la boucle est impair -->
-      
-                    {% if switchBox %}  <!-- Vérifie la valeur de switchBox -->
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="col-6 box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
-                    {% else %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="col-6 box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
-                    {% endif %}
-
-                        <!-- Contenu pour les posts avec un ID pair -->
-                        <div class="text-white">
-                            <p class="text-white">{{ posts.description | striptags | slice(0, 310)}}</p>  <!-- Affiche la description du post -->
-                        </div>
-                    </a>  <!-- Fermeture de la balise a -->
-
-
-                {% else %}
-
+            {% for posts in post %}
+                {% if loop.index is odd %}
                     {% if switchBox %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="col-6 box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                     {% else %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="col-6 box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')"><!-- Début de la boîte boxOne -->
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                     {% endif %}
-
-                        <!-- Contenu pour les posts avec un ID impair -->
-                        <div class="text-white">
-                            <p class="text-white">{{ posts.description | striptags | slice(0, 310)}}</p>  <!-- Affiche la description du post -->
+                        <div>
+                            <p class="text-white">{{ posts.description | striptags | slice(0, 310)}}</p>
                         </div>
-                    </a>  <!-- Fermeture de la balise a -->
-
+                    </a>
+                {% else %}
+                    {% if switchBox %}
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                    {% else %}
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                    {% endif %}
+                        <div>
+                            <p class="text-white">{{ posts.description | striptags | slice(0, 310)}}</p>
+                        </div>
+                    </a>
                 {% endif %}
 
-                {% if loop.index is divisible by 2 %}  <!-- Vérifie si l'index de la boucle est divisible par 2 -->
-                    {% set switchBox = not switchBox %}  <!-- Inverse la valeur de switchBox -->
+                {% if loop.index is divisible by 2 %}
+                    {% set switchBox = not switchBox %}
                 {% endif %}
-            {% endfor %}  <!-- Fin de la boucle -->
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
-        </div>  <!-- Fermeture de la div.row -->
-    </div>  <!-- Fermeture de la div.container -->
-</section>  <!-- Fermeture de la section -->
-
-<section class="d-flex justify-content-center" id="buttons" style="background-image:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);')">
-    
+<section class="d-flex justify-content-center" id="buttons" style="background-image:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);">
     <button type="button" class="btn btn-outline-primary"><a class="text-white text-decoration-none" href="/contact">Contactez Nous</a></button>
     <button type="button" class="btn btn-outline-info"><a class="text-white text-decoration-none" href="/vos-rendez-vous">Prenez Rendez-Vous</a></button>
     <button type="button" class="btn btn-outline-light"><a class="text-white text-decoration-none" href="/nous-rejoindre">Rejoignez Nous</a></button>
-
 </section>
 
-
-{% endblock %} 
+{% endblock %}

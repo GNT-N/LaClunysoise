@@ -5,46 +5,43 @@
 
 <h1 class="text-center"> Vos Rendez - vous </h1>
 
-<section class="appointment_form">
+<section class="appointmentform">
     <form class="row g-3">
 
-        <div class="border-top my-5">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Monsieur
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                    Madame
-                </label>
-            </div>
+        <div class="col-md-2 offset-md-1 border-top">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">M.</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Mme.</label>
+                </div>
         </div>
 
 
-        <div class="col-md-4">
+        <div class="col-md-4 ">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Nom</span>
                 <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 offset-md-1">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <span class="input-group-text" id="basic-addon2">Prénom</span>
             </div>
         </div>
 
+        <div class="col-md-2"></div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 offset-md-1">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Tèl</span>
                 <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 offset-md-1">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <span class="input-group-text" id="basic-addon2">Mail</span>
@@ -55,13 +52,13 @@
         <div class="col-12"></div>
 
 
-        <div class="col-md-4">
+        <div class="col-md-5">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Adresse</span>
                 <input type="text" class="form-control" placeholder="2 rue du four" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-5">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Ville</span>
                 <input type="text" class="form-control" placeholder="Mâcon" aria-label="Username" aria-describedby="basic-addon1">
@@ -76,7 +73,7 @@
 
 
         <div class="border-top my-5">
-            <div class="col-12">
+            <div class="col-12 offset-md-5">
                 <p>Mode de transport</p>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -87,7 +84,7 @@
                     <label class="form-check-label" for="inlineRadio2">Allongé</label>
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 offset-md-5">
                 <p>Type de Transport</p>
                 <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
                 <label class="btn btn-outline-info" for="success-outlined">Aller Simple</label>
@@ -97,13 +94,13 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Lieu de Départ</span>
                 <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <span class="input-group-text" id="basic-addon2">Lieux D'Arriver</span>
@@ -111,13 +108,13 @@
         </div>
 
 
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Heure du Rendez-Vous</span>
                 <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <span class="input-group-text" id="basic-addon2">Heure estimer de fin</span>
@@ -144,12 +141,9 @@
             </label>
             </div>
         </div>
-        
 
     </form>
 </section>
-
-
 
 
 {% endblock %} 

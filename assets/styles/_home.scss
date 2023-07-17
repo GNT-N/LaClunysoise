@@ -8,7 +8,7 @@
     --bs-gutter-x: 0!important;
     background-color: #ffffff;
     max-width: 100vw;
-    height: 700px!important;
+    height: 100vh!important;
 }
 
 #home p, 
@@ -16,18 +16,20 @@
     margin-top: 150px!important;
 }
 
+#homedescription {
+    width: 50vw!important;
+    height: 100vh!important;
+}
+
 .carousel-inner img {
     width: 50vw!important;
-    height: 700px!important;
+    height: 100vh!important
 }
 
 
 #buttons {
-    border-radius: 25px!important;
     margin-top: 2rem!important;
     margin-bottom: 2rem!important;
-    margin-left: 2rem!important;
-    margin-right: 2rem!important;
 }
 
 .btn {
@@ -50,8 +52,7 @@
 #gridGallery img {
     max-width: 300px;
     max-height: 330px;
-    margin: 10px;
-    
+    margin: 10px;   
 }
 
 #gridGallery p {
@@ -68,7 +69,6 @@
 .box-image {
     background-size:cover;
     background-position: center center;
-    margin: 10px;
+    margin: 35px;
     border-radius: 25px;
 }
-

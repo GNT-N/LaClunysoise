@@ -3,12 +3,13 @@
 {% block body %}
 
 
-<h1 class="text-center"> Contact </h1>
+<h1 class="text-center">Ambulance La Clunysoise</h1>
 
 <div class="container">
     <section class="row border-top">
         <div class="col-6">
 
+            <h2></h2>
             <p class="text-body-secondary"><a href="tel:+33385590487" class="nav-link p-0 text-body-secondary">Tèl : 03 85 59 04 87</a></p>
             <p class="text-body-secondary"><a href="tel:+33677658774" class="nav-link p-0 text-body-secondary">Tèl : 06 77 65 87 74</a></p>
             <p class="text-body-secondary"><a href="mailto:la.clunysoise@orange.fr" class="nav-link p-0 text-body-secondary">E-mail : la.clunysoise@orange.fr</a></p>
@@ -19,34 +20,40 @@
 
         <div class="col-6">
 
-        <section id="contact">
-        <form class="border-top">
+        <div id="contact">
+        <form>
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-5">
             <span class="input-group-text" id="basic-addon1">Nom</span>
-            <input type="text" class="form-control" placeholder="Dupont" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
             </div>
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-5">
             <span class="input-group-text" id="basic-addon1">Prénom</span>
-            <input type="text" class="form-control" placeholder="Robert" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
             </div>
 
-            <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="@example.com" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group mb-5">
+            <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
             <span class="input-group-text" id="basic-addon2">mail</span>
             </div>
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-5">
+            <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <span class="input-group-text" id="basic-addon2">objet</span>
+            </div>
+
+            <div class="input-group mb-5">
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="votre message"></textarea>
             </div>
 
         </form>
-        </section>
+        </div>
 
 
         </div>
     </section>
 </div>
+
 
 {% endblock %} 
