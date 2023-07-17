@@ -6,9 +6,14 @@ nav {
     background-color: white;
 }
 
-span {
-    color: #5C84B7!important;
-    height: 50px;
+.countTextColor {
+    color: #5C84B7;
+    padding: 0 5px;
+}
+
+.count {
+    color: #950D05;
+    font-size: 1.5rem;
 }
 
 .navbar {

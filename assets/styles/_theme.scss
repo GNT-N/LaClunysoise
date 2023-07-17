@@ -1,8 +1,7 @@
-#logo {
-    width: 200px;
-    height: auto;
-}
+$logoW: 175px; 
+$logoH: auto;
 
-p {
-    color: #5C84B7!important;
+#logo {
+    width: $logoW;
+    height: $logoH;
 }
