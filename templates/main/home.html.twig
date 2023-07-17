@@ -4,8 +4,60 @@
 
 <section class="container" id="home">
     <div class="row">
+        <nav class="navbar fixed-top" aria-label="Light offcanvas navbar">
+            <div class="container-fluid g-0">
+              <a class="navbar-brand m-0 p-0" href="/"><img id="logo" src="{{ asset('logo2.png') }}"></a>
+              <div class="square rounded" id="menuButton">
+                <button class="navbar-toggler me-3 border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark" aria-label="Toggle navigation">
+                  <span class="text-white">Menu</span>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+          
+              <div class="offcanvas offcanvas-end text-bg-Light" tabindex="-1" id="offcanvasNavbarDark" aria-labelledby="offcanvasNavbarDarkLabel">
+                <div class="offcanvas-body pt-5">
+                  <img src="{{ asset('ClunyTextWhite.png') }}" id="menuLogo">
+                  <hr class="border border-white opacity-100 border-1 m-5">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 pt-5 ps-3">
+                    <li class="nav-item">
+                      <a class="nav-link text-white fs-5" href="/">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white fs-5" href="/a-propos">A Propos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white fs-5" href="/prise-en-charge">Conditions de prise en charge</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white fs-5" href="/nous-rejoindre">Nous rejoindre</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white fs-5" href="/vos-rendez-vous">Vos rendez-vous</a>
+                    </li>
+                    <li class="nav-item pb-5">
+                      <a class="nav-link text-white fs-5" href="/contact">Contacts</a>
+                    </li>
+                    <hr class="border border-white opacity-100 border-1 m-5">
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/admin">Gestion admin</a></li>
+                    {% endif %}
+          
+                  </ul>
+                </div>
+              </div>
+          
+            </div>
+          </nav>
         <div class="col-6" id="homeDescription" style="background-image: url('{{ asset("test.jpg") }}')">
-            <h1 class="display-4 fst-italic text-center text-white">La Clunysoise</h1>
+            <h1 class="display-4 fst-italic text-center text-white">La Clunysoise c'est</h1>
+            <section class="text-center" id="compteur">
+                <span class="countText"><span class="count">421</span> Interventions</span>
+                <span class="countText"><span class="count">45</span> Urgences</span>
+                <span class="countText"><span class="count">28</span> Salarié</span>
+                <span class="countText"><span class="count">5</span> Ambualnces</span>
+                <span class="countText"><span class="count">10</span> VSL</span>
+                <span class="countText"><span class="count">8</span> Taxi</span>
+              </section>
             <p class="lead text-center text-white">L'entreprise « La Clunysoise » est une société d'ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis.La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d'interventions d'urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d'appel 15.</p>
         </div>
 
@@ -66,6 +118,7 @@
 </section>
 
 <section id="gridGallery">
+    <h2 class="text-center pt-5">Nos services</h2>
     <div class="container">
         <div class="row justify-content-center">
             {% set switchBox = false %}
@@ -99,12 +152,6 @@
             {% endfor %}
         </div>
     </div>
-</section>
-
-<section class="d-flex justify-content-center" id="buttons" style="background-image:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);">
-    <button type="button" class="btn btn-outline-primary"><a class="text-white text-decoration-none" href="/contact">Contactez Nous</a></button>
-    <button type="button" class="btn btn-outline-info"><a class="text-white text-decoration-none" href="/vos-rendez-vous">Prenez Rendez-Vous</a></button>
-    <button type="button" class="btn btn-outline-light"><a class="text-white text-decoration-none" href="/nous-rejoindre">Rejoignez Nous</a></button>
 </section>
 
 {% endblock %}
