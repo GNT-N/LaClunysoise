@@ -2,6 +2,16 @@
     background-color: #0059C6!important;
 }
 
+.navbar {
+    width: 100px!important;
+    height: 100px!important;
+    margin-left: auto!important;
+    padding-top: 30px!important;
+}
+
+#logo {
+    position: fixed!important;
+}
 
 .countText {
     color: white;
@@ -11,11 +21,6 @@
 .count {
     color: #950D05;
     font-size: 1.5rem;
-}
-
-.navbar {
-    padding: 0!important;
-    margin: 0!important;
 }
 
 #menuButton {
