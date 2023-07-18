@@ -98,3 +98,39 @@
     margin: 35px;
     border-radius: 25px;
 }
+
+#buttons button {
+    width: 200px !important;
+}
+
+@media (max-width: 1199.98px) { 
+    #homeDescription {
+        width: 100vw !important;
+        height: 100vh !important;
+        position: relative;
+    }
+
+    #homeDescription p {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 85%;
+    }
+
+    #carouselExampleAutoplaying {
+        display: none !important;
+    }
+
+    #buttons button {
+        margin: 40px 380px!important;
+    }
+}
+
+    @media (max-width: 991.98px) { 
+        #compteur {
+            display: none !important;
+        }
+
+ }

@@ -29,6 +29,10 @@
     background-color: #0059C6!important;
 }
 
+.menuButtonIn {
+    background-color: white!important;
+}
+
 .rounded {
     border-radius: 5px 0 0 5px!important;
 }
@@ -67,3 +71,15 @@
 .offcanvas ul li a:focus  {
         color: #b0b8bf!important;
 }
+
+
+@media (max-width: 1199.98px) { 
+    #offcanvasNavbarDark {
+        width: 100vw!important;
+    }
+
+    #logoHead {
+        display: none!important;
+    }
+    
+ }
