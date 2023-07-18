@@ -26,10 +26,15 @@ class ContactType extends AbstractType
                 'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'email'],
                 'label' => ' ',
             ])
+            ->add('sujet', TextType::class, [
+                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'objet'],
+                'label' => ' ',
+            ])
             ->add('content', TextareaType::class, [
                 'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Contenu'],
                 'label' => ' ',
             ])
+            
             ->add('envoyer', SubmitType::class, [
                 'attr' => ['class' => 'form-control mt-4'],
             ])
