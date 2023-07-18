@@ -3,8 +3,6 @@
 // Déclaration du namespace du contrôleur
 namespace App\Controller;
 
-// Importation de la classe d'entité Post
-use App\Entity\Post;
 // Importation de la classe de base pour les contrôleurs Symfony
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 // Importation de la classe Response pour la réponse HTTP
@@ -52,18 +50,16 @@ class HomeController extends AbstractController
     #[Route('/nous-rejoindre', name: 'join')]
     public function join(PostRepository $postRepository): Response
     {
-        // Rendu du template '/join.html.twig' avec les posts filtrés par page et visibilité
-        return $this->render('main/join.html.twig', [
-            'post' => $postRepository->findBy(array('page' => 'nous-rejoindre', 'visible' => true)),
-        ]);
+
+        return $this->forward('App\Controller\JoinController::index'); 
     }
 
     // Définition de la route '/vos-rendez-vous' avec le nom 'appointment'
     #[Route('/vos-rendez-vous', name: 'appointment')]
     public function appointment(PostRepository $postRepository): Response
     {
-        // Rendu du template '/appointment.html.twig' avec les posts filtrés par page et visibilité
-        return $this->render('main/appointment.html.twig');
+
+        return $this->forward('App\Controller\AppointmentController::index'); 
     }
 
     // Définition de la route '/contact' avec le nom 'contact'

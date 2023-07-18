@@ -50,6 +50,20 @@
     {% set counter = counter + 1 %}
 {% endfor %}
 
+{# Vérifiez si le formulaire est défini avant de le rendre #}
+{% if formulaire is defined %}
+    {{ form_start(formulaire) }}
+    {{ form_widget(formulaire) }}
+    <button type="submit">Envoyer</button>
+    {{ form_end(formulaire) }}
+{% else %}
+    {# Le formulaire n'est pas défini, vous pouvez afficher un message ou une autre action #}
+    <p>Le formulaire n'est pas disponible pour le moment.</p>
+{% endif %}
 
+{# Vérifiez si $post est défini avant de l'utiliser #}
+{% if post is defined %}
+    {# Votre code pour afficher les posts ici #}
+{% endif %}
 
 {% endblock %}
