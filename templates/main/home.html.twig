@@ -5,8 +5,16 @@
 <section class="container" id="home">
     <div class="row">
         <div class="col-6" id="homeDescription" style="background-image: url('{{ asset("test.jpg") }}')">
-            <h1 class="display-4 fst-italic text-center text-white">La Clunysoise</h1>
-            <p class="lead text-center text-white">L'entreprise « La Clunysoise » est une société d'ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis.La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d'interventions d'urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d'appel 15.</p>
+            <h1 class="display-4 fst-italic text-center text-white">La Clunysoise c'est</h1>
+            <section class="text-center" id="compteur">
+                <span class="countText fw-bold"><span class="count fw-bold">421 </span> Intervention ainsi que </span>
+                <span class="countText fw-bold"><span class="count fw-bold">45 </span> Urgences par jour,</span>
+                <span class="countText fw-bold"><span class="count fw-bold">28 </span> Salarié </span>
+                <span class="countText fw-bold"><span class="count fw-bold">5 </span> Ambulances </span>
+                <span class="countText fw-bold"><span class="count fw-bold">10 </span> VSL </span>
+                <span class="countText fw-bold"><span class="count fw-bold">8 </span> Taxi</span>
+              </section>
+            <p class="lead text-center text-white pe-5 ps-5">L'entreprise « La Clunysoise » est une société d'ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis.La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d'interventions d'urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d'appel 15.</p>
         </div>
 
         <div class="col-6">
@@ -59,13 +67,13 @@
     </div>
 </section>
 
-<section class="d-flex justify-content-center" id="buttons" style="background-image:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);">
-    <button type="button" class="btn btn-outline-primary"><a class="text-white text-decoration-none" href="/contact">Contactez Nous</a></button>
-    <button type="button" class="btn btn-outline-info"><a class="text-white text-decoration-none" href="/vos-rendez-vous">Prenez Rendez-Vous</a></button>
-    <button type="button" class="btn btn-outline-light"><a class="text-white text-decoration-none" href="/nous-rejoindre">Rejoignez Nous</a></button>
-</section>
-
-<section id="gridGallery">
+<section id="gridGallery" style="background-image: url('{{ asset("background.png") }}');">
+    <section class="d-flex justify-content-center" id="buttons">
+        <button type="button" class="btn bg-primary"><a class="text-white text-decoration-none" href="/contact">Contactez Nous</a></button>
+        <button type="button" class="btn bg-primary"><a class="text-white text-decoration-none" href="/vos-rendez-vous">Prenez Rendez-Vous</a></button>
+        <button type="button" class="btn bg-primary"><a class="text-white text-decoration-none" href="/nous-rejoindre">Rejoignez Nous</a></button>
+    </section>
+    <h2 class="text-center pt-5">Nos services</h2>
     <div class="container">
         <div class="row justify-content-center">
             {% set switchBox = false %}
@@ -73,9 +81,9 @@
             {% for posts in post %}
                 {% if loop.index is odd %}
                     {% if switchBox %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                     {% else %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                     {% endif %}
                         <div>
                             <p class="text-white">{{ posts.description | striptags | slice(0, 310)}}</p>
@@ -83,9 +91,9 @@
                     </a>
                 {% else %}
                     {% if switchBox %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                     {% else %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none" id="boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                     {% endif %}
                         <div>
                             <p class="text-white">{{ posts.description | striptags | slice(0, 310)}}</p>
@@ -100,11 +108,6 @@
         </div>
     </div>
 </section>
-
-<section class="d-flex justify-content-center" id="buttons" style="background-image:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);">
-    <button type="button" class="btn btn-outline-primary"><a class="text-white text-decoration-none" href="/contact">Contactez Nous</a></button>
-    <button type="button" class="btn btn-outline-info"><a class="text-white text-decoration-none" href="/vos-rendez-vous">Prenez Rendez-Vous</a></button>
-    <button type="button" class="btn btn-outline-light"><a class="text-white text-decoration-none" href="/nous-rejoindre">Rejoignez Nous</a></button>
-</section>
+<h2 class="pb-3 pt-3 text-center">Où nous trouver</h2>
 
 {% endblock %}
