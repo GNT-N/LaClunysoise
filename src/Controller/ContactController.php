@@ -9,7 +9,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Symfony\Component\Mime\Part\DataPart;
+use Symfony\Component\Mime\Part\File;
 
 class ContactController extends AbstractController
 {
@@ -24,15 +25,32 @@ class ContactController extends AbstractController
 
             $data = $form->getData();
 
-            $address = $data['email'];
+            $sexe = $data['Civilite'];
+            $lastname = $data['Nom'];
+            $firstname = $data['Prenom'];
+            $phone = $data['Telephone'];
+            $email = $data['email'];
+            $subject = $data['sujet'];
             $content = $data['content'];
-            $subject = $data['subject'];
+
+            $message = sprintf(
+
+                "Nouveau message ,\n\nObject: %s\n\nCivilité: %s\n\nNom: %s\nPrénom: %s\n\nTéléphone: %s\nAdresse e-mail: %s\n\nCommentaires: \n%s",
+
+                $subject,
+                $sexe,
+                $lastname,
+                $firstname,
+                $phone,
+                $email,
+                $content
+            );
 
             $email = (new Email())
-                ->from($address)
+                ->from($email)
                 ->to('admin@admin.com')
-                ->subject($subject)
-                ->text($content);
+                ->subject('Demande de Rendez-vous')
+                ->text($message);
 
 
             $mailer->send($email);

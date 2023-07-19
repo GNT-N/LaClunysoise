@@ -23,14 +23,47 @@ class AppointmentController extends AbstractController
 
             $data = $form->getData();
 
-            $address = $data['email'];
+            $sexe = $data['Civilite'];
+            $lastname = $data['Nom'];
+            $firstname = $data['Prenom'];
+            $phone = $data['Telephone'];
+            $email = $data['email'];
+            $adresse = $data['Adresse'];
+            $transport = $data['ModeTransport'];
+            $place = $data['LieuxRendezVous'];
+            $type = $data['TypeEtablissement'];
+            $date = $data['DateRendezVous']->format('Y-m-d');
+            $go = $data['Aller'];
+            $during = $data['DureeEstimee'];
+            $time = $data['HeureRendezVous'];
             $content = $data['content'];
 
+            $message = sprintf(
+                
+                "Nouveau rendez-vous ,\n\nCivilité: %s\n\nNom: %s\nPrénom: %s\n\nTéléphone: %s\nAdresse e-mail: %s\n\nAdresse: %s\n\nTransport: %s\nType: %s\n\nLieu du rendez-vous: %s\nType d'établissement: %s\n\nDate du rendez-vous: %s\nHeure du rendez-vous: %s\nDurée estimée du rendez-vous: %s\n\nCommentaires: \n%s",
+
+                $sexe,
+                $lastname,
+                $firstname,
+                $phone,
+                $email,
+                $adresse,
+                $transport,
+                $go,
+                $place,
+                $type,
+                $date,
+                $time,
+                $during,
+                $content
+            );
+            
+
             $email = (new Email())
-                ->from($address)
+                ->from($email)
                 ->to('admin@admin.com')
-                ->subject('Demande de contact')
-                ->text($content);
+                ->subject('Demande de Rendez-vous')
+                ->text($message);
 
 
             $mailer->send($email);

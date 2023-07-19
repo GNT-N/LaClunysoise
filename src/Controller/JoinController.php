@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Mime\Part\DataPart;
+use Symfony\Component\Mime\Part\File;
 
 // Définir la classe du contrôleur
 class JoinController extends AbstractController
@@ -39,15 +41,34 @@ class JoinController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // Récupérer les données du formulaire
             $data = $form->getData();
-            $address = $data['email'];
+            $sexe = $data['Civilite'];
+            $lastname = $data['Nom'];
+            $firstname = $data['Prenom'];
+            $phone = $data['Telephone'];
+            $email = $data['email'];
+            $file = $data['Fichier'];
             $content = $data['content'];
+
+            $message = sprintf(
+
+                "Nouveau Candidat(e) ,\n\nCivilité: %s\n\nNom: %s\nPrénom: %s\n\nTéléphone: %s\nAdresse e-mail: %s\n\nCv: %s\n\nCommentaires: \n%s",
+
+                $sexe,
+                $lastname,
+                $firstname,
+                $phone,
+                $email,
+                $file,
+                $content
+            );
 
             // Créer un nouvel e-mail à envoyer
             $email = (new Email())
-                ->from($address)
+                ->from($email)
                 ->to('admin@admin.com')
-                ->subject('Demande de contact')
-                ->text($content);
+                ->subject('Candidature')
+                ->addPart(new DataPart(new File($file), 'Contract', 'application/msword'))
+                ->text($message);
 
             // Envoyer l'e-mail en utilisant le service de messagerie (MailerInterface)
             $mailer->send($email);
@@ -64,17 +85,6 @@ class JoinController extends AbstractController
             'controller_name' => 'JoinController', // Variable pour afficher le nom du contrôleur dans le template (utilisation optionnelle)
             'formulaire' => $form->createView(), // Utilisez createView() pour obtenir la vue du formulaire
             'post' => $posts, // Variable contenant les posts filtrés par page et visibilité
-        ]);
-    }
-
-    // Définir une deuxième action du contrôleur
-    public function join(PostRepository $postRepository): Response
-    {
-        // Rendre le template '/join.html.twig' avec les posts filtrés par page et visibilité
-        $posts = $postRepository->findBy(array('page' => 'nous-rejoindre', 'visible' => true));
-
-        return $this->render('main/join.html.twig', [
-            'post' => $posts,
         ]);
     }
 }

@@ -8,6 +8,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
@@ -16,6 +18,14 @@ class JoinType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('Civilite', ChoiceType::class, [
+                'choices' => [
+                    'M.' => 'Monsieur',
+                    'Mme' => 'Madame',
+                ],
+                'attr' => ['class' => 'form-control mt-4'],
+                'label' => ' ',
+            ])
             ->add('Nom',TextType::class, [
                 'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Nom'],
                 'label' => ' ',
@@ -24,7 +34,11 @@ class JoinType extends AbstractType
                 'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Prenom'],
                 'label' => ' ',
             ])
-            ->add('email', TextType::class, [
+            ->add('Telephone', TextType::class, [
+                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Téléphone'],
+                'label' => ' ',
+            ])
+            ->add('email', EmailType::class, [
                 'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'email'],
                 'label' => ' ',
             ])
@@ -32,7 +46,7 @@ class JoinType extends AbstractType
                 'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Contenu'],
                 'label' => ' ',
             ])
-            ->add('attachment', FileType::class, [
+            ->add('Fichier', FileType::class, [
                 'label' => ' ',
                 'required' => false,
                 'attr' => ['class' => 'form-control mt-4'],
