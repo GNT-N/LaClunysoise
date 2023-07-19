@@ -15,10 +15,13 @@ iframe {
 
 .pCol {
     text-align: center !important;
+    width: fit-content;
+    padding: 0 100px !important;
 }
 
 .pCol p, .pCol p a, .pCol ul li, .pCol ul li a {
     color: white!important;
+    display: inline;
 }
 
 .pCol ul li, .pCol ul li a:hover,
