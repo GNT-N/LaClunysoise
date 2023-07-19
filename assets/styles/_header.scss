@@ -27,11 +27,24 @@
 
 .menuButton {
     background-color: #0059C6!important;
+    transition: transform 0.1s ease-in-out;
+}
+
+.menuButton:hover,
+.menuButton:focus {
+    transform: scale(1.1);
 }
 
 .menuButtonIn {
     background-color: white!important;
+    transition: transform 0.1s ease-in-out;
 }
+
+.menuButtonIn:hover,
+.menuButtonIn:focus {
+    transform: scale(1.1);
+}
+
 
 .rounded {
     border-radius: 5px 0 0 5px!important;
