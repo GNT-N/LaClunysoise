@@ -9,8 +9,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Mime\Part\DataPart;
-use Symfony\Component\Mime\Part\File;
 
 class ContactController extends AbstractController
 {
@@ -54,6 +52,12 @@ class ContactController extends AbstractController
 
 
             $mailer->send($email);
+
+            // Ajout du message flash dans la session
+            $this->addFlash('success', 'Votre message a été envoyé avec succès !');
+
+            // Rediriger l'utilisateur après envoi du formulaire pour éviter de le renvoyer en actualisant la page (Post-Redirect-Get pattern)
+            return $this->redirectToRoute('app_contact');
 
         }
 

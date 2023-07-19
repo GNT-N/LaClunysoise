@@ -22,6 +22,11 @@
 
         {{ form(formulaire)}}
 
+        {% for flashMessage in app.flashes('success') %}
+            <div class="alert alert-success m-5">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
         </div>
     </section>
 </div>

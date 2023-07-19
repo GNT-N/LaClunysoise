@@ -68,6 +68,12 @@ class AppointmentController extends AbstractController
 
             $mailer->send($email);
 
+            // Ajout du message flash dans la session
+            $this->addFlash('success', 'Votre demande de rendez-vous a été envoyé avec succès !');
+
+            // Rediriger l'utilisateur après envoi du formulaire pour éviter de le renvoyer en actualisant la page (Post-Redirect-Get pattern)
+            return $this->redirectToRoute('app_appointment');
+
         }
         return $this->render('main/appointment.html.twig', [
             'controller_name' => 'AppointmentController',
