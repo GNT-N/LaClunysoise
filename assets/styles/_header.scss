@@ -56,6 +56,7 @@
 #menuLogo {
     width: 300px; 
     height: auto;
+    position: fixed!important;
 }
 
 .navbar-toggler-icon {
@@ -65,6 +66,15 @@
 
 .offcanvas.offcanvas-end {
     width: 35vw!important;
+}
+
+.offcanvas ul {
+    padding-top: 80px !important;
+}
+
+.offcanvas ul li a {
+    display: inline;
+    line-height: 50px;
 }
 
 .offcanvas ul li a:hover,
