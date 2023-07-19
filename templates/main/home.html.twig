@@ -2,28 +2,29 @@
 
 {% block body %}
 
-<section class="container" id="home">
+<section class="container d-flex" id="home">
     <div class="row">
-        <div class="col-6" id="homeDescription" style="background-image: url('{{ asset("test.jpg") }}')">
-            <h1 class="display-4 fst-italic text-center text-white">La Clunysoise c'est</h1>
-            <section class="text-center" id="compteur">
-                <span class="countText fw-bold"><span class="count fw-bold">421 </span> Intervention ainsi que </span>
-                <span class="countText fw-bold"><span class="count fw-bold">45 </span> Urgences par jour,</span>
-                <span class="countText fw-bold"><span class="count fw-bold">28 </span> Salarié </span>
-                <span class="countText fw-bold"><span class="count fw-bold">5 </span> Ambulances </span>
-                <span class="countText fw-bold"><span class="count fw-bold">10 </span> VSL </span>
-                <span class="countText fw-bold"><span class="count fw-bold">8 </span> Taxi</span>
-              </section>
-            <p class="lead text-center text-white pe-5 ps-5">L'entreprise « La Clunysoise » est une société d'ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis.La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d'interventions d'urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d'appel 15.</p>
+        <div class="col-lg-6 d-flex justify-content-center align-items-center" id="homeDescription" style="background-image: url('{{ asset("test.jpg") }}')">
+            <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+                <h1 class="display-4 fst-italic text-white">La Clunysoise c'est</h1>
+                <div class="text-center pt-5" id="compteur">
+                    <span class="countText fw-bold"><span class="count fw-bold">421 </span> Intervention ainsi que </span>
+                    <span class="countText fw-bold"><span class="count fw-bold">45 </span> Urgences par jour,</span>
+                    <span class="countText fw-bold"><span class="count fw-bold">28 </span> Salarié </span>
+                    <span class="countText fw-bold"><span class="count fw-bold">5 </span> Ambulances </span>
+                    <span class="countText fw-bold"><span class="count fw-bold">10 </span> VSL </span>
+                    <span class="countText fw-bold"><span class="count fw-bold">8 </span> Taxi</span>
+                </div>
+                <p class="lead text-white text-center ps-3 pe-3">L'entreprise « La Clunysoise » est une société d'ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis.La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d'interventions d'urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d'appel 15.</p>
+            </div>
         </div>
-
-        <div class="col-6">
+        <div class="col-lg-6">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner text-center">
+                <div id="carousel" class="carousel-inner text-center">
                     <div class="carousel-item active">
                         <a href="/a-propos">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="{{ asset('car1.jpg') }}" class="d-block w-100 center-block" alt="...">
+                            <div class="d-flex justify-content-center align-items-center d-block w-100">
+                                <img src="{{ asset('car1.jpg') }}" class="d-block w-100 center-block" alt="..." style="filter: grayscale(.5)">
                             </div>
                             <div class="carousel-caption d-none d-md-block">
                                 <h2>Ambulance</h2>
@@ -33,10 +34,10 @@
                     </div>
                     <div class="carousel-item">
                         <a href="/a-propos">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="{{ asset('car2.jpg') }}" class="d-block w-100 center-block" alt="...">
+                            <div class="d-flex justify-content-center align-items-center d-block w-100">
+                                <img src="#" class="d-block w-100 center-block" alt="..." style="filter: grayscale(.5)"> 
                             </div>
-                            <div class="carousel-caption d-none d-md-block">
+                            <div class="carousel-caption d-none d-md-block text-dark">
                                 <h2> VSL </h2>
                                 <p>Nos vehicules sanitaires légers</p>
                             </div>
@@ -44,10 +45,10 @@
                     </div>
                     <div class="carousel-item">
                         <a href="/a-propos">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="{{ asset('car3.jpg') }}" class="d-block w-100 center-block" alt="...">
+                            <div class="d-flex justify-content-center align-items-center d-block w-100">
+                                <img src="#" class="d-block w-100 center-block" alt="..." style="filter: grayscale(.5)">
                             </div>
-                            <div class="carousel-caption d-none d-md-block">
+                            <div class="carousel-caption d-none d-md-block text-dark">
                                 <h2> Taxi </h2>
                                 <p>Nos taxis</p>
                             </div>
@@ -68,11 +69,6 @@
 </section>
 
 <section id="gridGallery" style="background-image: url('{{ asset("background.png") }}');">
-    <section class="d-flex justify-content-center" id="buttons">
-        <button type="button" class="btn bg-primary"><a class="text-white text-decoration-none" href="/contact">Contactez Nous</a></button>
-        <button type="button" class="btn bg-primary"><a class="text-white text-decoration-none" href="/vos-rendez-vous">Prenez Rendez-Vous</a></button>
-        <button type="button" class="btn bg-primary"><a class="text-white text-decoration-none" href="/nous-rejoindre">Rejoignez Nous</a></button>
-    </section>
     <h2 class="text-center pt-5">Nos services</h2>
     <div class="container">
         <div class="row justify-content-center">
@@ -106,6 +102,15 @@
                 {% endif %}
             {% endfor %}
         </div>
+    </div>
+    
+    <div class="container">
+        <div class="row flex-row flex-wrap justify-content-center" id="buttons">
+            <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none"><a class="text-white text-decoration-none" href="/contact">Contactez Nous</a></button>
+            <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none"><a class="text-white text-decoration-none" href="/vos-rendez-vous">Prenez Rendez-Vous</a></button>
+            <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none"><a class="text-white text-decoration-none" href="/nous-rejoindre">Rejoignez Nous</a></button>
+        </div>
+
     </div>
 </section>
 <h2 class="pb-3 pt-3 text-center">Où nous trouver</h2>

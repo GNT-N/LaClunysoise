@@ -24,7 +24,7 @@
 }
 
 #home p {
-    margin-top: 100px!important;
+    margin-top: 50px!important;
 }
 
 #homeDescription {
@@ -68,6 +68,25 @@
     background-position: center center;
 }
 
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23ffffff%27%3e%3cpath d=%27M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e");
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23ffffff%27%3e%3cpath d=%27M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z%27/%3e%3c/svg%3e");
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    display: inline-block;
+    width: 2.9rem;
+    height: 2.9rem;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 95% 95%;
+    background-color: #0059C6;
+  }
+
 #gridGallery {
     background-size: cover;
     background-repeat: no-repeat;
@@ -98,3 +117,24 @@
     margin: 35px;
     border-radius: 25px;
 }
+
+#buttons button {
+    width: 200px !important;
+}
+
+@media (max-width: 1199.98px) { 
+    #homeDescription {
+        width: 100vw !important;
+        height: 100vh !important;
+        position: relative;
+    }
+
+    #carouselExampleAutoplaying {
+        display: none !important;
+    }
+
+    #buttons button {
+        margin: 40px 380px!important;
+    }
+
+ }
