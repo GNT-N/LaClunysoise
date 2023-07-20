@@ -86,7 +86,7 @@
                         <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image tile d-flex align-items-center justify-content-center text-decoration-none boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                     {% endif %}
                         <div>
-                            <h1 class="animate-text">{{ posts.title }}</h1>
+                            <h1>{{ posts.title }}</h1>
                             <p class="animate-text text-white">{{ posts.description | striptags | slice(0, 310)}}</p>
                         </div>
                     </a>
@@ -97,7 +97,7 @@
                         <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image tile d-flex align-items-center justify-content-center text-decoration-none boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                     {% endif %}
                         <div>
-                            <h1 class="animate-text">{{ posts.title }}</h1>
+                            <h1>{{ posts.title }}</h1>
                             <p class="animate-text text-white">{{ posts.description | striptags | slice(0, 310)}}</p>
                         </div>
                     </a>
