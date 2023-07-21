@@ -4,61 +4,25 @@
     --bs-gutter-x: 0!important;
 }
 
-
-// -------------------- Home --------------------
 #home {
     --bs-gutter-x: 0!important;
     background-color: #ffffff;
     max-width: 100vw;
-    height: 70vh!important;
+    height: 100vh!important;
 }
 
 #home h1 {
     margin-top: 150px!important;
 }
 
-#home p {
-    margin-top: 100px!important;
+.countText {
+    color: black!important;
+    padding: 0 5px;
 }
 
-
-// -------------------- Home Buttons--------------------
-#home_buttons {
-    width: 50vw!important;
-    height: 30vh!important;
-}
-
-#buttons {
-    position: sticky!important;
-    margin-bottom: 2rem!important;
-    background-color: white!important;
-}
-
-.btn {
-    margin: 5rem!important;
-    padding: 1rem!important;
-}
-
-#buttons button:hover, 
-#buttons button:focus {
-    background-color: #5C84B7!important;
-}
-
-
-// -------------------- Home Text --------------------
-#home_text {
-    width: 50vw!important;
-    height: 30vh!important;
-    z-index: 2!important;
-}
-
-
-// -------------------- Home Description --------------------
-#home_description {
-    width: 50vw!important;
-    height: 70vh!important;
-    background-color: white!important;
-    z-index: 5
+.count {
+    color: #950D05;
+    font-size: 1.5rem;
 }
 
 .boxOne, .boxTwo {
@@ -69,65 +33,46 @@
   transform: scale(1.05);
 }
 
+#home p {
+    margin-top: 50px!important;
+}
 
-// -------------------- Home Carrousel --------------------
-#home_carrousel img {
+#homeDescription {
     width: 50vw!important;
-    height: 70vh!important;
+    height: 100vh!important;
 }
 
-.carousel-control-next-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23ffffff%27%3e%3cpath d=%27M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e");
+#titleDesc {
+    height: 85vh!important;
 }
 
-.carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23ffffff%27%3e%3cpath d=%27M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z%27/%3e%3c/svg%3e");
+#buttonsContainer {
+    height: 15vh!important;
+    width: 100%;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    width: 2.9rem;
-    height: 2.9rem;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 95% 95%;
-    background-color: #0059C6;
-  }
-
-
-// -------------------- Grid Gallery --------------------
-#grid_gallery {
-    margin-top: 20rem!important;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+#buttonsContainer button {
+    width: 33.33% !important;
+    height: auto !important;
 }
 
-#grid_gallery img {
-    max-width: 300px;
-    max-height: 330px;
-    margin: 10px;   
+.carousel-inner img {
+    width: 50vw!important;
+    height: 85vh!important
 }
 
-#grid_gallery p {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center!important;
+#compteur {
+    height: 15vh!important;
 }
 
+#buttonsContainer button:hover, 
+#buttonsContainer button:focus {
+    background-color: #5C84B7!important;
+}
 
-// -------------------- Box --------------------
-.box {
-    align-items: center;
-    justify-content: center;
-  }
-  
-.box-image {
-    background-size:cover;
-    background-position: center center;
-    margin: 35px;
-    border-radius: 25px;
+.btn {
+    --bs-btn-border-radius: 0!important;
+    --bs-btn-border-color: white!important;
 }
 
 .boxOne {
@@ -146,39 +91,79 @@
     background-position: center center;
 }
 
-
-// -------------------- Gallery Animation --------------------
-.animate-text
-{
-    opacity:0;
-    transition: all 0.6s ease-in-out;
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23ffffff%27%3e%3cpath d=%27M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e");
 }
 
-.tile h1
-{
-    color: white !important;
-    text-decoration: none !important;
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23ffffff%27%3e%3cpath d=%27M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z%27/%3e%3c/svg%3e");
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    display: inline-block;
+    width: 2.9rem;
+    height: 2.9rem;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 95% 95%;
+    background-color: #0059C6;
+  }
+
+#gridGallery {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+#gridGallery img {
+    max-width: 300px;
+    max-height: 330px;
+    margin: 10px;   
+}
+
+#gridGallery p {
+    font-size: 20px;
+    font-weight: bold;
     text-align: center!important;
-    font-weight:300;
 }
 
-.tile p
-{
-    font-weight:300;
-    margin:20px 0 0 0;
-    line-height: 25px;
-    transform: translateX(-200px);
-    transition-delay: 0.2s;
+.box {
+    align-items: center;
+    justify-content: center;
+  }
+  
+.box-image {
+    background-size:cover;
+    background-position: center center;
+    margin: 35px;
+    border-radius: 25px;
 }
 
-.boxOne:hover,
-.boxTwo:hover
-{
-    transform:scale(1.05);
-}
+.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+    --bs-gutter-x: 0rem;
+  }
 
-.tile:hover .animate-text
-{
-    transform:translateX(0);
-    opacity:1;
-}
+@media (max-width: 1199.98px) { 
+    #homeDescription {
+        width: 100vw !important;
+        height: 100vh !important;
+        position: relative;
+    }
+
+    #carouselExampleAutoplaying {
+        display: none !important;
+    }
+
+    #buttons button {
+        margin: 40px 380px!important;
+    }
+
+    .boxTwo, .bowOne {
+        width: 800px!important;
+        height: 400px!important;
+    }
+
+
+ }
