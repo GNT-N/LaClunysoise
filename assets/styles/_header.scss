@@ -28,7 +28,24 @@
 
 .menuButton {
     background-color: #0059C6!important;
+    transition: transform 0.1s ease-in-out;
 }
+
+.menuButton:hover,
+.menuButton:focus {
+    transform: scale(1.1);
+}
+
+.menuButtonIn {
+    background-color: white!important;
+    transition: transform 0.1s ease-in-out;
+}
+
+.menuButtonIn:hover,
+.menuButtonIn:focus {
+    transform: scale(1.1);
+}
+
 
 .rounded {
     border-radius: 5px 0 0 5px!important;
@@ -53,6 +70,7 @@
 #menuLogo {
     width: 300px; 
     height: auto;
+    position: fixed!important;
 }
 
 .navbar-toggler-icon {
@@ -64,7 +82,28 @@
     width: 35vw!important;
 }
 
+.offcanvas ul {
+    padding-top: 80px !important;
+}
+
+.offcanvas ul li a {
+    display: inline;
+    line-height: 50px;
+}
+
 .offcanvas ul li a:hover,
 .offcanvas ul li a:focus  {
         color: #b0b8bf!important;
 }
+
+
+@media (max-width: 1199.98px) { 
+    #offcanvasNavbarDark {
+        width: 100vw!important;
+    }
+
+    #logoHead {
+        display: none!important;
+    }
+    
+ }

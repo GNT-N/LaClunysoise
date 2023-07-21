@@ -4,9 +4,8 @@
     color: white;
 }
 
-.google_home {
-    padding: 50px 120px!important;
-    border-radius: 15px!important;
+iframe {
+    padding: 50px 80px!important;
 }
 
  #footerAll {
@@ -16,10 +15,13 @@
 
 .pCol {
     text-align: center !important;
+    width: fit-content;
+    padding: 0 100px !important;
 }
 
 .pCol p, .pCol p a, .pCol ul li, .pCol ul li a {
     color: white!important;
+    display: inline;
 }
 
 .pCol ul li, .pCol ul li a:hover,
@@ -36,5 +38,11 @@
     .pCol {
         margin-right: 50px !important;
         margin-left: 50px!important;
+    }
+}
+
+@media (max-width: 991.98px) { 
+    iframe {
+        padding: 50px 40px!important;
     }
 }
