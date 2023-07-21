@@ -62,16 +62,32 @@ class JoinController extends AbstractController
                 $content
             );
 
-            // Créer un nouvel e-mail à envoyer
-            $email = (new Email())
-                ->from($email)
-                ->to('admin@admin.com')
-                ->subject('Candidature')
-                ->addPart(new DataPart(new File($file), 'Contract', 'application/msword'))
-                ->text($message);
+            // Vérifier si le champ "Fichier" est null
+            if ($file === null) {
+                // Créer un nouvel e-mail sans le fichier
+                $email = (new Email())
+                    ->from($email)
+                    ->to('admin@admin.com')
+                    ->subject('Candidature')
+                    ->text($message);
+            } else {
+                // Le champ "Fichier" est spécifié, créer une instance de File
+                $fileObject = new File($file);
+
+                // Créer un nouvel e-mail avec le fichier
+                $email = (new Email())
+                    ->from($email)
+                    ->to('admin@admin.com')
+                    ->subject('Candidature')
+                    ->addPart(new DataPart($fileObject, 'Contract', 'application/msword'))
+                    ->text($message);
+            }
 
             // Envoyer l'e-mail en utilisant le service de messagerie (MailerInterface)
             $mailer->send($email);
+
+            // Ajout du message flash dans la session
+            $this->addFlash('success', 'Votre Candidature a été envoyé avec succès !');
 
             // Rediriger l'utilisateur après envoi du formulaire pour éviter de le renvoyer en actualisant la page (Post-Redirect-Get pattern)
             return $this->redirectToRoute('app_join');

@@ -64,7 +64,6 @@ class PostCrudController extends AbstractCrudController
                 ChoiceField::new('page', 'Page')
                 ->setChoices([
                     'Accueil' => 'accueil',
-                    'À propos' => 'a-propos',
                     'Prise en charge' => 'prise-en-charge',
                     'Nous rejoindre' => 'nous-rejoindre',
                 ])
