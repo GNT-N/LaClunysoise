@@ -5,6 +5,7 @@
         <title>{% block title %}Ambulance La Clynysoise{% endblock %}</title>
         <link rel="icon" type="image/svg" href="{{ asset('favicon.svg') }}"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -18,12 +19,6 @@
     {{ include("header.html.twig") }}
     <body>
         {% block body %}
-        <script src="https://kit.fontawesome.com/f785a57bb7.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-        <script>
-            new WOW().init();
-        </script>
-
 
         {% endblock %}
     </body>

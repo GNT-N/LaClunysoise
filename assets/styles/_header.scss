@@ -3,16 +3,19 @@
 }
 
 .navbar {
-    width: 100px!important;
-    height: 100px!important;
+    width: 125px!important;
+    height: 125px!important;
     margin-left: auto!important;
     padding-top: 30px!important;
 }
 
 #logoHead {
-    width: 200px;
+    width: 300px;
     height: auto;
-    position: fixed !important;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
 }
 
 .menuButton {
@@ -41,8 +44,8 @@
 }
 
 .square {
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
     position: relative!important;
 }
 
@@ -63,7 +66,7 @@
 }
 
 .navbar-toggler-icon {
-    width: 2rem!important;
+    width: 3rem!important;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
