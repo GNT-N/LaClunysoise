@@ -27,12 +27,12 @@ class HomeController extends AbstractController
     }
 
     // Définition de la route '/about' avec le nom 'about'
-    #[Route('/a-propos', name: 'about')]
+    #[Route('/notre-identite', name: 'about')]
     public function about(PostRepository $postRepository): Response
     {
         // Rendu du template '/about.html.twig' avec les posts filtrés par page et visibilité
         return $this->render('main/about.html.twig', [
-            'post' => $postRepository->findBy(array('page' => 'a-propos', 'visible' => true)),
+            'post' => $postRepository->findBy(array('page' => 'notre-identite', 'visible' => true)),
         ]);
     }
 
