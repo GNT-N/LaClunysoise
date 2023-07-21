@@ -15,6 +15,16 @@
     margin-top: 150px!important;
 }
 
+.countText {
+    color: black!important;
+    padding: 0 5px;
+}
+
+.count {
+    color: #950D05;
+    font-size: 1.5rem;
+}
+
 .boxOne, .boxTwo {
   transition: transform 0.2s ease-in-out;
 }
@@ -32,24 +42,37 @@
     height: 100vh!important;
 }
 
+#titleDesc {
+    height: 85vh!important;
+}
+
+#buttonsContainer {
+    height: 15vh!important;
+    width: 100%;
+}
+
+#buttonsContainer button {
+    width: 33.33% !important;
+    height: auto !important;
+}
+
 .carousel-inner img {
     width: 50vw!important;
-    height: 100vh!important
+    height: 85vh!important
 }
 
-
-#buttons {
-    margin-bottom: 2rem!important;
+#compteur {
+    height: 15vh!important;
 }
 
-#buttons button:hover, 
-#buttons button:focus {
+#buttonsContainer button:hover, 
+#buttonsContainer button:focus {
     background-color: #5C84B7!important;
 }
 
 .btn {
-    margin: 5rem!important;
-    padding: 1rem!important;
+    --bs-btn-border-radius: 0!important;
+    --bs-btn-border-color: white!important;
 }
 
 .boxOne {
@@ -118,9 +141,9 @@
     border-radius: 25px;
 }
 
-#buttons button {
-    width: 200px !important;
-}
+.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+    --bs-gutter-x: 0rem;
+  }
 
 @media (max-width: 1199.98px) { 
     #homeDescription {
@@ -136,5 +159,11 @@
     #buttons button {
         margin: 40px 380px!important;
     }
+
+    .boxTwo, .bowOne {
+        width: 800px!important;
+        height: 400px!important;
+    }
+
 
  }

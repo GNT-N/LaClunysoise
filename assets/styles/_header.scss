@@ -9,20 +9,10 @@
     padding-top: 30px!important;
 }
 
-#logoHead {
+#logoHead, #logoHead a, #logoHead a img {
     width: 200px;
     height: auto;
-    position: fixed!important;
-}
-
-.countText {
-    color: white;
-    padding: 0 5px;
-}
-
-.count {
-    color: #950D05;
-    font-size: 1.5rem;
+    z-index: 100;
 }
 
 .menuButton {
@@ -100,9 +90,4 @@
     #offcanvasNavbarDark {
         width: 100vw!important;
     }
-
-    #logoHead {
-        display: none!important;
-    }
-    
  }
