@@ -9,10 +9,10 @@
     padding-top: 30px!important;
 }
 
-#logoHead, #logoHead a, #logoHead a img {
+#logoHead {
     width: 200px;
     height: auto;
-    z-index: 100;
+    position: fixed !important;
 }
 
 .menuButton {
