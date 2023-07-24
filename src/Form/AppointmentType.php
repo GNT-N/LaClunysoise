@@ -41,8 +41,16 @@ class AppointmentType extends AbstractType
                 'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'email'],
                 'label' => ' ',
             ])
-            ->add('Adresse', TextareaType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Adresse'],
+            ->add('Rue', TextType::class, [
+                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Rue'],
+                'label' => ' ',
+            ])
+            ->add('Ville', TextType::class, [
+                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Ville'],
+                'label' => ' ',
+            ])
+            ->add('Postcode', TextType::class, [
+                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Code Postale'],
                 'label' => ' ',
             ])
             ->add('ModeTransport', ChoiceType::class, [

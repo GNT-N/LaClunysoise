@@ -28,7 +28,10 @@ class AppointmentController extends AbstractController
             $firstname = $data['Prenom'];
             $phone = $data['Telephone'];
             $email = $data['email'];
-            $adresse = $data['Adresse'];
+            $street = $data['Rue'];
+            $city = $data['Ville'];
+            $postcode = $data['Postcode'];
+
             $transport = $data['ModeTransport'];
             $place = $data['LieuxRendezVous'];
             $type = $data['TypeEtablissement'];
@@ -40,14 +43,16 @@ class AppointmentController extends AbstractController
 
             $message = sprintf(
                 
-                "Nouveau rendez-vous ,\n\nCivilité: %s\n\nNom: %s\nPrénom: %s\n\nTéléphone: %s\nAdresse e-mail: %s\n\nAdresse: %s\n\nTransport: %s\nType: %s\n\nLieu du rendez-vous: %s\nType d'établissement: %s\n\nDate du rendez-vous: %s\nHeure du rendez-vous: %s\nDurée estimée du rendez-vous: %s\n\nCommentaires: \n%s",
+                "Nouveau rendez-vous ,\n\nCivilité: %s\n\nNom: %s\nPrénom: %s\n\nTéléphone: %s\nAdresse e-mail: %s\n\nRue: %s\nVille: %s\nCode Postale: %s\n\nTransport: %s\nType: %s\n\nLieu du rendez-vous: %s\nType d'établissement: %s\n\nDate du rendez-vous: %s\nHeure du rendez-vous: %s\nDurée estimée du rendez-vous: %s\n\nCommentaires: \n%s",
 
                 $sexe,
                 $lastname,
                 $firstname,
                 $phone,
                 $email,
-                $adresse,
+                $street,
+                $city,
+                $postcode,
                 $transport,
                 $go,
                 $place,
