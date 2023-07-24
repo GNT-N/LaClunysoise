@@ -47,10 +47,21 @@ class AppointmentController extends AbstractController
             // Convertir la valeur de $date en un objet DateTimeImmutable
             $date = new \DateTimeImmutable($data['DateRendezVous']->format('Y-m-d'));
 
-            $time = new \DateTimeImmutable($data['DureeEstimee']->format('H:i'));
-
             // Convertir la valeur de $during en un objet DateTimeImmutable (si ce n'est pas déjà fait dans le formulaire)
             $during = new \DateTimeImmutable($data['DureeEstimee']->format('H:i'));
+
+            // Convertir la valeur de $time en un objet DateTimeImmutable (si ce n'est pas déjà fait dans le formulaire)
+            $time = new \DateTimeImmutable($data['HeureRendezVous']->format('H:i'));
+
+            // Vérifier si l'heure du rendez-vous est en dehors de la plage horaire autorisée (9h à 18h)
+            $startHour = new \DateTimeImmutable('06:00');
+            $endHour = new \DateTimeImmutable('20:00');
+
+            if ($time < $startHour || $time > $endHour) {
+                // Heure de rendez-vous en dehors de la plage horaire autorisée, afficher un message d'erreur
+                $this->addFlash('error', 'Les rendez-vous ne sont autorisés qu\'entre 9h et 18h.');
+                return $this->redirectToRoute('app_appointment');
+            }
 
             $message = sprintf(
 
@@ -123,6 +134,9 @@ class AppointmentController extends AbstractController
 
             // Ajout du message flash dans la session
             $this->addFlash('success', 'Votre demande de rendez-vous a été envoyé avec succès !');
+
+            // Ajout d'un autre message flash dans la session
+            $this->addFlash('info', 'Merci pour votre demande. Nous vous confirmerons ce rendez-vous dès que possible.');
 
             // Rediriger l'utilisateur après envoi du formulaire pour éviter de le renvoyer en actualisant la page (Post-Redirect-Get pattern)
             return $this->redirectToRoute('app_appointment');

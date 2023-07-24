@@ -9,53 +9,69 @@
     <section class="row">
 
         <div class="col-10 offset-1">
+            {{ form_start(formulaire) }}
 
-        {{ form_start(formulaire) }}
+            <div class="identity">
+                <div class="row">
+                    <div class="col-2">{{ form_row(formulaire.Civilite) }}</div>
+                    <div class="col-5">{{ form_row(formulaire.Nom) }}</div>
+                    <div class="col-5">{{ form_row(formulaire.Prenom) }}</div>
+                </div>
 
-        <div class="border-top mt-5">
-            <div class="row">
-                <div class="col-2">{{ form_row(formulaire.Civilite) }}</div>
-                <div class="col-5">{{ form_row(formulaire.Nom) }}</div>
-                <div class="col-5">{{ form_row(formulaire.Prenom) }}</div>
+                <div class="row">    
+                    <div class="col-6">{{ form_row(formulaire.Telephone) }}</div>
+                    <div class="col-6">{{ form_row(formulaire.email) }}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-5">{{ form_row(formulaire.Rue) }}</div>
+                    <div class="col-5">{{ form_row(formulaire.Ville) }}</div>
+                    <div class="col-2">{{ form_row(formulaire.Postcode) }}</div>
+                </div>
             </div>
 
-            <div class="row">    
-            <div class="col-6">{{ form_row(formulaire.Telephone) }}</div>
-            <div class="col-6">{{ form_row(formulaire.email) }}</div>
+            <div class="details">
+                <div class="row">
+                    <div class="col-3">{{ form_row(formulaire.DateRendezVous) }}</div>
+                    <div class="col-3">{{ form_row(formulaire.HeureRendezVous) }}</div>
+                    <div class="col-3">{{ form_row(formulaire.DureeEstimee) }}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-5">{{ form_row(formulaire.LieuxRendezVous) }}</div>
+                    <div class="col-5">{{ form_row(formulaire.Prescripteur) }}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-5">{{ form_row(formulaire.Motif) }}</div>
+                    <div class="col-5">{{ form_row(formulaire.TypeEtablissement) }}</div>
+                    <div class="col-5">{{ form_label(formulaire.ModeTransport) }}{{ form_widget(formulaire.ModeTransport) }}</div>
+                    <div class="col-5">{{ form_label(formulaire.Aller) }}{{ form_widget(formulaire.Aller) }}</div>
+                </div>
+
+                {{ form_row(formulaire.content) }}
             </div>
 
-            <div class="row">
-                <div class="col-5">{{ form_row(formulaire.Rue) }}</div>
-                <div class="col-5">{{ form_row(formulaire.Ville) }}</div>
-                <div class="col-2">{{ form_row(formulaire.Postcode) }}</div>
-            </div>
+            {{ form_row(formulaire.envoyer) }}
+
+            {{ form_end(formulaire) }}
+
+            {% for flashMessage in app.flashes('success') %}
+                <div class="alert alert-success m-5">{{ flashMessage }}</div>
+            {% endfor %}
+
+            {% for flashMessage in app.flashes('info') %}
+                <div class="alert alert-primary">
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+
+            {% for flashMessage in app.flashes('error') %}
+                <div class="alert alert-danger m-5">{{ flashMessage }}</div>
+            {% endfor %}
+
         </div>
 
-        <div class="border-top mt-5">
-            {{ form_row(formulaire.DateRendezVous) }}
-            {{ form_row(formulaire.HeureRendezVous) }}
-            {{ form_row(formulaire.DureeEstimee) }}
-
-            {{ form_row(formulaire.LieuxRendezVous) }}
-            {{ form_row(formulaire.Prescripteur) }}
-            {{ form_row(formulaire.Motif) }}
-            {{ form_row(formulaire.TypeEtablissement) }}
-            {{ form_row(formulaire.ModeTransport) }}
-            {{ form_row(formulaire.Aller) }}
-            {{ form_row(formulaire.content) }}
-        </div>
-
-        {{ form_row(formulaire.envoyer) }}
-
-        {{ form_end(formulaire) }}
-
-        {% for flashMessage in app.flashes('success') %}
-            <div class="alert alert-success m-5">
-                {{ flashMessage }}
-            </div>
-        {% endfor %}
-
-        </div>
     </section>
 </div>
 

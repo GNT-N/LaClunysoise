@@ -12,8 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
-use Symfony\Component\Validator\Constraints\GreaterThan;
-use Symfony\Component\Validator\Constraints\LessThan;
+use Symfony\Component\Validator\Constraints\Choice;
 
 class AppointmentType extends AbstractType
 {
@@ -26,8 +25,9 @@ class AppointmentType extends AbstractType
                     'M.' => 'Monsieur',
                     'Mme' => 'Madame',
                 ],
-                'attr' => ['class' => 'form-control'],
-                'label' => ' ',
+                'expanded' => true, // Transformer les choix en boutons cliquables
+                'attr' => ['class' => 'form-check'], // Ajoutez la classe 'form-check' pour le style des boutons
+                'label' => ' ', // Laissez l'étiquette vide pour supprimer l'étiquette du champ
             ])
             ->add('Nom', TextType::class, [
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Nom'],
@@ -64,24 +64,19 @@ class AppointmentType extends AbstractType
                 'attr' => ['class' => 'form-control','placeholder' => 'Date du rendez-vous'],
                 'input'  => 'datetime_immutable',
                 'widget' => 'single_text',
-                'label' => ' ',
+                'label' => 'Date du rendez-vous',
             ])
             ->add('HeureRendezVous', TimeType::class, [
-                'attr' => ['class' => 'form-control','placeholder' => 'Heure du rendez-vous','min' => '06:00','max' => '20:00'],
+                'attr' => ['class' => 'form-control','placeholder' => 'Heure du rendez-vous',],
                 'input'  => 'datetime',
                 'widget' => 'single_text',
-                'label' => ' ',
-                'constraints' => [
-                    // Ajoutez des contraintes de validation pour vous assurer que l'heure est bien dans la plage autorisée
-                    new GreaterThan('05:59'), // L'heure doit être supérieure à 05:59
-                    new LessThan('20:01'),    // L'heure doit être inférieure à 20:01
-                ],
+                'label' => 'Heure du rendez-vous',
             ])
             ->add('DureeEstimee', TimeType::class, [
                 'attr' => ['class' => 'form-control','placeholder' => 'Durée estimée du rendez-vous'],
                 'input'  => 'datetime',
                 'widget' => 'single_text',
-                'label' => ' ',
+                'label' => 'Durée estimée',
                 'required' => false,
                 'empty_data' => '00:00',
             ])
@@ -91,14 +86,6 @@ class AppointmentType extends AbstractType
                 'label' => ' ',
             ])
 
-            ->add('ModeTransport', ChoiceType::class, [
-                'choices' => [
-                    'Assis' => 'assis',
-                    'Allongé' => 'allongé',
-                ],
-                'attr' => ['class' => 'form-control'],
-                'label' => ' ',
-            ])
             ->add('TypeEtablissement', ChoiceType::class, [
                 'choices' => [
                     'Hopital' => 'Hôpital',
@@ -112,19 +99,39 @@ class AppointmentType extends AbstractType
             ->add('Prescripteur', TextType::class, [
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Médecin prescripteur'],
                 'label' => ' ',
+                'required' => false,
             ])
-            ->add('Motif', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Motif'],
-                'label' => ' ',
-            ])
-            ->add('Aller', ChoiceType::class, [
-                'choices' => [
-                    'Aller simple' => 'aller_simple',
-                    'Aller-retour' => 'aller_retour',
+                ->add('Motif', ChoiceType::class, [
+                    'choices' => [
+                        'Consultation' => 'Consultation',
+                'Examen' => 'Examen',
+                'Hôspitalisation' => 'Hôspitalisation',
+                'Hôspitalisation de jour' => 'Hôspitalisation de jour',
+                'Autre' => 'Autre',
                 ],
                 'attr' => ['class' => 'form-control'],
                 'label' => ' ',
             ])
+
+            ->add('ModeTransport', ChoiceType::class, [
+                'choices' => [
+                    'Assis' => 'assis',
+                    'Allongé' => 'allongé',
+                ],
+                'expanded' => true, // Transformer les choix en boutons cliquables
+                'attr' => ['class' => 'form-check'], // Ajoutez la classe 'form-check' pour le style des boutons
+                'label' => ' ', // Laissez l'étiquette vide pour supprimer l'étiquette du champ
+            ])
+            ->add('Aller', ChoiceType::class, [
+                'choices' => [
+                'Aller simple' => 'aller_simple',
+                'Aller-retour' => 'aller_retour',
+                ],
+                'expanded' => true, // Transformer les choix en boutons cliquables
+                'attr' => ['class' => 'form-check'], // Ajoutez la classe 'form-check' pour le style des boutons
+                'label' => ' ', // Laissez l'étiquette vide pour supprimer l'étiquette du champ
+            ])
+
             ->add('content', TextareaType::class, [
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Commentaires éventuels'],
                 'required' => false,
