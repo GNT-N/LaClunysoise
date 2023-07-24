@@ -18,6 +18,7 @@ class AppointmentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            // ---------- Identité ----------
             ->add('Civilite', ChoiceType::class, [
                 'choices' => [
                     'M.' => 'Monsieur',
@@ -54,13 +55,15 @@ class AppointmentType extends AbstractType
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Code Postale'],
                 'label' => ' ',
             ])
+
+            // ---------- Rendez-vous ----------
             ->add('ModeTransport', ChoiceType::class, [
                 'choices' => [
                     'Assis' => 'assis',
                     'Allongé' => 'allongé',
                 ],
                 'attr' => ['class' => 'form-control'],
-                'label' => 'Mode de transport (assis / allongé)',
+                'label' => ' ',
             ])
             ->add('LieuxRendezVous', TextareaType::class, [
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Lieux du rendez-vous'],
@@ -74,7 +77,7 @@ class AppointmentType extends AbstractType
                     'Autre' => 'Autre',
                 ],
                 'attr' => ['class' => 'form-control'],
-                'label' => 'Type d\'établissement',
+                'label' => ' ',
             ])
             ->add('DateRendezVous', DateType::class, [
                 'attr' => ['class' => 'form-control','placeholder' => 'Date du rendez-vous'],
@@ -83,9 +86,9 @@ class AppointmentType extends AbstractType
                 'label' => ' ',
             ])
             ->add('HeureRendezVous', TimeType::class, [
-                'attr' => ['placeholder' => 'Heure du rendez-vous'],
+                'attr' => ['class' => 'form-control','placeholder' => 'Heure du rendez-vous'],
                 'input'  => 'datetime',
-                'widget' => 'choice',
+                'widget' => 'single_text',
                 'label' => ' ',
             ])
             ->add('Aller', ChoiceType::class, [
@@ -97,12 +100,12 @@ class AppointmentType extends AbstractType
                 'label' => ' ',
             ])
             ->add('DureeEstimee', TimeType::class, [
-                'attr' => ['placeholder' => 'Durée estimée du rendez-vous'],
+                'attr' => ['class' => 'form-control','placeholder' => 'Durée estimée du rendez-vous'],
                 'input'  => 'datetime',
-                'widget' => 'choice',
+                'widget' => 'single_text',
                 'label' => ' ',
-                'required' => false, // Si le champ n'est pas obligatoire
-                'empty_data' => '00:00', // Valeur par défaut (peut être ajustée selon vos besoins)
+                'required' => false,
+                'empty_data' => '00:00',
             ])
             ->add('content', TextareaType::class, [
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Commentaires éventuels'],
