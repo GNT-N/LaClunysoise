@@ -78,12 +78,14 @@ class AppointmentType extends AbstractType
             ])
             ->add('DateRendezVous', DateType::class, [
                 'attr' => ['class' => 'form-control','placeholder' => 'Date du rendez-vous'],
+                'input'  => 'datetime_immutable',
                 'widget' => 'single_text',
                 'label' => ' ',
             ])
-            ->add('HeureRendezVous', TextType::class, [
+            ->add('HeureRendezVous', TimeType::class, [
                 'attr' => ['placeholder' => 'Heure du rendez-vous'],
-                
+                'input'  => 'datetime',
+                'widget' => 'choice',
                 'label' => ' ',
             ])
             ->add('Aller', ChoiceType::class, [
@@ -94,13 +96,17 @@ class AppointmentType extends AbstractType
                 'attr' => ['class' => 'form-control'],
                 'label' => ' ',
             ])
-            ->add('DureeEstimee', TextType::class, [
+            ->add('DureeEstimee', TimeType::class, [
                 'attr' => ['placeholder' => 'Durée estimée du rendez-vous'],
-                
+                'input'  => 'datetime',
+                'widget' => 'choice',
                 'label' => ' ',
+                'required' => false, // Si le champ n'est pas obligatoire
+                'empty_data' => '00:00', // Valeur par défaut (peut être ajustée selon vos besoins)
             ])
             ->add('content', TextareaType::class, [
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Commentaires éventuels'],
+                'required' => false,
                 'label' => ' ',
             ])
             ->add('envoyer', SubmitType::class, [

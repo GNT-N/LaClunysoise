@@ -38,13 +38,19 @@ class AppointmentController extends AbstractController
             $date = $data['DateRendezVous']->format('d-m-Y');
             $go = $data['Aller'];
             $during = $data['DureeEstimee'];
-            $time = $data['HeureRendezVous'];
+            $time = $data['HeureRendezVous']->format('H:i');
             $content = $data['content'];
 
-            $message = sprintf(
-                
-                "Nouveau rendez-vous ,\n\nCivilité: %s\n\nNom: %s\nPrénom: %s\n\nTéléphone: %s\nAdresse e-mail: %s\n\nRue: %s\nVille: %s\nCode Postale: %s\n\nTransport: %s\nType: %s\n\nLieu du rendez-vous: %s\nType d'établissement: %s\n\nDate du rendez-vous: %s\nHeure du rendez-vous: %s\nDurée estimée du rendez-vous: %s\n\nCommentaires: \n%s",
+            // Convertir la valeur de $date en un objet DateTimeImmutable
+            $date = new \DateTimeImmutable($data['DateRendezVous']->format('Y-m-d'));
 
+            $time = new \DateTimeImmutable($data['DureeEstimee']->format('H:i'));
+
+            // Convertir la valeur de $during en un objet DateTimeImmutable (si ce n'est pas déjà fait dans le formulaire)
+            $during = new \DateTimeImmutable($data['DureeEstimee']->format('H:i'));
+
+            $message = sprintf(
+                "Nouveau rendez-vous :\n\nCivilité : %s\n\nNom : %s\nPrénom : %s\n\nTéléphone : %s\nAdresse e-mail : %s\n\nRue : %s\nVille : %s\nCode Postal : %s\n\nTransport : %s\nType : %s\n\nLieu du rendez-vous : %s\nType d'établissement : %s\n\nDate du rendez-vous : %s\nHeure du rendez-vous : %s\nDurée estimée du rendez-vous : %s\n\nCommentaires : \n%s",
                 $sexe,
                 $lastname,
                 $firstname,
@@ -57,11 +63,12 @@ class AppointmentController extends AbstractController
                 $go,
                 $place,
                 $type,
-                $date,
-                $time,
-                $during,
+                $date->format('d-m-Y'),
+                $time->format('H:i'),
+                $during->format('H:i'),
                 $content
             );
+            
             
 
             $email = (new Email())
