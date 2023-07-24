@@ -20,3 +20,9 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
 }
+
+@media (max-width: 1200px) {
+    * {
+        font-size: 1.6rem;
+    }
+}
