@@ -145,6 +145,43 @@
     --bs-gutter-x: 0rem;
   }
 
+
+// -------------------- Gallery Animation --------------------
+.animate-text
+{
+    opacity:0;
+    transition: all 0.6s ease-in-out;
+}
+
+.tile h1
+{
+    color: white !important;
+    text-decoration: none !important;
+    text-align: center!important;
+    font-weight:300;
+}
+
+.tile p
+{
+    font-weight:300;
+    margin:20px 0 0 0;
+    line-height: 25px;
+    transform: translateX(-200px);
+    transition-delay: 0.2s;
+}
+
+.boxOne:hover,
+.boxTwo:hover
+{
+    transform:scale(1.05);
+}
+
+.tile:hover .animate-text
+{
+    transform:translateX(0);
+    opacity:1;
+}
+
 @media (max-width: 1199.98px) { 
     #homeDescription {
         width: 100vw !important;
