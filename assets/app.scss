@@ -1,5 +1,4 @@
 @import "~bootstrap/scss/bootstrap";
-@import "assets/styles/_theme.scss";
 @import "assets/styles/_login.scss";
 @import "assets/styles/_home.scss";
 @import "assets/styles/_header.scss";
@@ -20,4 +19,10 @@
     line-height: 1.8em;
     font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
+}
+
+@media (max-width: 1200px) {
+    * {
+        font-size: 1.6rem;
+    }
 }

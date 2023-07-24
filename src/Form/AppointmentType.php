@@ -11,89 +11,134 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
+use Symfony\Component\Validator\Constraints\Choice;
 
 class AppointmentType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            // ---------- Identité ----------
             ->add('Civilite', ChoiceType::class, [
                 'choices' => [
                     'M.' => 'Monsieur',
                     'Mme' => 'Madame',
                 ],
-                'attr' => ['class' => 'form-control mt-4'],
-                'label' => ' ',
+                'expanded' => true, // Transformer les choix en boutons cliquables
+                'attr' => ['class' => 'form-check'], // Ajoutez la classe 'form-check' pour le style des boutons
+                'label' => ' ', // Laissez l'étiquette vide pour supprimer l'étiquette du champ
             ])
             ->add('Nom', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Nom'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Nom'],
                 'label' => ' ',
             ])
             ->add('Prenom', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Prenom'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Prenom'],
                 'label' => ' ',
             ])
             ->add('Telephone', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Téléphone'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Téléphone'],
                 'label' => ' ',
             ])
             ->add('email', EmailType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'email'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'email'],
                 'label' => ' ',
             ])
-            ->add('Adresse', TextareaType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Adresse'],
+            ->add('Rue', TextType::class, [
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Rue'],
                 'label' => ' ',
             ])
+            ->add('Ville', TextType::class, [
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Ville'],
+                'label' => ' ',
+            ])
+            ->add('Postcode', TextType::class, [
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Code Postale'],
+                'label' => ' ',
+            ])
+
+
+            // ---------- Rendez-vous ----------
+            ->add('DateRendezVous', DateType::class, [
+                'attr' => ['class' => 'form-control','placeholder' => 'Date du rendez-vous'],
+                'input'  => 'datetime_immutable',
+                'widget' => 'single_text',
+                'label' => 'Date du rendez-vous',
+            ])
+            ->add('HeureRendezVous', TimeType::class, [
+                'attr' => ['class' => 'form-control','placeholder' => 'Heure du rendez-vous',],
+                'input'  => 'datetime',
+                'widget' => 'single_text',
+                'label' => 'Heure du rendez-vous',
+            ])
+            ->add('DureeEstimee', TimeType::class, [
+                'attr' => ['class' => 'form-control','placeholder' => 'Durée estimée du rendez-vous'],
+                'input'  => 'datetime',
+                'widget' => 'single_text',
+                'label' => 'Durée estimée',
+                'required' => false,
+                'empty_data' => '00:00',
+            ])
+
+            ->add('LieuxRendezVous', TextType::class, [
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Lieux du rendez-vous'],
+                'label' => ' ',
+            ])
+
+            ->add('TypeEtablissement', ChoiceType::class, [
+                'choices' => [
+                    'Hopital' => 'Hôpital',
+                    'Medecin Généraliste' => 'Medecin Généraliste',
+                    'Medecin Spécialiste' => 'Medecin Spécialiste',
+                    'Autre' => 'Autre',
+                ],
+                'attr' => ['class' => 'form-control'],
+                'label' => ' ',
+            ])
+            ->add('Prescripteur', TextType::class, [
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Médecin prescripteur'],
+                'label' => ' ',
+                'required' => false,
+            ])
+                ->add('Motif', ChoiceType::class, [
+                    'choices' => [
+                        'Consultation' => 'Consultation',
+                'Examen' => 'Examen',
+                'Hôspitalisation' => 'Hôspitalisation',
+                'Hôspitalisation de jour' => 'Hôspitalisation de jour',
+                'Autre' => 'Autre',
+                ],
+                'attr' => ['class' => 'form-control'],
+                'label' => ' ',
+            ])
+
             ->add('ModeTransport', ChoiceType::class, [
                 'choices' => [
                     'Assis' => 'assis',
                     'Allongé' => 'allongé',
                 ],
-                'attr' => ['class' => 'form-control mt-4'],
-                'label' => 'Mode de transport (assis / allongé)',
-            ])
-            ->add('LieuxRendezVous', TextareaType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Lieux du rendez-vous'],
-                'label' => ' ',
-            ])
-            ->add('TypeEtablissement', ChoiceType::class, [
-                'choices' => [
-                    'Hopital' => 'Hôpital',
-                    'MedecinGen' => 'Medecin Généraliste',
-                    'MedecinSpe' => 'Medecin Spécialiste',
-                    'Kine' => 'Kinésithérapeute',
-                    'Autre' => 'Autre',
-                ],
-                'attr' => ['class' => 'form-control mt-4'],
-                'label' => 'Type d\'établissement',
-            ])
-            ->add('DateRendezVous', DateType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Date du rendez-vous'],
-                'label' => ' ',
-            ])
-            ->add('HeureRendezVous', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Heure du rendez-vous'],
-                'label' => ' ',
+                'expanded' => true, // Transformer les choix en boutons cliquables
+                'attr' => ['class' => 'form-check'], // Ajoutez la classe 'form-check' pour le style des boutons
+                'label' => ' ', // Laissez l'étiquette vide pour supprimer l'étiquette du champ
             ])
             ->add('Aller', ChoiceType::class, [
                 'choices' => [
-                    'Aller simple' => 'aller_simple',
-                    'Aller-retour' => 'aller_retour',
+                'Aller simple' => 'aller_simple',
+                'Aller-retour' => 'aller_retour',
                 ],
-                'attr' => ['class' => 'form-control mt-4'],
-                'label' => ' ',
+                'expanded' => true, // Transformer les choix en boutons cliquables
+                'attr' => ['class' => 'form-check'], // Ajoutez la classe 'form-check' pour le style des boutons
+                'label' => ' ', // Laissez l'étiquette vide pour supprimer l'étiquette du champ
             ])
-            ->add('DureeEstimee', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Durée estimée du rendez-vous'],
-                'label' => ' ',
-            ])
+
             ->add('content', TextareaType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Commentaires éventuels'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Commentaires éventuels'],
+                'required' => false,
                 'label' => ' ',
             ])
             ->add('envoyer', SubmitType::class, [
-                'attr' => ['class' => 'form-control mt-4'],
+                'attr' => ['class' => 'form-control'],
             ])
         ;
     }
