@@ -13,16 +13,32 @@
 
 #home h1 {
     margin-top: 150px!important;
+    font-size: 3rem !important;
 }
 
-.countText {
-    color: black!important;
-    padding: 0 5px;
+#textCarousel {
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    transform: translateY(-55%)
+}
+
+#faArrow {
+    position: absolute;
+    z-index: 1000;
+    top: 94%;
+    left: 50%;
+    transform: translateX(-52%)
+}
+
+#faArrow, #faArrow i  {
+    width: auto!important;
+    height: auto!important;
 }
 
 .count {
     color: #950D05;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .boxOne, .boxTwo {
@@ -56,13 +72,15 @@
     height: auto !important;
 }
 
+#buttonsContainer button a{
+    width: 100% !important;
+    height: 100% !important;
+    
+}
+
 .carousel-inner img {
     width: 50vw!important;
     height: 85vh!important
-}
-
-#compteur {
-    height: 15vh!important;
 }
 
 #buttonsContainer button:hover, 
@@ -71,7 +89,7 @@
 }
 
 .btn {
-    --bs-btn-border-radius: 0!important;
+    --bs-btn-border-radius: 10px 10px 10px 10px!important;
     --bs-btn-border-color: white!important;
 }
 
@@ -81,6 +99,7 @@
     overflow: hidden;
     background-size: cover;
     background-position: center center;
+    position: relative;
 }
 
 .boxTwo {
@@ -89,6 +108,21 @@
     overflow: hidden;
     background-size: cover;
     background-position: center center;
+    position: relative;
+}
+
+.boxOne svg{
+    position: absolute; 
+    top: 100%; 
+    transform: translateY(-125%); 
+    left: 90%;
+}
+
+.boxTwo svg{
+    position: absolute; 
+    top: 100%; 
+    transform: translateY(-125%); 
+    left: 78%;
 }
 
 .carousel-control-next-icon {
@@ -99,16 +133,9 @@
     background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23ffffff%27%3e%3cpath d=%27M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z%27/%3e%3c/svg%3e");
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    display: inline-block;
-    width: 2.9rem;
-    height: 2.9rem;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 95% 95%;
-    background-color: #0059C6;
-  }
+#carouselExampleControls {
+    height: 15vh!important;
+}
 
 #gridGallery {
     background-size: cover;
@@ -124,7 +151,8 @@
 }
 
 #gridGallery p {
-    font-size: 20px;
+    width: auto !important;
+    font-size: 1.2rem;
     font-weight: bold;
     text-align: center!important;
 }
@@ -143,43 +171,10 @@
 
 .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
     --bs-gutter-x: 0rem;
-  }
-
-
-// -------------------- Gallery Animation --------------------
-.animate-text
-{
-    opacity:0;
-    transition: all 0.6s ease-in-out;
 }
 
-.tile h1
-{
-    color: white !important;
-    text-decoration: none !important;
-    text-align: center!important;
-    font-weight:300;
-}
-
-.tile p
-{
-    font-weight:300;
-    margin:20px 0 0 0;
-    line-height: 25px;
-    transform: translateX(-200px);
-    transition-delay: 0.2s;
-}
-
-.boxOne:hover,
-.boxTwo:hover
-{
-    transform:scale(1.05);
-}
-
-.tile:hover .animate-text
-{
-    transform:translateX(0);
-    opacity:1;
+#mobileIframe {
+    display: none;
 }
 
 @media (max-width: 1199.98px) { 
@@ -197,10 +192,41 @@
         margin: 40px 380px!important;
     }
 
+    #faArrow i  {
+        font-size: 3rem !important;
+    }
+
+    #gridGallery {
+        background-size: auto;
+    }
+
     .boxTwo, .bowOne {
         width: 800px!important;
         height: 400px!important;
     }
 
+    .boxTwo svg, .boxOne svg{
+        left: 85%;
+    }
 
+    #faArrow {
+        top: 80%;
+    }
+
+    .btn {
+        --bs-btn-border-radius: 10px 10px 0 0!important;
+        --bs-btn-border-color: white!important;
+    }
+
+    #desktopIframe {
+        display: none;
+    }
+
+    #mobileIframe {
+        display: initial;
+    }
+
+    h2 {
+        font-size: 2rem !important;
+    }
  }
