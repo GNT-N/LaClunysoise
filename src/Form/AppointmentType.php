@@ -12,6 +12,8 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
+use Symfony\Component\Validator\Constraints\GreaterThan;
+use Symfony\Component\Validator\Constraints\LessThan;
 
 class AppointmentType extends AbstractType
 {
@@ -56,17 +58,45 @@ class AppointmentType extends AbstractType
                 'label' => ' ',
             ])
 
+
             // ---------- Rendez-vous ----------
+            ->add('DateRendezVous', DateType::class, [
+                'attr' => ['class' => 'form-control','placeholder' => 'Date du rendez-vous'],
+                'input'  => 'datetime_immutable',
+                'widget' => 'single_text',
+                'label' => ' ',
+            ])
+            ->add('HeureRendezVous', TimeType::class, [
+                'attr' => ['class' => 'form-control','placeholder' => 'Heure du rendez-vous','min' => '06:00','max' => '20:00'],
+                'input'  => 'datetime',
+                'widget' => 'single_text',
+                'label' => ' ',
+                'constraints' => [
+                    // Ajoutez des contraintes de validation pour vous assurer que l'heure est bien dans la plage autorisée
+                    new GreaterThan('05:59'), // L'heure doit être supérieure à 05:59
+                    new LessThan('20:01'),    // L'heure doit être inférieure à 20:01
+                ],
+            ])
+            ->add('DureeEstimee', TimeType::class, [
+                'attr' => ['class' => 'form-control','placeholder' => 'Durée estimée du rendez-vous'],
+                'input'  => 'datetime',
+                'widget' => 'single_text',
+                'label' => ' ',
+                'required' => false,
+                'empty_data' => '00:00',
+            ])
+
+            ->add('LieuxRendezVous', TextType::class, [
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Lieux du rendez-vous'],
+                'label' => ' ',
+            ])
+
             ->add('ModeTransport', ChoiceType::class, [
                 'choices' => [
                     'Assis' => 'assis',
                     'Allongé' => 'allongé',
                 ],
                 'attr' => ['class' => 'form-control'],
-                'label' => ' ',
-            ])
-            ->add('LieuxRendezVous', TextareaType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Lieux du rendez-vous'],
                 'label' => ' ',
             ])
             ->add('TypeEtablissement', ChoiceType::class, [
@@ -79,16 +109,12 @@ class AppointmentType extends AbstractType
                 'attr' => ['class' => 'form-control'],
                 'label' => ' ',
             ])
-            ->add('DateRendezVous', DateType::class, [
-                'attr' => ['class' => 'form-control','placeholder' => 'Date du rendez-vous'],
-                'input'  => 'datetime_immutable',
-                'widget' => 'single_text',
+            ->add('Prescripteur', TextType::class, [
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Médecin prescripteur'],
                 'label' => ' ',
             ])
-            ->add('HeureRendezVous', TimeType::class, [
-                'attr' => ['class' => 'form-control','placeholder' => 'Heure du rendez-vous'],
-                'input'  => 'datetime',
-                'widget' => 'single_text',
+            ->add('Motif', TextType::class, [
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Motif'],
                 'label' => ' ',
             ])
             ->add('Aller', ChoiceType::class, [
@@ -98,14 +124,6 @@ class AppointmentType extends AbstractType
                 ],
                 'attr' => ['class' => 'form-control'],
                 'label' => ' ',
-            ])
-            ->add('DureeEstimee', TimeType::class, [
-                'attr' => ['class' => 'form-control','placeholder' => 'Durée estimée du rendez-vous'],
-                'input'  => 'datetime',
-                'widget' => 'single_text',
-                'label' => ' ',
-                'required' => false,
-                'empty_data' => '00:00',
             ])
             ->add('content', TextareaType::class, [
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Commentaires éventuels'],
