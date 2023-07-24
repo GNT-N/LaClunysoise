@@ -18,8 +18,33 @@
         </div>
 
         <div class="col-6">
+            {{ form_start(formulaire) }}
 
-        {{ form(formulaire)}}
+                <div>
+                    <div class="row">
+                        <div class="col-2">{{ form_row(formulaire.Civilite) }}</div>
+                        <div class="col-5">{{ form_row(formulaire.Nom) }}</div>
+                        <div class="col-5">{{ form_row(formulaire.Prenom) }}</div>
+                    </div>
+
+                    <div class="row">    
+                        <div class="col-6">{{ form_row(formulaire.Telephone) }}</div>
+                        <div class="col-6">{{ form_row(formulaire.email) }}</div>
+                    </div>
+
+                </div>
+                {{ form_row(formulaire.sujet) }}
+                {{ form_row(formulaire.content) }}
+
+                {{ form_row(formulaire.envoyer) }}
+
+            {{ form_end(formulaire) }}
+
+            {% for flashMessage in app.flashes('success') %}
+                <div class="alert alert-success m-5">
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
 
         {% for flashMessage in app.flashes('success') %}
             <div class="alert alert-success m-5">
