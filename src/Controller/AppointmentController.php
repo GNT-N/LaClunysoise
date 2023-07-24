@@ -35,7 +35,7 @@ class AppointmentController extends AbstractController
             $transport = $data['ModeTransport'];
             $place = $data['LieuxRendezVous'];
             $type = $data['TypeEtablissement'];
-            $date = $data['DateRendezVous']->format('Y-m-d');
+            $date = $data['DateRendezVous']->format('d-m-Y');
             $go = $data['Aller'];
             $during = $data['DureeEstimee'];
             $time = $data['HeureRendezVous'];

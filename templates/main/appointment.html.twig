@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
 
 
@@ -11,7 +10,9 @@
 
         <div class="col-10 offset-1">
 
-        {{ form(formulaire)}}
+        {{ form_start(formulaire) }}
+            {{ form_widget(formulaire) }}
+        {{ form_end(formulaire) }}
 
         {% for flashMessage in app.flashes('success') %}
             <div class="alert alert-success m-5">

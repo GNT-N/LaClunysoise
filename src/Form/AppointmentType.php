@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 
 class AppointmentType extends AbstractType
 {
@@ -22,35 +23,35 @@ class AppointmentType extends AbstractType
                     'M.' => 'Monsieur',
                     'Mme' => 'Madame',
                 ],
-                'attr' => ['class' => 'form-control mt-4'],
+                'attr' => ['class' => 'form-control'],
                 'label' => ' ',
             ])
             ->add('Nom', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Nom'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Nom'],
                 'label' => ' ',
             ])
             ->add('Prenom', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Prenom'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Prenom'],
                 'label' => ' ',
             ])
             ->add('Telephone', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Téléphone'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Téléphone'],
                 'label' => ' ',
             ])
             ->add('email', EmailType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'email'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'email'],
                 'label' => ' ',
             ])
             ->add('Rue', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Rue'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Rue'],
                 'label' => ' ',
             ])
             ->add('Ville', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Ville'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Ville'],
                 'label' => ' ',
             ])
             ->add('Postcode', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Code Postale'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Code Postale'],
                 'label' => ' ',
             ])
             ->add('ModeTransport', ChoiceType::class, [
@@ -58,30 +59,31 @@ class AppointmentType extends AbstractType
                     'Assis' => 'assis',
                     'Allongé' => 'allongé',
                 ],
-                'attr' => ['class' => 'form-control mt-4'],
+                'attr' => ['class' => 'form-control'],
                 'label' => 'Mode de transport (assis / allongé)',
             ])
             ->add('LieuxRendezVous', TextareaType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Lieux du rendez-vous'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Lieux du rendez-vous'],
                 'label' => ' ',
             ])
             ->add('TypeEtablissement', ChoiceType::class, [
                 'choices' => [
                     'Hopital' => 'Hôpital',
-                    'MedecinGen' => 'Medecin Généraliste',
-                    'MedecinSpe' => 'Medecin Spécialiste',
-                    'Kine' => 'Kinésithérapeute',
+                    'Medecin Généraliste' => 'Medecin Généraliste',
+                    'Medecin Spécialiste' => 'Medecin Spécialiste',
                     'Autre' => 'Autre',
                 ],
-                'attr' => ['class' => 'form-control mt-4'],
+                'attr' => ['class' => 'form-control'],
                 'label' => 'Type d\'établissement',
             ])
             ->add('DateRendezVous', DateType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Date du rendez-vous'],
+                'attr' => ['class' => 'form-control','placeholder' => 'Date du rendez-vous'],
+                'widget' => 'single_text',
                 'label' => ' ',
             ])
             ->add('HeureRendezVous', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Heure du rendez-vous'],
+                'attr' => ['placeholder' => 'Heure du rendez-vous'],
+                
                 'label' => ' ',
             ])
             ->add('Aller', ChoiceType::class, [
@@ -89,19 +91,20 @@ class AppointmentType extends AbstractType
                     'Aller simple' => 'aller_simple',
                     'Aller-retour' => 'aller_retour',
                 ],
-                'attr' => ['class' => 'form-control mt-4'],
+                'attr' => ['class' => 'form-control'],
                 'label' => ' ',
             ])
             ->add('DureeEstimee', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Durée estimée du rendez-vous'],
+                'attr' => ['placeholder' => 'Durée estimée du rendez-vous'],
+                
                 'label' => ' ',
             ])
             ->add('content', TextareaType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Commentaires éventuels'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Commentaires éventuels'],
                 'label' => ' ',
             ])
             ->add('envoyer', SubmitType::class, [
-                'attr' => ['class' => 'form-control mt-4'],
+                'attr' => ['class' => 'form-control'],
             ])
         ;
     }
