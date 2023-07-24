@@ -1,29 +1,58 @@
-.about_boxone {
-    margin-top: 5rem!important;
-    margin-left: 10rem!important;
-    margin-right: 10rem!important;
-    max-height: 100vh!important;
-    overflow: hidden;
+.showSection {
+    margin-top: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
-.about_boxone img {
-    padding: 0;
-    margin: 10px!important;
-    margin-left: 0;
-    margin-right: 0;
-    max-width: 700px!important;
-    border-radius: 15px;
-    max-height: 90vh!important;
+.container-fluid {
+    width: 80vw!important;
 }
 
-.about_boxone h1 {
-    margin: 0.8rem!important;
+.content {
+    background-color: white;
+    width: 100%;
+    height: auto !important;
 }
 
-.about_boxone p {
-    margin-top: 3rem!important;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    text-align: center;
-    font-weight: bold;
+.subContent img {
+    width: 1000px !important;
+    height: auto !important;
+    float: left;
+    margin: 10px 10px 10px 0;
 }
+
+.subContent {
+    padding: 40px 20px !important;
+}
+
+.subContent p {
+    text-align: left !important;
+}
+
+@media (max-width: 1199.98px) { 
+    .showScetion {
+        background-size: auto;
+    }
+
+    .container-fluid {
+        width: 90vw!important;
+    }
+
+    .subContent {
+        height: auto;
+    }
+
+    .subCcontent img {
+        height: 50% !important;
+        margin: 0 0 15px 0;
+    }
+    .subContent p {
+        text-align: center !important;
+    }
+
+    .subContent h1 {
+        padding-bottom: 0!important;
+    }
+ }

@@ -2,7 +2,7 @@
 
 {% block body %}
 <div id="faArrow" class="text-center">
-    <i class="fa-solid fa-circle-arrow-down fa-bounce" style="color: #000000 #ffffff; font-size: 3rem;"></i>
+    <i class="fa-solid fa-circle-arrow-down fa-bounce" style="color: #000000 #ffffff; font-size: 2.5rem;"></i>
 </div>
 <section class="container d-flex" id="home">
     <div class="row">
@@ -13,9 +13,9 @@
                     <p class="lead text-center ps-3 pe-3">L'entreprise « La Clunysoise » est une société d'ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis.La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d'interventions d'urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d'appel 15.</p>
                 </div>
                 <div class="d-flex row" id="buttonsContainer">
-                        <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none"><a class="text-white text-decoration-none" href="/contact">Contactez Nous</a></button>
-                        <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none"><a class="text-white text-decoration-none" href="/vos-rendez-vous">Prenez Rendez-Vous</a></button>
-                        <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none"><a class="text-white text-decoration-none" href="/nous-rejoindre">Rejoignez Nous</a></button>
+                        <button type="button" class="btn bg-primary text-decoration-none"><a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/contact">Contactez Nous</a></button>
+                        <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none"><a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/vos-rendez-vous">Prenez Rendez-Vous</a></button>
+                        <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none"><a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/nous-rejoindre">Rejoignez Nous</a></button>
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@
                               </svg>
                     {% endif %}
                         <div>
-                            <p class="text-white">{{ posts.description | striptags | slice(0, 310)}}</p>
+                            <p class="text-white text-center">{{ posts.description | striptags | slice(0, 310)}}</p>
                         </div>
                     </a>
                 {% endif %}
@@ -132,7 +132,9 @@
 </section>
 <h2 class="pb-3 pt-3 text-center">Où nous trouver</h2>
 <div class="row text-center">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10998.152493979294!2d4.6545993!3d46.4380336!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f30aeb8182f371%3A0xbf3199329fef4a95!2sLA%20CLUNYSOISE%20AMBULANCES%20ET%20TAXIS!5e0!3m2!1sfr!2sfr!4v1689589206519!5m2!1sfr!2sfr" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe id="desktopIframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10998.152493979294!2d4.6545993!3d46.4380336!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f30aeb8182f371%3A0xbf3199329fef4a95!2sLA%20CLUNYSOISE%20AMBULANCES%20ET%20TAXIS!5e0!3m2!1sfr!2sfr!4v1689589206519!5m2!1sfr!2sfr" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+    <iframe id="mobileIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2749.5379384110347!2d4.652024377356847!3d46.438037267937126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f30aeb8182f371%3A0xbf3199329fef4a95!2sLA%20CLUNYSOISE%20AMBULANCES%20ET%20TAXIS!5e0!3m2!1sfr!2sfr!4v1690210543131!5m2!1sfr!2sfr" width="600" height="1000" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
 {% endblock %}

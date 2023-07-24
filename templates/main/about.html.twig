@@ -10,42 +10,33 @@
 
     {% if counter is divisible by(2) %}
 
-        <section class="about_boxone">
-            
-            <div class="row">
-
-                <div class="col-5 d-flex justify-content-center align-middle">
+    <section id="showSection" style="background-image: url('{{ asset('background.png') }}');">
+        <div class="container-fluid pt-5 pb-5">
+            <div class="row" id="content">
+                <div class="col-lg-12" id="subContent">
+                    <h1 class="fw-bolder pb-5 text-center">{{ posts.title }}</h1> 
                     {% if posts.mediaUrl is not null %}
-                        <img src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    <img class="img-fluid rounded" src="upload/images/{{ asset(posts.mediaUrl) }}">
                     {% endif %}
-                </div>
-
-            
-                <div class="col-7">
-                    <h1 class="text-center">{{ posts.title }}</h1>
                     <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
                 </div>
-
             </div>
-        </section>
+        </div>
+    </section>
 
         {% else %}
 
-        <section class="about_boxone">
-            
-            <div class="row">
-
-                <div class="col-7">
-                    <h1 class="text-center">{{ posts.title }}</h1>
-                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+        <section class="showSection" style="background-image: url('{{ asset('background.png') }}');">
+            <div class="container-fluid pt-5 pb-5 showSection">
+                <div class="row content">
+                    <div class="col-lg-12 subContent">
+                        <h1 class="fw-bolder pb-5 text-center">{{ posts.title }}</h1> 
+                        <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                        {% if posts.mediaUrl is not null %}
+                        <img class="img-fluid rounded" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                        {% endif %}
+                    </div>
                 </div>
-
-                <div class="col-5 d-flex justify-content-center align-middle">
-                    {% if posts.mediaUrl is not null %}
-                        <img src="upload/images/{{ asset(posts.mediaUrl) }}">
-                    {% endif %}
-                </div>
-
             </div>
         </section>
         

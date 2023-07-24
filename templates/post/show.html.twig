@@ -4,25 +4,18 @@
 {% block body %}
 
 
-<article>
-    <div class="text-center">
-        <h1>{{ post.title }}</h1>
-    </div>
-
-    <div class="row">
-
-        <div class="col-5">
-            {% if post.mediaUrl is not null %}
-            <img src="upload/images/{{ asset(post.mediaUrl) }}">
-            {% endif %}
+<section class="showSection" style="background-image: url('{{ asset('background.png') }}');">
+    <div class="container-fluid pt-5 pb-5">
+        <div class="row content">
+            <div class="col-lg-12 subContent">
+                <h1 class="fw-bolder pb-5 text-center">{{ post.title }}</h1> 
+                {% if post.mediaUrl %}
+                <img class="img-fluid rounded-5" src="{{ asset('upload/images/' ~ post.mediaUrl) }}">
+                {% endif %}
+                <p>{{ post.content|striptags|replace({'&nbsp;': ''}) }}</p>
+            </div>
         </div>
-
-        <div class="col-7">
-            <p>{{ post.content|striptags|replace({'&nbsp;': ''}) }}</p>
-        </div>
-
     </div>
-</article>
-
+</section>
 
 {% endblock %}

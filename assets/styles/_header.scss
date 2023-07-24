@@ -1,3 +1,8 @@
+#logo {
+    width: 150px !important;
+    height: auto !important;
+}
+
 .offcanvas {
     background-color: #0059C6!important;
 }
@@ -10,7 +15,7 @@
 }
 
 #logoHead {
-    width: 300px;
+    width: 200px;
     height: auto;
     position: absolute;
     z-index: 1000;
@@ -80,7 +85,7 @@
 
 .offcanvas ul li a {
     display: inline;
-    line-height: 50px;
+    line-height: 65px;
 }
 
 .offcanvas ul li a:hover,
@@ -88,9 +93,58 @@
         color: #b0b8bf!important;
 }
 
+#mobileKey {
+    display: none;
+}
+
 
 @media (max-width: 1199.98px) { 
+    #logoHead {
+        width: 400px;
+        height: auto;
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+    }
+
     #offcanvasNavbarDark {
         width: 100vw!important;
+    }
+    .navbar {
+        width: 200px!important;
+        height: 200px!important;
+    }
+
+    .square {
+        width: 200px;
+        height: 200px;
+    }
+
+    #menuLogo {
+        width: 75%; 
+        height: auto;
+        position: fixed!important;
+    }
+
+    .offcanvas ul {
+        padding-top: 200px !important;
+    }
+
+    .offcanvas ul li {
+        padding-bottom: 80px !important;
+    }
+    
+    .offcanvas ul li a {
+        font-size: 2.5rem!important;
+        line-height: 100px;
+    }
+
+    #desktopKey {
+        display: none;
+    }
+
+    #mobileKey {
+        display: initial;
     }
  }
