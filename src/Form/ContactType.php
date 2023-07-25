@@ -20,36 +20,36 @@ class ContactType extends AbstractType
                     'M.' => 'Monsieur',
                     'Mme' => 'Madame',
                 ],
-                'attr' => ['class' => 'form-control mt-4'],
+                'attr' => ['class' => 'form-control'],
                 'label' => ' ',
             ])
             ->add('Nom',TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Nom'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Nom'],
                 'label' => ' ',
             ])
             ->add('Prenom', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Prenom'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Prenom'],
                 'label' => ' ',
             ])
             ->add('Telephone', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Téléphone'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Téléphone'],
                 'label' => ' ',
             ])
             ->add('email', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'email'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'email'],
                 'label' => ' ',
             ])
             ->add('sujet', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'objet'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'objet'],
                 'label' => ' ',
             ])
             ->add('content', TextareaType::class, [
-                'attr' => ['class' => 'form-control mt-4', 'placeholder' => 'Contenu'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Contenu'],
                 'label' => ' ',
             ])
             
             ->add('envoyer', SubmitType::class, [
-                'attr' => ['class' => 'form-control mt-4'],
+                'attr' => ['class' => 'form-control mt-5'],
             ])
         ;
     }
