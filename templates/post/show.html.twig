@@ -10,7 +10,7 @@
             <div class="col-lg-12 subContent">
                 <h1 class="fw-bolder pb-5 text-center">{{ post.title }}</h1> 
                 {% if post.mediaUrl %}
-                <img class="img-fluid rounded-5" src="{{ asset('upload/images/' ~ post.mediaUrl) }}">
+                <img class="img-fluid rounded-5 imgL" src="{{ asset('upload/images/' ~ post.mediaUrl) }}">
                 {% endif %}
                 <p>{{ post.content|striptags|replace({'&nbsp;': ''}) }}</p>
             </div>

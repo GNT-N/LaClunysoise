@@ -1,5 +1,5 @@
 .showSection {
-    margin-top: 300px;
+    margin-top: 200px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -16,15 +16,23 @@
     height: auto !important;
 }
 
-.subContent img {
-    width: 1000px !important;
+.imgL {
+    max-width: 1000px !important;
     height: auto !important;
     float: left;
     margin: 10px 20px 10px 0;
 }
 
+.imgR {
+    max-width: 1000px !important;
+    height: auto !important;
+    float: right;
+    margin: 10px 20px 10px 0;
+}
+
 .subContent {
-    padding: 40px 20px !important;
+    height: 100%;
+    padding: 20px 20px !important;
 }
 
 .subContent p {
