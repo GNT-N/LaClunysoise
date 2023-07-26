@@ -32,50 +32,50 @@ class AppointmentType extends AbstractType
                 },
             ])
             ->add('Nom', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Nom *'],
+                'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Nom *'],
                 'label' => ' ',
             ])
             ->add('Prenom', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Prenom *'],
+                'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Prénom *'],
                 'label' => ' ',
             ])
             ->add('Telephone', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Téléphone *'],
+                'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Téléphone *'],
                 'label' => ' ',
             ])
             ->add('email', EmailType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'email *'],
+                'attr' => ['class' => 'form-control border-black', 'placeholder' => 'email *'],
                 'label' => ' ',
             ])
             ->add('Rue', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Rue *'],
+                'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Rue *'],
                 'label' => ' ',
             ])
             ->add('Ville', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Ville *'],
+                'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Ville *'],
                 'label' => ' ',
             ])
             ->add('Postcode', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Code Postale *'],
+                'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Code Postal *'],
                 'label' => ' ',
             ])
 
 
             // ---------- Rendez-vous ----------
             ->add('DateRendezVous', DateType::class, [
-                'attr' => ['class' => 'form-control','placeholder' => 'Date du rendez-vous'],
+                'attr' => ['class' => 'form-control border-black','placeholder' => 'Date du rendez-vous'],
                 'input'  => 'datetime_immutable',
                 'widget' => 'single_text',
                 'label' => 'Date du rendez-vous *',
             ])
             ->add('HeureRendezVous', TimeType::class, [
-                'attr' => ['class' => 'form-control','placeholder' => 'Heure du rendez-vous',],
+                'attr' => ['class' => 'form-control border-black text-center','placeholder' => 'Heure du rendez-vous',],
                 'input'  => 'datetime',
                 'widget' => 'single_text',
                 'label' => 'Heure du rendez-vous *',
             ])
             ->add('DureeEstimee', TimeType::class, [
-                'attr' => ['class' => 'form-control','placeholder' => 'Durée estimée du rendez-vous'],
+                'attr' => ['class' => 'form-control border-black text-center','placeholder' => 'Durée estimée du rendez-vous'],
                 'input'  => 'datetime',
                 'widget' => 'single_text',
                 'label' => 'Durée estimée',
@@ -84,7 +84,7 @@ class AppointmentType extends AbstractType
             ])
 
             ->add('LieuxRendezVous', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Lieux du rendez-vous *'],
+                'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Lieux du rendez-vous *'],
                 'label' => ' ',
             ])
 
@@ -95,11 +95,11 @@ class AppointmentType extends AbstractType
                     'Medecin Spécialiste' => 'Medecin Spécialiste',
                     'Autre' => 'Autre',
                 ],
-                'attr' => ['class' => 'form-control'],
+                'attr' => ['class' => 'form-control border-black form-select'],
                 'label' => ' ',
             ])
             ->add('Prescripteur', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Médecin prescripteur'],
+                'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Médecin prescripteur'],
                 'label' => ' ',
                 'required' => false,
             ])
@@ -111,7 +111,7 @@ class AppointmentType extends AbstractType
                 'Hôspitalisation de jour' => 'Hôspitalisation de jour',
                 'Autre' => 'Autre',
                 ],
-                'attr' => ['class' => 'form-control'],
+                'attr' => ['class' => 'form-control border-black form-select'],
                 'label' => ' ',
             ])
 
@@ -141,12 +141,12 @@ class AppointmentType extends AbstractType
             ])
 
             ->add('content', TextareaType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Commentaires éventuels'],
+                'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Commentaires éventuels'],
                 'required' => false,
                 'label' => ' ',
             ])
             ->add('envoyer', SubmitType::class, [
-                'attr' => ['class' => 'form-control'],
+                'attr' => ['class' => 'form-control btn btn-primary'],
             ])
         ;
     }

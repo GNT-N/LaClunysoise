@@ -27,23 +27,23 @@ class JoinType extends AbstractType
                 'label' => ' ',
             ])
             ->add('Nom',TextType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Nom'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Nom *'],
                 'label' => ' ',
             ])
             ->add('Prenom', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Prénom'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Prénom *'],
                 'label' => ' ',
             ])
             ->add('Telephone', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Téléphone'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Téléphone *'],
                 'label' => ' ',
             ])
             ->add('email', EmailType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'email'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'email *'],
                 'label' => ' ',
             ])
             ->add('content', TextareaType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Contenu'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Contenu *'],
                 'label' => ' ',
             ])
             ->add('Fichier', FileType::class, [

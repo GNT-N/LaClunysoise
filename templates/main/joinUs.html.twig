@@ -46,19 +46,21 @@
                 {{ form_start(formulaire) }}
                     <div>
                         <div class="row">
-                            <div class="col-2 pe-3">{{ form_row(formulaire.Civilite) }}</div>
-                            <div class="col-5 pe-3">{{ form_row(formulaire.Nom) }}</div>
-                            <div class="col-5">{{ form_row(formulaire.Prenom) }}</div>
+                            <div class="col-2 ps-3 pe-3">{{ form_row(formulaire.Civilite) }}</div>
+                            <div class="col-5 ps-3 pe-3">{{ form_row(formulaire.Nom) }}</div>
+                            <div class="col-5 ps-3 pe-3">{{ form_row(formulaire.Prenom) }}</div>
                         </div>
                         <div class="row">    
-                            <div class="col-6 pe-3">{{ form_row(formulaire.Telephone) }}</div>
-                            <div class="col-6">{{ form_row(formulaire.email) }}</div>
+                            <div class="col-6 ps-3 pe-3">{{ form_row(formulaire.Telephone) }}</div>
+                            <div class="col-6 ps-3 pe-3">{{ form_row(formulaire.email) }}</div>
                         </div>
                     </div>
                     {{ form_row(formulaire.content) }}
-                    <div class="form-group pt-3">
-                        <label>Téléchargez votre C.V ci-dessous</label>
+                    <div class="row form-group pt-3">
+                        <div class="col-12 pe-3 ps-3">
+                            <label>Téléchargez votre C.V ci-dessous</label>
                         {{ form_row(formulaire.Fichier) }}
+                        </div>
                     </div>
                     {{ form_row(formulaire.envoyer) }}
                 {{ form_end(formulaire) }}
