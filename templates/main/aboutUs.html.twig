@@ -1,31 +1,48 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 <section class="pagesSection" style="background-image: url('{{ asset("croixGrey.png") }}');">
-{% set animations = ['fade-in-left', 'fade-in-right', 'fade-in-up', 'fade-in-down'] %}
+{% set counter = 0 %}
 {% for posts in post %}
-    {% set animation = animations[loop.index0 % animations|length] %}
-    <div class="container-fluid pt-5 pb-5">
-        <div class="row content">
-            <div class="col-lg-12 subContent">
-                <h1 class="fw-bolder pb-5 text-center {{ animation }}" id="about_title">{{ posts.title }}</h1> 
-                {% if posts.mediaUrl is not null %}
-                <img class="img-fluid rounded-5 imgL {{ animation }}" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                {% endif %}
-                <p class="{{ animation }}" id="about_p">{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+    {% if counter is divisible by(2) %}
+        <div class="container-fluid pt-5 pb-5">
+            <div class="row content">
+                <div class="col-lg-12 subContent">
+                    <h1 class="fw-bolder pb-5 text-center fade-in-up" id="about_title">{{ posts.title }}</h1> 
+                    {% if posts.mediaUrl is not null %}
+                    <img class="img-fluid rounded-5 imgL fade-in-left" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    {% endif %}
+                    <p class="fade-in-right" id="about_p">{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                </div>
             </div>
         </div>
-    </div>
+        {% else %}
+        <div class="container-fluid pt-5 pb-5">
+            <div class="row content">
+                <div class="col-lg-12 subContent">
+                    <h1 class="fw-bolder pb-5 text-center">{{ posts.title }}</h1> 
+                    {% if posts.mediaUrl is not null %}
+                    <img class="img-fluid rounded-5 imgR" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    {% endif %}
+                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% set counter = counter + 1 %}
 {% endfor %}
 </section>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const elements = document.querySelectorAll('.fade-in-left, .fade-in-right, .fade-in-up, .fade-in-down');
+        const about_title = document.getElementById("about_title");
+        const about_img = document.getElementById("about_img");
+        const about_p = document.getElementById("about_p");
         
         setTimeout(function() {
-            elements.forEach((element) => {
-                element.classList.add('active');
-            });
+            about_title.classList.add("active");
+            about_img.classList.add("active");
+            about_p.classList.add("active");
         }, 100);
     });
 </script>
