@@ -3,51 +3,50 @@
 
 {% block body %}
 
-{% set counter = 0 %}
-
-{% for posts in post %}
-
-    {% if counter is divisible by(2) %}
-
-        <section class="support_boxone">
-            <div class="row">
-
-                <div class="col-5 d-flex">
-                    {% if posts.mediaUrl is not null %}
-                        <img class="align-middle" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                    {% endif %}
-                </div>
-
-                <div class="col-7">
-                    <h1 class="text-center">{{ posts.title }}</h1>
-                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
-                </div>
-
-            </div>
-        </section>
-
-        {% else %}
-
-        <section class="support_boxone">
-            <div class="row">
-
-                <div class="col-7">
-                    <h1 class="text-center">{{ posts.title }}</h1>
-                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
-                </div>
-
-                <div class="col-5 d-flex">
-                    {% if posts.mediaUrl is not null %}
-                        <img class="align-middle" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                    {% endif %}
-                </div>
-
-            </div>
-        </section>
-        
-    {% endif %}
+<section class="support_page" style="background-image: url('{{ asset("croix.png") }}');">
+    <h1 class="text-center">Ambulance La Clunysoise</h1>
     
-    {% set counter = counter + 1 %}
-{% endfor %}
+    {% set counter = 0 %}
+    {% for posts in post %}
+
+        {% if counter is divisible by(2) %}
+
+            <section class="support_boxone">
+                <div class="row">
+                    <div class="col-5 d-flex">
+                        {% if posts.mediaUrl is not null %}
+                            <img class="align-middle" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                        {% endif %}
+                    </div>
+
+                    <div class="col-7">
+                        <h1 class="text-center">{{ posts.title }}</h1>
+                        <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                    </div>
+                </div>
+            </section>
+
+            {% else %}
+
+            <section class="support_boxone">
+                <div class="row">
+                    <div class="col-7">
+                        <h1 class="text-center">{{ posts.title }}</h1>
+                        <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                    </div>
+
+                    <div class="col-5 d-flex">
+                        {% if posts.mediaUrl is not null %}
+                            <img class="align-middle" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                        {% endif %}
+                    </div>
+                </div>
+            </section>
+            
+        {% endif %}
+        
+        {% set counter = counter + 1 %}
+    {% endfor %}
+</section>
 
 {% endblock %}

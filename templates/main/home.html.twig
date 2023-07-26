@@ -4,26 +4,38 @@
 <div id="faArrow" class="text-center">
     <i class="fa-solid fa-circle-arrow-down fa-bounce" style="color: #000000 #ffffff; font-size: 2.5rem;"></i>
 </div>
+
 <section class="container d-flex" id="home">
     <div class="row">
+
         <div class="col-lg-6 d-flex justify-content-center align-items-center" id="homeDescription">
             <div>
-                <div id="titleDesc" class="d-flex flex-column justify-content-center align-items-center">
+                <div id="titleDesc" class="d-flex flex-column justify-content-center align-items-center fade-in-left">
                     <h1 class="display-4 fst-italic">La Clunysoise</h1>
                     <p class="text-center ps-3 pe-3">L'entreprise « La Clunysoise » est une société d'ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis.La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d'interventions d'urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d'appel 15.</p>
                 </div>
-                <div class="d-flex row" id="buttonsContainer">
-                        <button type="button" class="btn bg-primary text-decoration-none"><a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/contact">Contactez Nous</a></button>
-                        <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none"><a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/vos-rendez-vous">Prenez Rendez-Vous</a></button>
-                        <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none"><a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/nous-rejoindre">Rejoignez Nous</a></button>
-                    </div>
+
+                <div id="buttonsContainer" class="d-flex row fade-in-left">
+
+                        <button type="button" class="btn bg-primary text-decoration-none">
+                            <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/contact">Contactez Nous</a>
+                        </button>
+
+                        <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none">
+                            <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/vos-rendez-vous">Prenez Rendez-Vous</a>
+                        </button>
+
+                        <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none">
+                            <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/nous-rejoindre">Rejoignez Nous</a>
+                        </button>
+                    
                 </div>
             </div>
         </div>
 
         
         <div class="col-lg-6">
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+            <div id="carouselExampleAutoplaying" class="carousel slide fade-in-right" data-bs-ride="carousel" data-bs-pause="false">
                 <div id="carousel" class="carousel-inner text-center">
                     <div class="carousel-item active" data-bs-interval="3900">
                             <div class="d-flex justify-content-center align-items-center d-block w-100">
@@ -44,7 +56,7 @@
             </div>
 
             <a href="/notre-identite">
-                <div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel"  data-bs-ride="carousel" data-bs-pause="false">
+                <div id="carouselExampleControls" class="carousel slide fade-in-right" data-mdb-ride="carousel"  data-bs-ride="carousel" data-bs-pause="false">
                     <div class="carousel-inner text-center" id="textCarousel">
                         <div class="carousel-item active" data-bs-interval="2500">
                             
@@ -82,8 +94,8 @@
         </div>           
 </section>
 
-<section id="gridGallery" style="background-image: url('{{ asset("background.png") }}');">
-    <h2 class="text-center pt-5">Nos services</h2>
+<section id="gridGallery" style="background-image: url('{{ asset("croix.png") }}');">
+    <h2 class="text-center pt-5">Actus</h2>
     <div class="container">
         <div class="row justify-content-center">
             {% set switchBox = false %}
@@ -91,34 +103,34 @@
             {% for posts in post %}
                 {% if loop.index is odd %}
                     {% if switchBox %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxTwo tile" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
                                 <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
                               </svg>
                     {% else %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxOne tile" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
                                 <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
                               </svg>
                     {% endif %}
                         <div>
-                            <p class="text-white">{{ posts.description | striptags | slice(0, 310)}}</p>
+                            <p class="text-white text-center animate-text">{{ posts.description | striptags | slice(0, 310)}}</p>
                         </div>
                     </a>
                 {% else %}
                     {% if switchBox %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxOne" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxOne tile" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
                                 <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
                               </svg>
                     {% else %}
-                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxTwo" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none boxTwo tile" style="background-image:linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}')">
                           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
                                 <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
                               </svg>
                     {% endif %}
                         <div>
-                            <p class="text-white text-center">{{ posts.description | striptags | slice(0, 310)}}</p>
+                            <p class="text-white text-center animate-text">{{ posts.description | striptags | slice(0, 310)}}</p>
                         </div>
                     </a>
                 {% endif %}

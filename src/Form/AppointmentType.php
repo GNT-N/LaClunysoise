@@ -12,7 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
-use Symfony\Component\Validator\Constraints\Choice;
 
 class AppointmentType extends AbstractType
 {
@@ -25,36 +24,39 @@ class AppointmentType extends AbstractType
                     'M.' => 'Monsieur',
                     'Mme' => 'Madame',
                 ],
-                'expanded' => true, // Transformer les choix en boutons cliquables
-                'attr' => ['class' => 'form-check'], // Ajoutez la classe 'form-check' pour le style des boutons
-                'label' => ' ', // Laissez l'étiquette vide pour supprimer l'étiquette du champ
+                'expanded' => true,
+                'label' => ' ',
+                'label_html' => true, // Permet d'utiliser des balises HTML dans le label
+                'choice_attr' => function ($choice, $key, $value) {
+                    return ['label' => strip_tags($choice, '<i>')];
+                },
             ])
             ->add('Nom', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Nom'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Nom *'],
                 'label' => ' ',
             ])
             ->add('Prenom', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Prenom'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Prenom *'],
                 'label' => ' ',
             ])
             ->add('Telephone', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Téléphone'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Téléphone *'],
                 'label' => ' ',
             ])
             ->add('email', EmailType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'email'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'email *'],
                 'label' => ' ',
             ])
             ->add('Rue', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Rue'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Rue *'],
                 'label' => ' ',
             ])
             ->add('Ville', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Ville'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Ville *'],
                 'label' => ' ',
             ])
             ->add('Postcode', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Code Postale'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Code Postale *'],
                 'label' => ' ',
             ])
 
@@ -64,13 +66,13 @@ class AppointmentType extends AbstractType
                 'attr' => ['class' => 'form-control','placeholder' => 'Date du rendez-vous'],
                 'input'  => 'datetime_immutable',
                 'widget' => 'single_text',
-                'label' => 'Date du rendez-vous',
+                'label' => 'Date du rendez-vous *',
             ])
             ->add('HeureRendezVous', TimeType::class, [
                 'attr' => ['class' => 'form-control','placeholder' => 'Heure du rendez-vous',],
                 'input'  => 'datetime',
                 'widget' => 'single_text',
-                'label' => 'Heure du rendez-vous',
+                'label' => 'Heure du rendez-vous *',
             ])
             ->add('DureeEstimee', TimeType::class, [
                 'attr' => ['class' => 'form-control','placeholder' => 'Durée estimée du rendez-vous'],
@@ -82,7 +84,7 @@ class AppointmentType extends AbstractType
             ])
 
             ->add('LieuxRendezVous', TextType::class, [
-                'attr' => ['class' => 'form-control', 'placeholder' => 'Lieux du rendez-vous'],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Lieux du rendez-vous *'],
                 'label' => ' ',
             ])
 
@@ -115,21 +117,27 @@ class AppointmentType extends AbstractType
 
             ->add('ModeTransport', ChoiceType::class, [
                 'choices' => [
-                    'Assis' => 'assis',
-                    'Allongé' => 'allongé',
+                    '<i class="fas fa-chair"></i> Assis' => 'assis',
+                    '<i class="fas fa-bed"></i> Allongé' => 'allongé',
                 ],
-                'expanded' => true, // Transformer les choix en boutons cliquables
-                'attr' => ['class' => 'form-check'], // Ajoutez la classe 'form-check' pour le style des boutons
-                'label' => ' ', // Laissez l'étiquette vide pour supprimer l'étiquette du champ
+                'expanded' => true,
+                'label' => ' ',
+                'label_html' => true,
+                'choice_attr' => function ($choice, $key, $value) {
+                    return ['label' => strip_tags($choice, '<i>')];
+                },
             ])
             ->add('Aller', ChoiceType::class, [
                 'choices' => [
-                'Aller simple' => 'aller_simple',
-                'Aller-retour' => 'aller_retour',
+                    '<i class="fas fa-plane"></i> Aller simple' => 'aller_simple',
+                    '<i class="fas fa-exchange-alt"></i> Aller-retour' => 'aller_retour',
                 ],
-                'expanded' => true, // Transformer les choix en boutons cliquables
-                'attr' => ['class' => 'form-check'], // Ajoutez la classe 'form-check' pour le style des boutons
-                'label' => ' ', // Laissez l'étiquette vide pour supprimer l'étiquette du champ
+                'expanded' => true,
+                'label' => ' ',
+                'label_html' => true,
+                'choice_attr' => function ($choice, $key, $value) {
+                    return ['label' => strip_tags($choice, '<i>')];
+                },
             ])
 
             ->add('content', TextareaType::class, [

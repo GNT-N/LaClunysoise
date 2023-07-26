@@ -3,96 +3,95 @@
 
 {% block body %}
 
-{% set counter = 0 %}
+    {% set counter = 0 %}
 
-{% for posts in post %}
+    {% for posts in post %}
 
-    {% if counter is divisible by(2) %}
+        {% if counter is divisible by(2) %}
 
-        <section class="join_boxone border-top">
-            <div class="row">
+            <section class="join_boxone border-top">
+                <div class="row">
 
-                <div class="col-5 d-flex">
-                    {% if posts.mediaUrl is not null %}
-                        <img class="align-middle" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                    {% endif %}
+                    <div class="col-5 d-flex">
+                        {% if posts.mediaUrl is not null %}
+                            <img class="align-middle" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                        {% endif %}
+                    </div>
+
+                    <div class="col-7">
+                        <h1 class="text-center">{{ posts.title }}</h1>
+                        <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                    </div>
+
                 </div>
+            </section>
 
-                <div class="col-7">
-                    <h1 class="text-center">{{ posts.title }}</h1>
-                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+            {% else %}
+
+            <section class="join_boxone border-top">
+                <div class="row">
+
+                    <div class="col-7">
+                        <h1 class="text-center">{{ posts.title }}</h1>
+                        <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                    </div>
+
+                    <div class="col-5 d-flex">
+                        {% if posts.mediaUrl is not null %}
+                            <img class="align-middle" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                        {% endif %}
+                    </div>
+
                 </div>
-
-            </div>
-        </section>
-
-        {% else %}
-
-        <section class="join_boxone border-top">
-            <div class="row">
-
-                <div class="col-7">
-                    <h1 class="text-center">{{ posts.title }}</h1>
-                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
-                </div>
-
-                <div class="col-5 d-flex">
-                    {% if posts.mediaUrl is not null %}
-                        <img class="align-middle" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                    {% endif %}
-                </div>
-
-            </div>
-        </section>
+            </section>
+            
+        {% endif %}
         
-    {% endif %}
-    
-    {% set counter = counter + 1 %}
-{% endfor %}
+        {% set counter = counter + 1 %}
+    {% endfor %}
 
-<div class="container">
-    <section class="row border-top">
-        <div class="col-6 mt-5">
+    <div class="container">
+        <section class="row border-top">
+            <div class="col-6 mt-5">
 
-            <h2></h2>
-            <p class="text-body-secondary mt-5"><a href="tel:+33385590487" class="nav-link p-0 text-body-secondary">Tèl : 03 85 59 04 87</a></p>
-            <p class="text-body-secondary mt-5"><a href="tel:+33677658774" class="nav-link p-0 text-body-secondary">Tèl : 06 77 65 87 74</a></p>
-            <p class="text-body-secondary mt-5"><a href="mailto:la.clunysoise@orange.fr" class="nav-link p-0 text-body-secondary">E-mail : la.clunysoise@orange.fr</a></p>
-            <p class="nav-item mb-2 mt-5"><a href="geo:0,0?q=7+Avn.Pierre+le+Vénérable,71250+Cluny" class="nav-link p-0 text-body-secondary">7 Av. Pierre le Vénérable, 71250 Cluny</a></p>
+                <h2></h2>
+                <p class="text-body-secondary mt-5"><a href="tel:+33385590487" class="nav-link p-0 text-body-secondary">Tèl : 03 85 59 04 87</a></p>
+                <p class="text-body-secondary mt-5"><a href="tel:+33677658774" class="nav-link p-0 text-body-secondary">Tèl : 06 77 65 87 74</a></p>
+                <p class="nav-item mb-2 mt-5"><a href="geo:0,0?q=7+Avn.Pierre+le+Vénérable,71250+Cluny" class="nav-link p-0 text-body-secondary">7 Av. Pierre le Vénérable, 71250 Cluny</a></p>
 
-        </div>
+            </div>
 
-        <div class="col-6">
+            <div class="col-6" id="join_form">
 
-            {{ form_start(formulaire) }}
+                {{ form_start(formulaire) }}
 
-                <div>
-                    <div class="row">
-                        <div class="col-2">{{ form_row(formulaire.Civilite) }}</div>
-                        <div class="col-5">{{ form_row(formulaire.Nom) }}</div>
-                        <div class="col-5">{{ form_row(formulaire.Prenom) }}</div>
+                    <div>
+                        <div class="row">
+                            <div class="col-2">{{ form_row(formulaire.Civilite) }}</div>
+                            <div class="col-5">{{ form_row(formulaire.Nom) }}</div>
+                            <div class="col-5">{{ form_row(formulaire.Prenom) }}</div>
+                        </div>
+
+                        <div class="row">    
+                            <div class="col-6">{{ form_row(formulaire.Telephone) }}</div>
+                            <div class="col-6">{{ form_row(formulaire.email) }}</div>
+                        </div>
+
                     </div>
+                    {{ form_row(formulaire.content) }}
+                    {{ form_row(formulaire.Fichier) }}
 
-                    <div class="row">    
-                        <div class="col-6">{{ form_row(formulaire.Telephone) }}</div>
-                        <div class="col-6">{{ form_row(formulaire.email) }}</div>
+                    {{ form_row(formulaire.envoyer) }}
+
+                {{ form_end(formulaire) }}
+
+                {% for flashMessage in app.flashes('success') %}
+                    <div class="alert alert-success m-5">
+                        {{ flashMessage }}
                     </div>
-
-                </div>
-                {{ form_row(formulaire.content) }}
-                {{ form_row(formulaire.Fichier) }}
-
-                {{ form_row(formulaire.envoyer) }}
-
-            {{ form_end(formulaire) }}
-
-            {% for flashMessage in app.flashes('success') %}
-                <div class="alert alert-success m-5">
-                    {{ flashMessage }}
-                </div>
-            {% endfor %}
-        </div>
-    </section>
-</div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
 
 {% endblock %}
