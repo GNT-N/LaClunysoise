@@ -1,3 +1,9 @@
+#logo {
+    width: 150px !important;
+    height: auto !important;
+}
+
+
 #footer {
     padding: 50px 0 0 0!important;
     background-color: #0059C6;
@@ -19,6 +25,10 @@ iframe {
     padding: 0 100px !important;
 }
 
+.pCol h5 {
+    font-size: 1.4rem!important;
+}
+
 .pCol p, .pCol p a, .pCol ul li, .pCol ul li a {
     color: white!important;
     display: inline;
@@ -29,20 +39,29 @@ iframe {
     color: #b0b8bf!important;
 }
 
-.pCol h5 {
-    font-size: 1.5rem;
-    font-weight: bold!important;
-}
-
 @media (max-width: 1200px) {
+    #logo {
+        width: 400px !important;
+        height: auto !important;
+    }
+    
+
     .pCol {
         margin-right: 50px !important;
         margin-left: 50px!important;
     }
-}
 
-@media (max-width: 991.98px) { 
+    .pCol h5 {
+        font-size: 2.5rem!important;
+        padding-top: 15px;
+        padding-bottom: 30px;
+    }
+
     iframe {
         padding: 50px 40px!important;
+    }
+    
+    hr {
+        display: none;
     }
 }
