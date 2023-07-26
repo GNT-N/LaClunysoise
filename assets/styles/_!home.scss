@@ -11,7 +11,7 @@
 }
 
 .content {
-    background-color: white;
+    background-color: hsla(0, 0%, 100%, 0.55);
     width: 100%;
     height: auto !important;
 }
@@ -40,9 +40,9 @@
 }
 
 @media (max-width: 1199.98px) { 
-    .pagesSection {
-        background-size: auto;
-    }
+    // .pagesSection {
+    //     background-size: auto;
+    // }
 
     .container-fluid {
         width: 90vw!important;

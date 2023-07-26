@@ -2,11 +2,10 @@
 
 
 {% block body %}
-
+<section class="pagesSection" style="background-image: url('{{ asset("croixGrey.png") }}');">
 {% set counter = 0 %}
 {% for posts in post %}
     {% if counter is divisible by(2) %}
-    <section class="pagesSection" style="background-image: url('{{ asset("croixGrey.png") }}');">
         <div class="container-fluid pt-5 pb-5">
             <div class="row content">
                 <div class="col-lg-12 subContent">
@@ -19,7 +18,7 @@
             </div>
         </div>
         {% else %}
-        <div class="container-fluid pt-5">
+        <div class="container-fluid pt-5 pb-5">
             <div class="row content">
                 <div class="col-lg-12 subContent">
                     <h1 class="fw-bolder pb-5 text-center">{{ posts.title }}</h1> 
@@ -30,53 +29,46 @@
                 </div>
             </div>
         </div>
-    </section>
     {% endif %}
     {% set counter = counter + 1 %}
 {% endfor %}
 
-    <div class="container">
-        <section class="row border-top">
-            <div class="col-6 mt-5">
-
+    <div class="container-fluid pt-5 pb-5">
+        <div class="row content">
+            <div class="col-6 mt-5 subContent text-center">
                 <h2></h2>
-                <p class="text-body-secondary mt-5"><a href="tel:+33385590487" class="nav-link p-0 text-body-secondary">Tèl : 03 85 59 04 87</a></p>
-                <p class="text-body-secondary mt-5"><a href="tel:+33677658774" class="nav-link p-0 text-body-secondary">Tèl : 06 77 65 87 74</a></p>
-                <p class="nav-item mb-2 mt-5"><a href="geo:0,0?q=7+Avn.Pierre+le+Vénérable,71250+Cluny" class="nav-link p-0 text-body-secondary">7 Av. Pierre le Vénérable, 71250 Cluny</a></p>
-
+                <a href="tel:+33385590487" class="nav-link p-0 text-body-secondary mt-5 d-inline-block">Tèl : 03 85 59 04 87</a><br>
+                <a href="tel:+33677658774" class="nav-link p-0 text-body-secondary mt-5 d-inline-block">Tèl : 06 77 65 87 74</a><br>
+                <a href="geo:0,0?q=7+Avn.Pierre+le+Vénérable,71250+Cluny" class="nav-link p-0 text-body-secondary mt-5 d-inline-block">7 Av. Pierre le Vénérable, 71250 Cluny</a>
             </div>
 
-            <div class="col-6" id="join_form">
-
+            <div class="col-6 mt-5 subContent" id="join_form">
                 {{ form_start(formulaire) }}
-
                     <div>
                         <div class="row">
-                            <div class="col-2">{{ form_row(formulaire.Civilite) }}</div>
-                            <div class="col-5">{{ form_row(formulaire.Nom) }}</div>
+                            <div class="col-2 pe-3">{{ form_row(formulaire.Civilite) }}</div>
+                            <div class="col-5 pe-3">{{ form_row(formulaire.Nom) }}</div>
                             <div class="col-5">{{ form_row(formulaire.Prenom) }}</div>
                         </div>
-
                         <div class="row">    
-                            <div class="col-6">{{ form_row(formulaire.Telephone) }}</div>
+                            <div class="col-6 pe-3">{{ form_row(formulaire.Telephone) }}</div>
                             <div class="col-6">{{ form_row(formulaire.email) }}</div>
                         </div>
-
                     </div>
                     {{ form_row(formulaire.content) }}
-                    {{ form_row(formulaire.Fichier) }}
-
+                    <div class="form-group pt-3">
+                        <label>Téléchargez votre C.V ci-dessous</label>
+                        {{ form_row(formulaire.Fichier) }}
+                    </div>
                     {{ form_row(formulaire.envoyer) }}
-
                 {{ form_end(formulaire) }}
-
                 {% for flashMessage in app.flashes('success') %}
                     <div class="alert alert-success m-5">
                         {{ flashMessage }}
                     </div>
                 {% endfor %}
             </div>
-        </section>
+        </div>
     </div>
-
+</section>
 {% endblock %}
