@@ -137,20 +137,20 @@
     height: 15vh!important;
 }
 
-#gridGallery {
+.gridGallery {
     background-size:contain;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
 }
 
-#gridGallery img {
+.gridGallery img {
     max-width: 300px;
     max-height: 330px;
     margin: 10px;   
 }
 
-#gridGallery p {
+.gridGallery p {
     width: auto !important;
     font-size: 1.2rem;
     font-weight: bold;
@@ -200,7 +200,7 @@
         font-size: 3rem !important;
     }
 
-    #gridGallery {
+    .gridGallery {
         background-size: auto;
     }
 
