@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{% set counter = 0 %}
+{% for posts in post %}
+    {% if counter is divisible by(2) %}
+    <section id="gridGallery" style="background-image: url('{{ asset("croixGrey.png") }}');">
+        <div class="container-fluid pt-5 pb-5">
+            <div class="row content">
+                <div class="col-lg-12 subContent">
+                    <h1 class="fw-bolder pb-5 text-center">{{ posts.title }}</h1> 
+                    {% if posts.mediaUrl is not null %}
+                    <img class="img-fluid rounded-5 imgL" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    {% endif %}
+                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="container-fluid pt-5 pagesSection">
+            <div class="row content">
+                <div class="col-lg-12 subContent">
+                    <h1 class="fw-bolder pb-5 text-center">{{ posts.title }}</h1> 
+                    {% if posts.mediaUrl is not null %}
+                    <img class="img-fluid rounded-5 imgR" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    {% endif %}
+                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+    {% set counter = counter + 1 %}
+{% endfor %}
+
+{% endblock %}
+
+

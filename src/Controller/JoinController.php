@@ -96,8 +96,8 @@ class JoinController extends AbstractController
         // Appel de la fonction join avec les posts filtrés par page et visibilité
         $posts = $postRepository->findBy(array('page' => 'nous-rejoindre', 'visible' => true));
 
-        // Rendre le template 'main/join.html.twig' avec les variables à passer au template
-        return $this->render('main/join.html.twig', [
+        // Rendre le template 'main/joinUs.html.twig' avec les variables à passer au template
+        return $this->render('main/joinUs.html.twig', [
             'controller_name' => 'JoinController', // Variable pour afficher le nom du contrôleur dans le template (utilisation optionnelle)
             'formulaire' => $form->createView(), // Utilisez createView() pour obtenir la vue du formulaire
             'post' => $posts, // Variable contenant les posts filtrés par page et visibilité

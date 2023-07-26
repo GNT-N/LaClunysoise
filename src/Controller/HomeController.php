@@ -30,25 +30,25 @@ class HomeController extends AbstractController
     #[Route('/notre-identite', name: 'about')]
     public function about(PostRepository $postRepository): Response
     {
-        // Rendu du template '/about.html.twig' avec les posts filtrés par page et visibilité
-        return $this->render('main/about.html.twig', [
+        // Rendu du template '/aboutUs.html.twig' avec les posts filtrés par page et visibilité
+        return $this->render('main/aboutUs.html.twig', [
             'post' => $postRepository->findBy(array('page' => 'notre-identite', 'visible' => true)),
         ]);
     }
 
-    // Définition de la route '/prise-en-charge' avec le nom 'support'
-    #[Route('/prise-en-charge', name: 'support')]
-    public function support(PostRepository $postRepository): Response
+    // Définition de la route '/prise-en-charge' avec le nom 'supportPricing'
+    #[Route('/prise-en-charge', name: 'supportPricing')]
+    public function supportPricing(PostRepository $postRepository): Response
     {
-        // Rendu du template '/support.html.twig' avec les posts filtrés par page et visibilité
-        return $this->render('main/support.html.twig', [
+        // Rendu du template '/supportPricing.html.twig' avec les posts filtrés par page et visibilité
+        return $this->render('main/supportPricing.html.twig', [
             'post' => $postRepository->findBy(array('page' => 'prise-en-charge', 'visible' => true)),
         ]);
     }
 
-    // Définition de la route '/join' avec le nom 'join'
-    #[Route('/nous-rejoindre', name: 'join')]
-    public function join(PostRepository $postRepository): Response
+    // Définition de la route '/joinUs' avec le nom 'joinUs'
+    #[Route('/nous-rejoindre', name: 'joinUs')]
+    public function joinUs(PostRepository $postRepository): Response
     {
 
         return $this->forward('App\Controller\JoinController::index'); 
