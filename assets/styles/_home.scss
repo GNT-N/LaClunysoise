@@ -26,7 +26,7 @@
 #faArrow {
     position: absolute;
     z-index: 1000;
-    top: 94%;
+    top: 90%;
     left: 50%;
     transform: translateX(-52%)
 }
@@ -138,7 +138,7 @@
 }
 
 #gridGallery {
-    background-size: cover;
+    background-size:contain;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -172,6 +172,68 @@
 .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
     --bs-gutter-x: 0rem;
 }
+
+#mobileIframe {
+    display: none;
+}
+
+@media (max-width: 1199.98px) { 
+    #homeDescription {
+        width: 100vw !important;
+        height: 100vh !important;
+        position: relative;
+    }
+
+    #carouselExampleAutoplaying {
+        display: none !important;
+    }
+
+    #textCarousel {
+        display: none;
+    }
+
+    #buttons button {
+        margin: 40px 380px!important;
+    }
+
+    #faArrow i  {
+        font-size: 3rem !important;
+    }
+
+    #gridGallery {
+        background-size: auto;
+    }
+
+    .boxTwo, .bowOne {
+        width: 800px!important;
+        height: 400px!important;
+    }
+
+    .boxTwo svg, .boxOne svg{
+        left: 85%;
+    }
+
+    #faArrow {
+        top: 80%;
+    }
+
+    .btn {
+        --bs-btn-border-radius: 10px 10px 0 0!important;
+        --bs-btn-border-color: white!important;
+    }
+
+    #desktopIframe {
+        display: none;
+    }
+
+    #mobileIframe {
+        display: initial;
+    }
+
+    h2 {
+        font-size: 2rem !important;
+    }
+ }
 
 // -------------------- Grid Animation --------------------
 .animate-text
@@ -241,59 +303,3 @@
     opacity: 1;
     transform: translateY(0);
 }
-
-@media (max-width: 1199.98px) { 
-    #titleDesc {
-        width: 100vw !important;
-        height: 100vh !important;
-        position: relative;
-    }
-
-    #carouselExampleAutoplaying {
-        display: none !important;
-    }
-
-    #buttons button {
-        margin: 40px 380px!important;
-    }
-
-    #faArrow i  {
-        font-size: 3rem !important;
-    }
-
-    #gridGallery {
-        background-size: auto;
-    }
-
-    .boxTwo, .bowOne {
-        width: 800px!important;
-        height: 400px!important;
-    }
-
-    .boxTwo svg, .boxOne svg{
-        left: 85%;
-    }
-
-    #faArrow {
-        top: 80%;
-    }
-
-    .btn {
-        --bs-btn-border-radius: 10px 10px 0 0!important;
-        --bs-btn-border-color: white!important;
-    }
-
-    #desktopIframe {
-        display: none;
-    }
-
-    #mobileIframe {
-        display: initial;
-    }
-
-    h2 {
-        font-size: 2rem !important;
-    }
- }
-
-
