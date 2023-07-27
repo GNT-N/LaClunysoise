@@ -1,3 +1,11 @@
+.titlesTop {
+    position: absolute;
+    z-index: 1000;
+    top: 7%;
+    left: 50%;
+    transform: translateX(-55%);
+}
+
 .pagesSection {
     margin-top: 200px;
     background-size:contain;

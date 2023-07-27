@@ -66,19 +66,19 @@ class AppointmentType extends AbstractType
                 'attr' => ['class' => 'form-control border-black','placeholder' => 'Date du rendez-vous'],
                 'input'  => 'datetime_immutable',
                 'widget' => 'single_text',
-                'label' => 'Date du rendez-vous *',
+                'label' => ' ',
             ])
             ->add('HeureRendezVous', TimeType::class, [
                 'attr' => ['class' => 'form-control border-black text-center','placeholder' => 'Heure du rendez-vous',],
                 'input'  => 'datetime',
                 'widget' => 'single_text',
-                'label' => 'Heure du rendez-vous *',
+                'label' => ' ',
             ])
             ->add('DureeEstimee', TimeType::class, [
                 'attr' => ['class' => 'form-control border-black text-center','placeholder' => 'Durée estimée du rendez-vous'],
                 'input'  => 'datetime',
                 'widget' => 'single_text',
-                'label' => 'Durée estimée',
+                'label' => ' ',
                 'required' => false,
                 'empty_data' => '00:00',
             ])
