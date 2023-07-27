@@ -115,7 +115,7 @@
                     {% endif %}
                         <div>
                             <h1 class="fw-bolder text-white text-decoration-none text-center">{{ posts.title }}</h1> 
-                            <p class="text-white text-center animate-text">{{ posts.description | striptags | slice(0, 310)}}</p>
+                            <p class="text-white text-center animate-text">{{ posts.description |raw | slice(0, 310)}}</p>
                         </div>
                     </a>
                 {% else %}
@@ -132,7 +132,7 @@
                     {% endif %}
                         <div>
                             <h1 class="fw-bolder text-white text-decoration-none text-center">{{ posts.title }}</h1> 
-                            <p class="text-white text-center animate-text">{{ posts.description | striptags | slice(0, 310)}}</p>
+                            <p class="text-white text-center animate-text">{{ posts.description |raw | slice(0, 310)}}</p>
                         </div>
                     </a>
                 {% endif %}

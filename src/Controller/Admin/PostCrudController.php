@@ -77,7 +77,8 @@ class PostCrudController extends AbstractCrudController
                 TextField::new('description', 'Description'),
 
                 // Champ d'éditeur de texte pour le contenu
-                TextEditorField::new('content', 'Contenu'),
+                TextEditorField::new('content', 'Contenu')
+                    ->setFormTypeOption('attr', ['class' => 'tinymce']),
 
                 // Champ de date/heure pour la création (masqué sur le formulaire)
                 DateTimeField::new('createdAt', 'Date/Heure de Création')

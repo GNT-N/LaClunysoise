@@ -11,14 +11,20 @@
         {% endblock %}
 
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+            {{ encore_entry_script_tags('app') }}            
+            
         {% endblock %}
     </head>
 
     {{ include("header.html.twig") }}
     <body>
         {% block body %}
-
+        <script src="{{ asset('path/to/tinymce/tinymce.min.js') }}"></script>
+        <script>
+            tinymce.init({
+                selector: '.tinymce',
+            });
+        </script>
         {% endblock %}
     </body>
     {{ include("footer.html.twig") }}

@@ -12,7 +12,7 @@
                     {% if posts.mediaUrl is not null %}
                     <img class="img-fluid rounded-5 imgL" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
                     {% endif %}
-                    <p class="" id="about_p">{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                    <p class="" id="about_p">{{ posts.content|raw }}</p>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                     {% if posts.mediaUrl is not null %}
                     <img class="img-fluid rounded-5 imgR" src="upload/images/{{ asset(posts.mediaUrl) }}">
                     {% endif %}
-                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                    <p>{{ posts.content|raw }}</p>
                 </div>
             </div>
         </div>
