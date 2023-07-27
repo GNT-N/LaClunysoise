@@ -8,11 +8,11 @@
         <div class="container-fluid pt-5 pb-5">
             <div class="row content">
                 <div class="col-lg-12 subContent">
-                    <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
+                    <h1 class="fw-bolder pb-5 text-center" id="about_title">{{ posts.title }}</h1> 
                     {% if posts.mediaUrl is not null %}
-                    <img class="img-fluid rounded-5 imgL" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    <img class="img-fluid rounded-5 imgL" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
                     {% endif %}
-                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                    <p class="" id="about_p">{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
                 </div>
             </div>
         </div>
@@ -33,4 +33,5 @@
     {% set counter = counter + 1 %}
 {% endfor %}
 </section>
+
 {% endblock %}

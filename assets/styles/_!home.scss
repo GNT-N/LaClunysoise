@@ -71,4 +71,20 @@
     .subContent h1 {
         padding-bottom: 0!important;
     }
+
+    .imgL {
+        max-width: 80vw !important;
+        height: auto !important;
+        float: left;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .imgR {
+        max-width: 80vw !important;
+        height: auto !important;
+        float: right;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
  }
