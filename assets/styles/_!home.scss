@@ -1,3 +1,9 @@
+#about_desc {
+    margin-top : 250px !important;
+    max-width: 80vw !important;
+    border-radius: 20px !important;
+}
+
 .titlesTop {
     position: absolute;
     z-index: 1000;
@@ -7,7 +13,6 @@
 }
 
 .pagesSection {
-    margin-top: 200px;
     background-size:contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -45,6 +50,11 @@
 
 .subContent p {
     text-align: left !important;
+}
+
+.subContent i {
+    color: #0059C6!important;
+font-size: 3rem !important;
 }
 
 @media (max-width: 1199.98px) { 
