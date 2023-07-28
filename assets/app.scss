@@ -24,49 +24,77 @@
 }
 
 // ---------- animation gauche ----------
-.fade-in-left {
+@keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-2000px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .fade-in-left {
     opacity: 0;
     transform: translateX(-2000px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
-.fade-in-left.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-// ---------- animation droite ----------
-.fade-in-right {
+    animation: fadeInLeft 2s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  
+  // ---------- animation droite ----------
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(2000px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .fade-in-right {
     opacity: 0;
     transform: translateX(2000px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
-.fade-in-right.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-// ---------- animation haut ----------
-.fade-in-up {
+    animation: fadeInRight 2s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  
+  // ---------- animation haut ----------
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(-2000px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in-up {
     opacity: 0;
     transform: translateY(-2000px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
-.fade-in-up.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-// ---------- animation bas ----------
-.fade-in-down {
+    animation: fadeInUp 2s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  
+  // ---------- animation bas ----------
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(2000px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in-down {
     opacity: 0;
     transform: translateY(2000px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
-.fade-in-down.active {
-    opacity: 1;
-    transform: translateY(0);
-}
+    animation: fadeInDown 2s ease-in-out;
+    animation-fill-mode: forwards;
+  }

@@ -3,14 +3,14 @@
 {% set counter = 0 %}
 {% for posts in post %}
     {% if counter is divisible by(2) %}
-    <section class="pagesSection" style="background-image: url('{{ asset("croixGrey.png") }}');">
-        <h1 class="titlesTop fst-italic fw-bolder text-center">Prise en charge - Tarification</h1>
+    <section class="pages_section" style="background-image: url('{{ asset("croixGrey.png") }}');">
+        <h1 class="titles_top fst-italic fw-bolder text-center">Prise en charge - Tarification</h1>
         <div class="container-fluid pt-5 pb-5">
             <div class="row content">
-                <div class="col-lg-12 subContent">
+                <div class="col-lg-12 sub_content">
                     <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
                     {% if posts.mediaUrl is not null %}
-                    <img class="img-fluid rounded-5 imgL" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    <img class="img-fluid rounded-5 img_left" src="upload/images/{{ asset(posts.mediaUrl) }}">
                     {% endif %}
                     <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
                 </div>
@@ -19,10 +19,10 @@
         {% else %}
         <div class="container-fluid pt-5 pb-5">
             <div class="row content">
-                <div class="col-lg-12 subContent">
+                <div class="col-lg-12 sub_content">
                     <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
                     {% if posts.mediaUrl is not null %}
-                    <img class="img-fluid rounded-5 imgR" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    <img class="img-fluid rounded-5 img_right" src="upload/images/{{ asset(posts.mediaUrl) }}">
                     {% endif %}
                     <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
                 </div>

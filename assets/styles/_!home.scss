@@ -1,13 +1,24 @@
-.titlesTop {
+#about_desc {
+    margin-top : 290px !important;
+    max-width: 80vw !important;
+    border-radius: 20px !important;
+}
+
+.titles_top {
     position: absolute;
     z-index: 1000;
     top: 7%;
     left: 50%;
     transform: translateX(-55%);
+    color: #0059C6!important;
 }
 
-.pagesSection {
-    margin-top: 200px;
+small {
+    background-color: hsla(0, 0%, 100%, 0.55)!important;
+}
+
+.pages_section {
+    margin-top:200px;
     background-size:contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -22,29 +33,35 @@
     background-color: hsla(0, 0%, 100%, 0.55);
     width: 100%;
     height: auto !important;
+    border-radius: 20px !important;
 }
 
-.imgL {
+.img_left {
     max-width: 1000px !important;
     height: auto !important;
     float: left;
     margin: 10px 20px 10px 0;
 }
 
-.imgR {
+.img_right {
     max-width: 1000px !important;
     height: auto !important;
     float: right;
     margin: 10px 20px 10px 0;
 }
 
-.subContent {
+.sub_content {
     height: 100%;
     padding: 20px 20px !important;
 }
 
-.subContent p {
+.sub_content p {
     text-align: left !important;
+}
+
+.sub_content #about_i {
+    color: #0059C6!important;
+font-size: 3rem !important;
 }
 
 @media (max-width: 1200px) { 
@@ -56,27 +73,35 @@
         padding-top: 200px;
     }
 
+    .titles_top {
+        top: 19%;
+    }
+
+    .sub_titles {
+        padding-top: 200px;
+    }
+
     .container-fluid {
         width: 90vw!important;
     }
 
-    .subContent {
+    .sub_content {
         height: auto;
     }
 
-    .subCcontent img {
+    .sub_content img {
         height: 50% !important;
         margin: 0 0 15px 0;
     }
-    .subContent p {
+    .sub_content p {
         text-align: center !important;
     }
 
-    .subContent h1 {
+    .sub_content h1 {
         padding-bottom: 0!important;
     }
 
-    .imgL {
+    .img_left {
         max-width: 80vw !important;
         height: auto !important;
         float: left;
@@ -84,11 +109,15 @@
         margin-right: 20px;
     }
     
-    .imgR {
+    .img_right {
         max-width: 80vw !important;
         height: auto !important;
         float: right;
         margin-left: 20px;
         margin-right: 20px;
     }
- }
+
+    .pages_section {
+        margin-top:410px;
+    }
+}
