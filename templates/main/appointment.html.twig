@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 <section class="pages_section" style="background-image: url('{{ asset("croixGrey.png") }}');">
-    <h1 class="titlesTop fs-italic fw-bolder text-center">Vos rendez-vous</h1>
+    <h1 class="titles_top fst-italic fw-bolder text-center">Vos rendez-vous</h1>
     <div class="container container-fluid pt-5 pb-5">
         <div class="row row content">
 
-            <div class="col-lg-12 subContent">
+            <div class="col-lg-12 sub_content">
                 {{ form_start(formulaire) }}
                 <div class="identity">
-                    <h2 class="text-center"> Informations Personnelles </h2>
+                    <h2 class="text-center sub_titles"> Informations Personnelles </h2>
                     <div class="row">
                         <div class="col-lg-2 pe-3 ps-3">{{ form_row(formulaire.Civilite) }}</div>
                         <div class="col-lg-4 pe-3 ps-3">{{ form_row(formulaire.Nom) }}</div>

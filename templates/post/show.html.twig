@@ -4,13 +4,13 @@
 {% block body %}
 
 <section class="pages_section" style="background-image: url('{{ asset('croixGrey.png') }}');">
-    <h1 class="titlesTop fst-italic fw-bolder text-center">Nos actualités</h1>
+    <h1 class="titles_top fst-italic fw-bolder text-center">Nos actualités</h1>
     <div class="container-fluid pt-5 pb-5">
         <div class="row content">
-            <div class="col-lg-12 subContent">
+            <div class="col-lg-12 sub_content">
                 <h1 class="pb-5 text-center">{{ post.title }}</h1> 
                 {% if post.mediaUrl %}
-                <img class="img-fluid rounded-5 imgL" src="{{ asset('upload/images/' ~ post.mediaUrl) }}">
+                <img class="img-fluid rounded-5 img_left" src="{{ asset('upload/images/' ~ post.mediaUrl) }}">
                 {% endif %}
                 <p>{{ post.content|raw }}</p>
             </div>
