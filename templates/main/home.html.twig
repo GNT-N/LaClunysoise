@@ -152,23 +152,23 @@
 </div>
 
 
+<!-- Supprimez l'ancien script -->
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function() {
+    // Sélectionnez les éléments
+    const titleDesc = document.getElementById("titleDesc");
+    const carouselExampleAutoplaying = document.getElementById("carouselExampleAutoplaying");
+    const carouselExampleControls = document.getElementById("carouselExampleControls");
+    const buttonsContainer = document.getElementById("buttonsContainer");
 
-        const titleDesc = document.getElementById("titleDesc");
-        const carouselExampleAutoplaying = document.getElementById("carouselExampleAutoplaying");
-        const carouselExampleControls = document.getElementById("carouselExampleControls");
-        const buttonsContainer = document.getElementById("buttonsContainer");
-        
-        setTimeout(function() {
-            titleDesc.classList.add("active");
-            carouselExampleAutoplaying.classList.add("active");
-            carouselExampleControls.classList.add("active");
-            buttonsContainer.classList.add("active");
-
-        }, 100);
-    });
+    // Ajoutez une classe pour déclencher les animations fadeIn
+    titleDesc.classList.add("animate-fade-in-right");
+    carouselExampleAutoplaying.classList.add("animate-fade-in-left");
+    carouselExampleControls.classList.add("animate-fade-in-left");
+    buttonsContainer.classList.add("animate-fade-in-right");
+  });
 </script>
+
 
 
 {% endblock %}

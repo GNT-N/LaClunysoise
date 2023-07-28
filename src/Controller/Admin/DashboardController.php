@@ -48,7 +48,8 @@ class DashboardController extends AbstractDashboardController
     {
         // Création d'un nouvel objet Dashboard et définition de son titre
         return Dashboard::new()
-            ->setTitle('La Clunysoise Administration'); 
+            ->setTitle('La Clunysoise Administration')
+            ->setFaviconPath('favicon.svg');
     }
 
         // Configuration des éléments de menu
