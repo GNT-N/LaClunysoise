@@ -10,12 +10,17 @@
 
         <div class="col-lg-6 d-flex justify-content-center align-items-center" id="home_description">
             <div>
-                <div id="titleDesc" class="d-flex flex-column justify-content-center align-items-center fade-in-left">
-                    <h1 class="display-4 fst-italic">La Clunysoise</h1>
+                <div id="title_desc" class="d-flex flex-column justify-content-center align-items-center fade-in-left">
+                    <h1 class="fst-italic">La Clunysoise</h1>
+                    <div class="row">
+                        <span class="col-lg-4 countText fw-bold d-block text-black pe-4 text-center"><span class="count fw-bold">45 </span><br> Urgences par jour</span>
+                        <span class="col-lg-4 countText fw-bold d-block text-black pe-4 text-center"><span class="count fw-bold">421 </span><br> Interventions</span>
+                        <span class="col-lg-4 countText fw-bold d-block text-black pe-4 text-center"><span class="count fw-bold">28 </span><br> Salarié</span>
+                    </div>
                     <p class="text-center ps-3 pe-3">L'entreprise « La Clunysoise » est une société d'ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis.La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d'interventions d'urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d'appel 15.</p>
                 </div>
 
-                <div id="buttonsContainer" class="d-flex row fade-in-left">
+                <div id="buttons_container" class="d-flex row fade-in-left">
 
                         <button type="button" class="btn bg-primary text-decoration-none">
                             <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/contact">Contactez Nous</a>
@@ -59,34 +64,13 @@
                 <div id="carouselExampleControls" class="carousel slide fade-in-right" data-mdb-ride="carousel"  data-bs-ride="carousel" data-bs-pause="false">
                     <div class="carousel-inner text-center" id="text_carousel">
                         <div class="carousel-item active" data-bs-interval="2500">
-                            
-                                <span class="countText fw-bold d-block text-black"><span class="count fw-bold">421 </span><br> Interventions</span>
-                            
+                            <span class="countText fw-bold d-block text-black"><span class="count fw-bold">5 </span><br> Ambulances</span>
                         </div>
                         <div class="carousel-item" data-bs-interval="2500">
-                            
-                                <span class="countText fw-bold d-block text-black"><span class="count fw-bold">45 </span><br> Urgences par jour</span>
-                            
+                            <span class="countText fw-bold d-block text-black"><span class="count fw-bold">10 </span><br> VSL</span>
                         </div>
                         <div class="carousel-item" data-bs-interval="2500">
-                            
-                                <span class="countText fw-bold d-block text-black"><span class="count fw-bold">28 </span><br> Salarié</span>
-                            
-                        </div>
-                        <div class="carousel-item" data-bs-interval="2500">
-                            
-                                <span class="countText fw-bold d-block text-black"><span class="count fw-bold">5 </span><br> Ambulances</span>
-                            
-                        </div>
-                        <div class="carousel-item" data-bs-interval="3250">
-                            
-                                <span class="countText fw-bold d-block text-black"><span class="count fw-bold">10 </span><br> VSL</span>
-                            
-                        </div>
-                        <div class="carousel-item" data-bs-interval="2500">
-                            
-                                <span class="countText fw-bold d-block text-black"><span class="count fw-bold">8 </span><br> Taxi</span>
-                            
+                            <span class="countText fw-bold d-block text-black"><span class="count fw-bold">8 </span><br> Taxi</span>
                         </div>
                     </div>
                 </div>
@@ -156,16 +140,16 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     // Sélectionnez les éléments
-    const titleDesc = document.getElementById("titleDesc");
+    const title_desc = document.getElementById("title_desc");
     const carouselExampleAutoplaying = document.getElementById("carouselExampleAutoplaying");
     const carouselExampleControls = document.getElementById("carouselExampleControls");
-    const buttonsContainer = document.getElementById("buttonsContainer");
+    const buttons_container = document.getElementById("buttons_container");
 
     // Ajoutez une classe pour déclencher les animations fadeIn
-    titleDesc.classList.add("animate-fade-in-right");
+    title_desc.classList.add("animate-fade-in-right");
     carouselExampleAutoplaying.classList.add("animate-fade-in-left");
     carouselExampleControls.classList.add("animate-fade-in-left");
-    buttonsContainer.classList.add("animate-fade-in-right");
+    buttons_container.classList.add("animate-fade-in-right");
   });
 </script>
 
