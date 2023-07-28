@@ -1,40 +1,9 @@
 {% extends 'base.html.twig' %}
-
-
 {% block body %}
-<section class="pagesSection" style="background-image: url('{{ asset("croixGrey.png") }}');">
-    <h1 class="titlesTop fst-italic fw-bolder text-center">Nous rejoindre<br><small class="fw-lighter">( formulaire de recrutement en bas de page )</small></h1>
-{% set counter = 0 %}
-{% for posts in post %}
-    {% if counter is divisible by(2) %}
-        <div class="container-fluid pt-5 pb-5">
-            <div class="row content">
-                <div class="col-lg-12 subContent">
-                    <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
-                    {% if posts.mediaUrl is not null %}
-                    <img class="img-fluid rounded-5 imgL" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                    {% endif %}
-                    <p>{{ posts.content|raw }}</p>
-                </div>
-            </div>
-        </div>
-        {% else %}
-        <div class="container-fluid pt-5 pb-5">
-            <div class="row content">
-                <div class="col-lg-12 subContent">
-                    <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
-                    {% if posts.mediaUrl is not null %}
-                    <img class="img-fluid rounded-5 imgR" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                    {% endif %}
-                    <p>{{ posts.content|raw }}</p>
-                </div>
-            </div>
-        </div>
-    {% endif %}
-    {% set counter = counter + 1 %}
-{% endfor %}
+<section class="pages_section" style="background-image: url('{{ asset("croixGrey.png") }}');">
+    <h1 class="titlesTop fst-italic fw-bolder text-center">Nous rejoindre</h1>
 
-    <div class="container-fluid pt-5 pb-5">
+        <div class="container-fluid pt-5 pb-5">
         <div class="row content">
             <div class="col-lg-6 mt-5 subContent text-center">
                 <a href="tel:+33385590487" class="nav-link p-0 text-body-secondary mt-5 d-inline-block">Tél : 03 85 59 04 87</a><br>
@@ -75,5 +44,36 @@
             </div>
         </div>
     </div>
+{% set counter = 0 %}
+{% for posts in post %}
+    {% if counter is divisible by(2) %}
+        <div class="container-fluid pt-5 pb-5">
+            <div class="row content">
+                <div class="col-lg-12 subContent">
+                    <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
+                    {% if posts.mediaUrl is not null %}
+                    <img class="img-fluid rounded-5 imgL" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    {% endif %}
+                    <p>{{ posts.content|raw }}</p>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="container-fluid pt-5 pb-5">
+            <div class="row content">
+                <div class="col-lg-12 subContent">
+                    <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
+                    {% if posts.mediaUrl is not null %}
+                    <img class="img-fluid rounded-5 imgR" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    {% endif %}
+                    <p>{{ posts.content|raw }}</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% set counter = counter + 1 %}
+{% endfor %}
+
+
 </section>
 {% endblock %}
