@@ -54,8 +54,8 @@
 }
 
 #homeDescription {
-    width: 50vw!important;
-    height: 100vh!important;
+    width: 50%!important;
+    height: 100%!important;
 }
 
 #titleDesc {
@@ -175,6 +175,11 @@
 
 #mobileIframe {
     display: none;
+}
+
+#diapo {
+    width: 50% !important;
+    height: 100%;
 }
 
 @media (max-width: 1199.98px) { 
