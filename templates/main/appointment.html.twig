@@ -10,9 +10,9 @@
             <div class="col-lg-12 subContent">
                 {{ form_start(formulaire) }}
                 <div class="identity">
-                    <h2 class="text-center"> Informations Personnelles </h2>
+                    <h2 class="text-center subTitles"> Informations Personnelles </h2>
                     <div class="row">
-                        <div class="col-lg-2 pe-3 ps-3">{{ form_row(formulaire.Civilite) }}</div>
+                        <div class="col-lg-2 pe-3">{{ form_row(formulaire.Civilite) }}</div>
                         <div class="col-lg-4 pe-3 ps-3">{{ form_row(formulaire.Nom) }}</div>
                         <div class="col-lg-4 pe-3 ps-3">{{ form_row(formulaire.Prenom) }}</div>
                     </div>
@@ -46,10 +46,12 @@
                         <div class="col-lg-6 pe-3 ps-3">{{ form_row(formulaire.Motif) }}</div>
                         <div class="col-lg-6 pe-3 ps-3">{{ form_row(formulaire.TypeEtablissement) }}</div>
                         <div class="col-lg-6 pe-3 ps-3 text-center">
+                            <h3 class="pt-4">Veuillez choisir votre position de transport</h3>
                             {{ form_label(formulaire.ModeTransport) }}
                             {{ form_widget(formulaire.ModeTransport) }}
                         </div>
                         <div class="col-lg-6 pe-3 ps-3 text-center">
+                            <h3 class="pt-4">Veuillez choisir entre aller simple et aller retour</h3>
                             {{ form_label(formulaire.Aller) }}
                             {{ form_widget(formulaire.Aller) }}
                         </div>

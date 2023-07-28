@@ -54,8 +54,8 @@
 }
 
 #homeDescription {
-    width: 50%!important;
-    height: 100%!important;
+    width: 50vw!important;
+    height: 100vh!important;
 }
 
 #titleDesc {
@@ -182,7 +182,7 @@
     height: 100%;
 }
 
-@media (max-width: 1199.98px) { 
+@media (max-width: 1200px) { 
     #homeDescription {
         width: 100vw !important;
         height: 100vh !important;

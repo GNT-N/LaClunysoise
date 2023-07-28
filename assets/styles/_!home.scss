@@ -48,9 +48,13 @@
 }
 
 @media (max-width: 1200px) { 
-    // .pagesSection {
-    //     background-size: auto;
-    // }
+    .titlesTop {
+        top: 19%;
+    }
+
+    .subTitles {
+        padding-top: 200px;
+    }
 
     .container-fluid {
         width: 90vw!important;

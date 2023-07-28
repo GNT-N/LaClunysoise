@@ -27,9 +27,6 @@ class AppointmentType extends AbstractType
                 'expanded' => true,
                 'label' => ' ',
                 'label_html' => true, // Permet d'utiliser des balises HTML dans le label
-                'choice_attr' => function ($choice, $key, $value) {
-                    return ['label' => strip_tags($choice, '<i>')];
-                },
             ])
             ->add('Nom', TextType::class, [
                 'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Nom *'],
@@ -117,27 +114,21 @@ class AppointmentType extends AbstractType
 
             ->add('ModeTransport', ChoiceType::class, [
                 'choices' => [
-                    '<i class="fas fa-chair"></i> Assis' => 'assis',
-                    '<i class="fas fa-bed"></i> Allongé' => 'allongé',
+                    '<div class="appointmentBtn col-lg-6 pe-3 ps-3 me-4 text-center"><img src="assis.png"></div>' => 'assis',
+                    '<div class="appointmentBtn col-lg-6 pe-3 ps-3 me-4 text-center"><img src="allonge.png"></div>' => 'allongé',
                 ],
                 'expanded' => true,
                 'label' => ' ',
                 'label_html' => true,
-                'choice_attr' => function ($choice, $key, $value) {
-                    return ['label' => strip_tags($choice, '<i>')];
-                },
             ])
             ->add('Aller', ChoiceType::class, [
                 'choices' => [
-                    '<i class="fas fa-plane"></i> Aller simple' => 'aller_simple',
-                    '<i class="fas fa-exchange-alt"></i> Aller-retour' => 'aller_retour',
+                    '<div class="appointmentBtn col-lg-6 pe-3 ps-3 me-4 text-center"><img src="aller.png"></div>' => 'aller_simple',
+                    '<div class="appointmentBtn col-lg-6 pe-3 ps-3 me-4 text-center"><img src="aller-retour.png"></div>' => 'aller_retour',
                 ],
                 'expanded' => true,
                 'label' => ' ',
                 'label_html' => true,
-                'choice_attr' => function ($choice, $key, $value) {
-                    return ['label' => strip_tags($choice, '<i>')];
-                },
             ])
 
             ->add('content', TextareaType::class, [

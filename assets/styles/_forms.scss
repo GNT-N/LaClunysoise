@@ -1,20 +1,4 @@
 // ---------- Margin check box ----------
-#appointment_Aller_0 {
-    margin: 10px!important;
-  }
-
-  #appointment_Aller_1 {
-    margin: 10px!important;
-  }
-
-#appointment_ModeTransport_0 {
-    margin: 10px!important;
-}
-
-#appointment_ModeTransport_1 {
-    margin: 10px!important;
-}
-
 #appointment_Civilite_0 {
     margin: 10px!important;
 }
@@ -34,3 +18,34 @@
 .contact form {
     margin-top: 2rem!important;
 }
+
+#appointment_ModeTransport input[type=radio],
+#appointment_Aller input[type=radio],
+#appointment_Civilite input[type=radio] {
+    width: 20px;
+    height: 20px;
+ }
+
+.appointmentBtn {
+    width: 155px !important;
+    height: 155px !important;
+}
+
+.appointmentBtn img{
+    width: 100% !important;
+    height: auto !important;
+}
+
+@media (max-width: 1200px) { 
+    .appointmentBtn {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    #appointment_ModeTransport input[type=radio],
+    #appointment_Aller input[type=radio],
+    #appointment_Civilite input[type=radio] {
+        width: 35px;
+        height: 35px;
+ }
+ }
