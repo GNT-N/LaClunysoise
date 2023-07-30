@@ -6,7 +6,7 @@
 
 #home {
     --bs-gutter-x: 0!important;
-    background-color: #ffffff;
+    background-color: hsla(0, 0%, 100%, 0.90);  
     max-width: 100vw;
     height: 100vh!important;
 }
@@ -137,7 +137,7 @@
     height: 15vh!important;
 }
 
-.grid_gallery {
+main {
     background-size:contain;
     background-repeat: no-repeat;
     background-position: center center;

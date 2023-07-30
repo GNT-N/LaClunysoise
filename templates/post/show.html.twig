@@ -10,12 +10,29 @@
             <div class="col-lg-12 sub_content">
                 <h1 class="pb-5 text-center">{{ post.title }}</h1> 
                 {% if post.mediaUrl %}
-                <img class="img-fluid rounded-5 img_left" src="{{ asset('upload/images/' ~ post.mediaUrl) }}">
+                <img class="img-fluid rounded-5 img_left fade-in-left" id="show_img" src="{{ asset('upload/images/' ~ post.mediaUrl) }}">
                 {% endif %}
-                <p>{{ post.content|raw }}</p>
+                <div class="fade-in-right" id="show_content">{{ post.content|raw }}</div>
             </div>
         </div>
     </div>
 </section>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Sélectionnez les éléments
+        
+        const show_img = document.getElementById("show_img");
+        const show_content = document.getElementById("show_content");
+
+        // Ajoutez une classe pour déclencher les animations fadeIn
+
+        show_img.classList.add("animate-fade-in-left");
+        show_content.classList.add("animate-fade-in-right");
+        
+
+    });
+</script>
 
 {% endblock %}

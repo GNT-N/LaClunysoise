@@ -38,14 +38,14 @@ small {
 
 .img_left {
     max-width: 1000px !important;
-    height: auto !important;
+    max-height: 800px !important;
     float: left;
     margin: 10px 20px 10px 0;
 }
 
 .img_right {
     max-width: 1000px !important;
-    height: auto !important;
+    max-height: 800px !important;
     float: right;
     margin: 10px 20px 10px 0;
 }
@@ -116,4 +116,5 @@ font-size: 3rem !important;
     .pages_section {
         margin-top:410px;
     }
+    
 }
