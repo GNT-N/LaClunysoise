@@ -59,7 +59,7 @@ class AppointmentController extends AbstractController
 
             if ($time < $startHour || $time > $endHour) {
                 // Heure de rendez-vous en dehors de la plage horaire autorisée, afficher un message d'erreur
-                $this->addFlash('error', 'Les rendez-vous ne sont autorisés qu\'entre 9h et 18h.');
+                $this->addFlash('error', 'Les rendez-vous ne sont autorisés qu\'entre 6h et 20h.');
                 return $this->redirectToRoute('app_appointment');
             }
 

@@ -4,38 +4,38 @@
     <h1 class="titles_top fst-italic fw-bolder text-center">Notre identité</h1>
 
     <div class="container-fluid fade-in-up pt-5 pb-5" id="about_desc">
-    <div class="content">
-        <div class="row col-lg-12 sub_content">
-            <div class="col-12">
-                <h2 class="text-center">Nos engagements</h2></br>
-                <h4 class="text-center">Nous vous proposons des transports médicalisés sur Cluny et ses environs pour tous vos besoins et transferts.</h4></br>
-                <p>En effet, dans différentes situations (accidents ou hospitalisation urgente mais encore transport médical sur rendez - vous), les particuliers peuvent bénéficier de nos services.</p>
-                <p>Sur chacune de nos prestations et nos véhicules, nous garantissons :</p>
-            </div>
-            <div class="col-lg-3 col-sm-12 ps-2 pe-2">
-                <i aria-hidden="true" class="fas fa-snowflake" id="about_i"></i>
-                <h4>Le confort et l’hygiène :</h4>
-                <p>nos ambulances sont climatisées, issues de la dernière génération et désinfectées quotidiennement.</p>
-            </div>
+        <div class="content">
+            <div class="row col-lg-12 sub_content">
+                <div class="col-12">
+                    <h2 class="text-center">Nos engagements</h2></br>
+                    <h4 class="text-center">Nous vous proposons des transports médicalisés sur Cluny et ses environs pour tous vos besoins et transferts.</h4></br>
+                    <p>En effet, dans différentes situations (accidents ou hospitalisation urgente mais encore transport médical sur rendez - vous), les particuliers peuvent bénéficier de nos services.</p>
+                    <p>Sur chacune de nos prestations et nos véhicules, nous garantissons :</p>
+                </div>
+                <div class="col-lg-3 col-sm-12 ps-2 pe-2">
+                    <i aria-hidden="true" class="fas fa-snowflake" id="about_i"></i>
+                    <h4>Le confort et l’hygiène :</h4>
+                    <p>nos ambulances sont climatisées, issues de la dernière génération et désinfectées quotidiennement.</p>
+                </div>
 
-            <div class="col-lg-3 col-sm-12 ps-2 pe-2">
-                <i aria-hidden="true" class="fas fa-user-nurse" id="about_i"></i>
-                <h4>Le professionnalisme :</h4>
-                <p>nos ambulanciers sont tous diplômés d’État et mettront leur savoir-faire à votre disposition.</p>
-            </div>
+                <div class="col-lg-3 col-sm-12 ps-2 pe-2">
+                    <i aria-hidden="true" class="fas fa-user-nurse" id="about_i"></i>
+                    <h4>Le professionnalisme :</h4>
+                    <p>nos ambulanciers et chauffeur sont tous diplômés d’État et mettront leur savoir-faire à votre disposition.</p>
+                </div>
 
-            <div class="col-lg-3 col-sm-12 ps-2 pe-2">
-                <i aria-hidden="true" class="fas fa-shield-virus" id="about_i"></i>
-                <h4>La sécurité :</h4>
-                <p>nos véhicules sont équipés du matériel de premier secours et de réanimation dernier cri. De plus, nous disposons d’oxygène à bord.</p>
-            </div>
+                <div class="col-lg-3 col-sm-12 ps-2 pe-2">
+                    <i aria-hidden="true" class="fas fa-shield-virus" id="about_i"></i>
+                    <h4>La sécurité :</h4>
+                    <p>nos véhicules sont équipés d’oxygène ainsi que du matériel de premier secours et de réanimation dernier cri. De plus, nous disposons de bonne humeur à bord.</p>
+                </div>
 
-            <div class="col-lg-3 col-sm-12 ps-2 pe-2">
-                <i aria-hidden="true" class="fas fa-stopwatch" id="about_i"></i>
-                <h4>Une intervention 7j/7 et 24h/24 :</h4>
-                <p>nos véhicules sont disponible tous les jours à n'importe quel moment.</p>
+                <div class="col-lg-3 col-sm-12 ps-2 pe-2">
+                    <i aria-hidden="true" class="fas fa-stopwatch" id="about_i"></i>
+                    <h4>Une intervention 7j/7 et 24h/24 :</h4>
+                    <p>nos véhicules sont disponible tous les jours à n'importe quel moment.</p>
+                </div>
             </div>
-        </div>
         </div>
     </div>
     {% set counter = 0 %}
@@ -44,11 +44,11 @@
             <div class="container-fluid pt-5 pb-5">
                 <div class="row content">
                     <div class="col-lg-12 sub_content">
-                        <h1 class="fw-bolder pb-5 text-center">{{ posts.title }}</h1> 
+                        <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
                         {% if posts.mediaUrl is not null %}
                         <img class="img-fluid rounded-5 img_left fade-in-left" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
                         {% endif %}
-                        <p>{{ posts.content|raw }}</p>
+                        <div class="fade-in-right" id="about_content">{{ posts.content|raw }}</div>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                         {% if posts.mediaUrl is not null %}
                         <img class="img-fluid rounded-5 img_right fade-in-right" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
                         {% endif %}
-                        <p >{{ posts.content|raw }}</p>
+                        <div class="fade-in-right" id="about_content">{{ posts.content|raw }}</div>
                     </div>
                 </div>
             </div>
@@ -72,11 +72,13 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+
         const about_img = document.getElementById("about_img");
-        const about_desc = document.getElementById("about_desc");
+        const about_content = document.getElementById("about_content");
+
 
         about_img.classList.add("animate-fade-in-left");
-        about_desc.classList.add("animate-fade-in-up");
+        about_content.classList.add("animate-fade-in-right");
     });
 </script>
 

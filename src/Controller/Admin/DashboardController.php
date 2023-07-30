@@ -50,6 +50,7 @@ class DashboardController extends AbstractDashboardController
         return Dashboard::new()
             ->setTitle('La Clunysoise Administration')
             ->setFaviconPath('favicon.svg');
+
     }
 
         // Configuration des éléments de menu

@@ -8,11 +8,11 @@
         <div class="container-fluid pt-5 pb-5">
             <div class="row content">
                 <div class="col-lg-12 sub_content">
-                    <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
+                    <h1 class="pb-5 text-center fade-in-up" id="support_title">{{ posts.title }}</h1> 
                     {% if posts.mediaUrl is not null %}
-                    <img class="img-fluid rounded-5 img_left" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    <img class="img-fluid rounded-5 img_left fade-in-left" id="support_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
                     {% endif %}
-                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                    <div class="fade-in-right" id="support_content">{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</div>
                 </div>
             </div>
         </div>
@@ -33,4 +33,19 @@
     {% set counter = counter + 1 %}
 {% endfor %}
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Sélectionnez les éléments
+        const support_title = document.getElementById("support_title");
+        const support_img = document.getElementById("support_img");
+        const support_content = document.getElementById("support_content");
+
+        // Ajoutez une classe pour déclencher les animations fadeIn
+        support_title.classList.add("animate-fade-in-up");
+        support_img.classList.add("animate-fade-in-left");
+        support_content.classList.add("animate-fade-in-right");
+        
+
+    });
+</script>
 {% endblock %}
