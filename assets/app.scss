@@ -21,6 +21,30 @@
     * {
         font-size: 1.6rem;
     }
+
+    .fade-in-left {
+      opacity: 1!important;
+      transform: translateX(0)!important;
+      animation: none!important;
+    }
+
+    .fade-in-right {
+      opacity: 1!important;
+      transform: translateX(0)!important;
+      animation: none!important;
+    }
+
+    .fade-in-up {
+      opacity: 1!important;
+      transform: translateX(0)!important;
+      animation: none!important;
+    }
+
+    .fade-in-down {
+      opacity: 1!important;
+      transform: translateX(0)!important;
+      animation: none!important;
+    }
 }
 
 // ---------- animation gauche ----------
@@ -38,7 +62,7 @@
   .fade-in-left {
     opacity: 0;
     transform: translateX(-2000px);
-    animation: fadeInLeft 2s ease-in-out;
+    animation: fadeInLeft 1s ease-in-out;
     animation-fill-mode: forwards;
   }
   
@@ -57,7 +81,7 @@
   .fade-in-right {
     opacity: 0;
     transform: translateX(2000px);
-    animation: fadeInRight 2s ease-in-out;
+    animation: fadeInRight 1s ease-in-out;
     animation-fill-mode: forwards;
   }
   
@@ -76,7 +100,7 @@
   .fade-in-up {
     opacity: 0;
     transform: translateY(-2000px);
-    animation: fadeInUp 2s ease-in-out;
+    animation: fadeInUp 1s ease-in-out;
     animation-fill-mode: forwards;
   }
   
@@ -95,6 +119,6 @@
   .fade-in-down {
     opacity: 0;
     transform: translateY(2000px);
-    animation: fadeInDown 2s ease-in-out;
+    animation: fadeInDown 1s ease-in-out;
     animation-fill-mode: forwards;
   }
