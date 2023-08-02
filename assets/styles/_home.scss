@@ -197,8 +197,8 @@ main {
         display: none;
     }
 
-    #buttons button {
-        margin: 40px 380px!important;
+    #buttons_container button {
+        width: 100% !important;
     }
 
     #faArrow i  {
