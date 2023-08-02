@@ -49,6 +49,17 @@ class JoinController extends AbstractController
             $file = $data['Fichier'];
             $content = $data['content'];
 
+            // // Vérifier si le champ "Fichier" est un objet UploadedFile
+            // if ($file instanceof UploadedFile) {
+            //     // Récupérer le type MIME du fichier
+            //     $fileMimeType = $file->getClientMimeType();
+
+            //     // Vérifier qu'il s'agit bien d'un fichier PDF valide
+            //     if ($fileMimeType !== 'application/pdf') {
+            //         $this->addFlash('error', 'Veuillez télécharger un document PDF valide.');
+            //         return $this->redirectToRoute('app_join');
+            //     }}
+
             $message = sprintf(
 
                 "Nouveau Candidat(e) ,\n\nCivilité: %s\n\nNom: %s\nPrénom: %s\n\nTéléphone: %s\nAdresse e-mail: %s\n\nCv: %s\n\nCommentaires: \n%s",

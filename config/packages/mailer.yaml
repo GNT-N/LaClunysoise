@@ -1,3 +1,4 @@
 framework:
     mailer:
         dsn: '%env(MAILER_DSN)%'
+        # sender_address: 'votre_email@example.com'

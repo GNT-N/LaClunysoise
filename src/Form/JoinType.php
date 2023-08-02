@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\File;
 
 
 class JoinType extends AbstractType
@@ -50,6 +51,14 @@ class JoinType extends AbstractType
                 'label' => ' ',
                 'required' => false,
                 'attr' => ['class' => 'form-control-file mt-4 border-black'],
+                'constraints' => [
+                    new File([
+                        'mimeTypes' => [
+                            'application/pdf', // Autoriser uniquement les fichiers PDF
+                        ],
+                        'mimeTypesMessage' => 'Veuillez télécharger un document PDF.',
+                    ]),
+                ],
             ])
             ->add('envoyer', SubmitType::class, [
             'attr' => ['class' => 'form-control mt-4 btn btn-primary'],
