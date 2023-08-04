@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 class ContactType extends AbstractType
 {
@@ -35,7 +36,7 @@ class ContactType extends AbstractType
                 'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Téléphone'],
                 'label' => ' ',
             ])
-            ->add('email', TextType::class, [
+            ->add('email', EmailType::class, [
                 'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'email'],
                 'label' => ' ',
             ])
