@@ -23,7 +23,7 @@ class AppointmentController extends AbstractController
 
             $data = $form->getData();
 
-            $sexe = $data['Civilite'];
+            $gender = $data['Civilite'];
             $lastname = $data['Nom'];
             $firstname = $data['Prenom'];
             $phone = $data['Telephone'];
@@ -94,7 +94,7 @@ class AppointmentController extends AbstractController
                 \n\nCommentaires : \n%s
                 ",
 
-                $sexe,
+                $gender,
 
                 $lastname,
                 $firstname,

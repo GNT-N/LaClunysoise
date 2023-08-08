@@ -23,7 +23,7 @@ class ContactController extends AbstractController
 
             $data = $form->getData();
 
-            $sexe = $data['Civilite'];
+            $gender = $data['Civilite'];
             $lastname = $data['Nom'];
             $firstname = $data['Prenom'];
             $phone = $data['Telephone'];
@@ -36,7 +36,7 @@ class ContactController extends AbstractController
                 "Nouveau message ,\n\nObject: %s\n\nCivilité: %s\n\nNom: %s\nPrénom: %s\n\nTéléphone: %s\nAdresse e-mail: %s\n\nCommentaires: \n%s",
 
                 $subject,
-                $sexe,
+                $gender,
                 $lastname,
                 $firstname,
                 $phone,

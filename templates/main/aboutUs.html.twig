@@ -38,6 +38,8 @@
             </div>
         </div>
     </div>
+
+    {# Post #}
     {% set counter = 0 %}
     {% for posts in post %}
         {% if counter is divisible by(2) %}
@@ -69,17 +71,4 @@
         {% set counter = counter + 1 %}
     {% endfor %}
 </section>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-
-        const about_img = document.getElementById("about_img");
-        const about_content = document.getElementById("about_content");
-
-
-        about_img.classList.add("animate-fade-in-left");
-        about_content.classList.add("animate-fade-in-right");
-    });
-</script>
-
 {% endblock %}
