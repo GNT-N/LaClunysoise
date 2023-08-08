@@ -189,6 +189,10 @@ main {
         position: relative;
     }
 
+    #countContainer {
+        display: none !important;
+    }
+
     #carouselExampleAutoplaying {
         display: none !important;
     }

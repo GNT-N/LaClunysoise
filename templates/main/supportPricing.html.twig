@@ -3,7 +3,7 @@
 {% set counter = 0 %}
 {% for posts in post %}
     {% if counter is divisible by(2) %}
-    <section class="pages_section" style="background-image: url('{{ asset("croixGrey.png") }}');">
+    <section class="pages_section" style="background-image: url('{{ asset("background.png") }}');">
         <h1 class="titles_top fst-italic fw-bolder text-center">Prise en charge - Tarification</h1>
         <div class="container-fluid pt-5 pb-5">
             <div class="row content">
@@ -29,23 +29,4 @@
             </div>
         </div>
     </section>
-    {% endif %}
-    {% set counter = counter + 1 %}
-{% endfor %}
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Sélectionnez les éléments
-        const support_title = document.getElementById("support_title");
-        const support_img = document.getElementById("support_img");
-        const support_content = document.getElementById("support_content");
-
-        // Ajoutez une classe pour déclencher les animations fadeIn
-        support_title.classList.add("animate-fade-in-up");
-        support_img.classList.add("animate-fade-in-left");
-        support_content.classList.add("animate-fade-in-right");
-        
-
-    });
-</script>
 {% endblock %}
