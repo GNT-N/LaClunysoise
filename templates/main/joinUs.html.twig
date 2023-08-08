@@ -74,17 +74,5 @@
     {% endif %}
     {% set counter = counter + 1 %}
 {% endfor %}
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Sélectionnez les éléments
-        const join_post = document.getElementById("join_post");
-        const join_form = document.getElementById("join_form");
-
-        // Ajoutez une classe pour déclencher les animations fadeIn
-        join_post.classList.add("animate-fade-in-up");
-        join_form.classList.add("animate-fade-in-up");
-    });
-</script>
 </section>
 {% endblock %}

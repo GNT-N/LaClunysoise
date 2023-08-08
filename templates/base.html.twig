@@ -16,9 +16,11 @@
         {% endblock %}
     </head>
 
-    {{ include("header.html.twig") }}
     <body>
+        {{ include("header.html.twig") }}
         {% block body %}
+
+
         <script src="{{ asset('path/to/tinymce/tinymce.min.js') }}"></script>
         <script>
             tinymce.init({
@@ -26,7 +28,6 @@
             });
         </script>
         {% endblock %}
+        {{ include("footer.html.twig") }}
     </body>
-    {{ include("footer.html.twig") }}
-    
 </html>
