@@ -182,6 +182,11 @@ main {
     height: 100%;
 }
 
+#desktop_iframe {
+    width: 90%;
+    margin-bottom: 50px !important;
+}
+
 @media (max-width: 1200px) { 
     #home_description {
         width: 100vw !important;
