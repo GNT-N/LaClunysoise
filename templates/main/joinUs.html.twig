@@ -33,6 +33,10 @@
                         {{ form_row(formulaire.Fichier) }}
                         </div>
                     </div>
+                    <div class="col-lg-12 d-flex justify-content-center ps-3 pe-3 text-center">
+                        <div class="p-3">{{ form_widget(formulaire.agreement) }}</div>
+                        <div class="p-3">{{ form_label(formulaire.agreement) }}</div>
+                    </div>
                     <div class="col-lg-12 ps-3 pe-3">
                         {{ form_row(formulaire.envoyer) }}
                     </div>

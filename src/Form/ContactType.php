@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class ContactType extends AbstractType
 {
@@ -53,6 +54,11 @@ class ContactType extends AbstractType
             ->add('content', TextareaType::class, [
                 'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Contenu'],
                 'label' => ' ',
+                'required' => true,
+            ])
+            ->add('agreement', CheckboxType::class, [
+                'attr' => ['class' => 'mt-4 border-black'],
+                'label' => 'J\'autorise l\'utilisation des données transmises via ce formulaire exclusivement aux fins de traitement de ma demande et conformément à la politique de confidentialité en vigueur.',
                 'required' => true,
             ])
             

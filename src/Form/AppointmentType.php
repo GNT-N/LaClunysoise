@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class AppointmentType extends AbstractType
 {
@@ -149,6 +150,11 @@ class AppointmentType extends AbstractType
                 'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Commentaires éventuels'],
                 'required' => false,
                 'label' => ' ',
+            ])
+            ->add('agreement', CheckboxType::class, [
+                'attr' => ['class' => 'mt-4 border-black'],
+                'label' => 'J\'autorise l\'utilisation des données transmises via ce formulaire exclusivement aux fins de traitement de ma demande et conformément à la politique de confidentialité en vigueur.',
+                'required' => true,
             ])
             ->add('envoyer', SubmitType::class, [
                 'attr' => ['class' => 'form-control btn btn-primary'],

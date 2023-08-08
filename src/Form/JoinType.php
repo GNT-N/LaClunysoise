@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 
 class JoinType extends AbstractType
@@ -65,6 +66,11 @@ class JoinType extends AbstractType
                         'mimeTypesMessage' => 'Veuillez télécharger un document PDF.',
                     ]),
                 ],
+            ])
+            ->add('agreement', CheckboxType::class, [
+                'attr' => ['class' => 'form-checkbox mt-4 border-black'],
+                'label' => 'J\'autorise l\'utilisation des données transmises via ce formulaire exclusivement aux fins de traitement de ma demande et conformément à la politique de confidentialité en vigueur.',
+                'required' => true,
             ])
             ->add('envoyer', SubmitType::class, [
             'attr' => ['class' => 'form-control mt-4 btn btn-primary'],
