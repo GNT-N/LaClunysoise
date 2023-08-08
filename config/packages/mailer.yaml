@@ -2,3 +2,9 @@ framework:
     mailer:
         dsn: '%env(MAILER_DSN)%'
         # sender_address: 'votre_email@example.com'
+
+# when@dev:
+#     framework:
+#         mailer:
+#             envelope:
+#                 recipients: ['youremail@example.com']
