@@ -43,8 +43,8 @@
                 </div>
                 {% endfor %}
 
-                {% for flashMessage in app.flashes('success') %}
-                <div class="alert alert-success m-5">
+                {% for flashMessage in app.flashes('danger') %}
+                <div class="alert alert-danger m-5">
                     {{ flashMessage }}
                 </div>
                 {% endfor %}

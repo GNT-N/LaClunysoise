@@ -63,6 +63,11 @@ class AppointmentController extends AbstractController
                 return $this->redirectToRoute('app_appointment');
             }
 
+            // if ((empty($email) && is_null($email)) || (empty($content) && is_null($content)) || (empty($date) && is_null($date)) )  {
+            //     $this->addFlash('danger', 'Les champs du formulaire sont obligatoires.');
+            //     return $this->redirectToRoute('app_contact');
+            // }
+
             $message = sprintf(
 
                 "Nouvelle demande de rendez-vous :

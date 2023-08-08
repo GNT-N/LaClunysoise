@@ -31,6 +31,12 @@ class ContactController extends AbstractController
             $subject = $data['sujet'];
             $content = $data['content'];
 
+            if ((empty($email) && is_null($email)) || (empty($content) && is_null($content))) {
+                $this->addFlash('danger', 'Les champs du formulaire sont obligatoires.');
+                return $this->redirectToRoute('app_contact');
+            }
+            
+
             $message = sprintf(
 
                 "Nouveau message ,\n\nObject: %s\n\nCivilité: %s\n\nNom: %s\nPrénom: %s\n\nTéléphone: %s\nAdresse e-mail: %s\n\nCommentaires: \n%s",
