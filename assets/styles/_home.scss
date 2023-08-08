@@ -98,7 +98,7 @@
     height: 400px!important;
     overflow: hidden;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     position: relative;
 }
 
@@ -107,7 +107,7 @@
     height: 400px!important;
     overflow: hidden;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     position: relative;
 }
 
@@ -140,7 +140,7 @@
 main {
     background-size:contain;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     background-attachment: fixed;
 }
 
@@ -164,7 +164,7 @@ main {
   
 .box-image {
     background-size:cover;
-    background-position: center center;
+    background-position: center;
     margin: 35px;
     border-radius: 25px;
 }
