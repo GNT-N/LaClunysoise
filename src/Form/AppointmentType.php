@@ -26,35 +26,43 @@ class AppointmentType extends AbstractType
                 ],
                 'expanded' => true,
                 'label' => ' ',
-                'label_html' => true, // Permet d'utiliser des balises HTML dans le label
+                'label_html' => true,
+                'required' => true,
             ])
             ->add('Nom', TextType::class, [
                 'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Nom *'],
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('Prenom', TextType::class, [
                 'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Prénom *'],
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('Telephone', TextType::class, [
                 'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Téléphone *'],
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('email', EmailType::class, [
                 'attr' => ['class' => 'form-control border-black', 'placeholder' => 'email *'],
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('Rue', TextType::class, [
                 'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Rue *'],
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('Ville', TextType::class, [
                 'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Ville *'],
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('Postcode', TextType::class, [
                 'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Code Postal *'],
                 'label' => ' ',
+                'required' => true,
             ])
 
 
@@ -64,12 +72,14 @@ class AppointmentType extends AbstractType
                 'input'  => 'datetime_immutable',
                 'widget' => 'single_text',
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('HeureRendezVous', TimeType::class, [
                 'attr' => ['class' => 'form-control border-black text-center','placeholder' => 'Heure du rendez-vous',],
                 'input'  => 'datetime',
                 'widget' => 'single_text',
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('DureeEstimee', TimeType::class, [
                 'attr' => ['class' => 'form-control border-black text-center','placeholder' => 'Durée estimée du rendez-vous'],
@@ -83,6 +93,7 @@ class AppointmentType extends AbstractType
             ->add('LieuxRendezVous', TextType::class, [
                 'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Lieux du rendez-vous *'],
                 'label' => ' ',
+                'required' => true,
             ])
 
             ->add('TypeEtablissement', ChoiceType::class, [
@@ -110,6 +121,7 @@ class AppointmentType extends AbstractType
                 ],
                 'attr' => ['class' => 'form-control border-black form-select'],
                 'label' => ' ',
+                'required' => true,
             ])
 
             ->add('ModeTransport', ChoiceType::class, [
@@ -120,6 +132,7 @@ class AppointmentType extends AbstractType
                 'expanded' => true,
                 'label' => ' ',
                 'label_html' => true,
+                'required' => true,
             ])
             ->add('Aller', ChoiceType::class, [
                 'choices' => [
@@ -129,6 +142,7 @@ class AppointmentType extends AbstractType
                 'expanded' => true,
                 'label' => ' ',
                 'label_html' => true,
+                'required' => true,
             ])
 
             ->add('content', TextareaType::class, [

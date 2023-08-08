@@ -26,35 +26,41 @@ class JoinType extends AbstractType
                 ],
                 'attr' => ['class' => 'form-control mt-4 border-black form-select'],
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('Nom',TextType::class, [
                 'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Nom *'],
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('Prenom', TextType::class, [
                 'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Prénom *'],
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('Telephone', TextType::class, [
                 'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Téléphone *'],
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('email', EmailType::class, [
                 'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'email *'],
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('content', TextareaType::class, [
                 'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Contenu *'],
                 'label' => ' ',
+                'required' => true,
             ])
             ->add('Fichier', FileType::class, [
                 'label' => ' ',
-                'required' => false,
+                'required' => true,
                 'attr' => ['class' => 'form-control-file mt-4 border-black'],
                 'constraints' => [
                     new File([
                         'mimeTypes' => [
-                            'application/pdf', // Autoriser uniquement les fichiers PDF
+                            'application/pdf',
                         ],
                         'mimeTypesMessage' => 'Veuillez télécharger un document PDF.',
                     ]),
