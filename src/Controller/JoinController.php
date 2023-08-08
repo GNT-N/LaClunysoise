@@ -41,7 +41,7 @@ class JoinController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // Récupérer les données du formulaire
             $data = $form->getData();
-            $sexe = $data['Civilite'];
+            $gender = $data['Civilite'];
             $lastname = $data['Nom'];
             $firstname = $data['Prenom'];
             $phone = $data['Telephone'];
@@ -58,7 +58,7 @@ class JoinController extends AbstractController
 
                 "Nouveau Candidat(e) ,\n\nCivilité: %s\n\nNom: %s\nPrénom: %s\n\nTéléphone: %s\nAdresse e-mail: %s\n\nCv: %s\n\nCommentaires: \n%s",
 
-                $sexe,
+                $gender,
                 $lastname,
                 $firstname,
                 $phone,
