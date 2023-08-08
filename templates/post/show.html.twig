@@ -3,7 +3,7 @@
 
 {% block body %}
 
-<section class="pages_section" style="background-image: url('{{ asset('croix-bleu.png') }}');">
+<section class="pages_section" style="background-image: url('{{ asset('croixGrey.png') }}');">
     <h1 class="titles_top fst-italic fw-bolder text-center">Nos actualités</h1>
     <div class="container-fluid pt-5 pb-5">
         <div class="row content">
@@ -18,21 +18,5 @@
     </div>
 </section>
 
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Sélectionnez les éléments
-        
-        const show_img = document.getElementById("show_img");
-        const show_content = document.getElementById("show_content");
-
-        // Ajoutez une classe pour déclencher les animations fadeIn
-
-        show_img.classList.add("animate-fade-in-left");
-        show_content.classList.add("animate-fade-in-right");
-        
-
-    });
-</script>
 
 {% endblock %}
