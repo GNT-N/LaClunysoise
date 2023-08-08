@@ -36,6 +36,10 @@
     height: auto !important;
 }
 
+#contact_envoyer, #appointment_envoyer {
+    --bs-btn-padding-y: 1.4rem !important;
+}
+
 @media (max-width: 1200px) { 
     .appointmentBtn {
         width: 200px !important;

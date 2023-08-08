@@ -1,52 +1,52 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<section class="pages_section" style="background-image: url('{{ asset("croixGrey.png") }}');">
+<section class="pages_section" style="background-image: url('{{ asset("background.png") }}');">
     <h1 class="titles_top fst-italic fw-bolder text-center">Contact</h1>
     <div class="container-fluid pt-5 pb-5">
-        <div class="row content text-center">
-            <div class="col-12 ">
-                <a href="tel:+33385590487" class="nav-link p-0 text-body-secondary mt-2 d-inline-block ps-5 pe-5">Tél : 03 85 59 04 87</a>
-                <a href="tel:+33677658774" class="nav-link p-0 text-body-secondary mt-2 d-inline-block ps-5 pe-5">Tél : 06 77 65 87 74</a><br>
-                <a href="geo:0,0?q=7+Avn.Pierre+le+Vénérable,71250+Cluny" class="nav-link p-0 text-body-secondary mt-3 d-inline-block">7 Av. Pierre le Vénérable, 71250 Cluny</a>
-            </div>
+        <div class="row content">
             <div class="col-lg-6 mt-5 sub_content text-center">
-                <iframe class="rounded-5 mt-2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2749.5379384110047!2d4.652024377010696!3d46.43803726793772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f30aeb8182f371%3A0xbf3199329fef4a95!2sLA%20CLUNYSOISE%20AMBULANCES%20ET%20TAXIS!5e0!3m2!1sfr!2sfr!4v1689871120391!5m2!1sfr!2sfr" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="col-lg-6 mt-3 sub_content">
-                {{ form_start(formulaire) }}
-                    <div>
-                        <div class="row">
-                            <div class="col-lg-2 ps-3 pe-3">{{ form_row(formulaire.Civilite) }}</div>
-                            <div class="col-lg-5 ps-3 pe-3">{{ form_row(formulaire.Nom) }}</div>
-                            <div class="col-lg-5 ps-3 pe-3">{{ form_row(formulaire.Prenom) }}</div>
-                        </div>
+                <h2></h2>
+                <a href="tel:+33385590487" class="nav-link p-0 text-body-secondary mt-5 d-inline-block">Tél : 03 85 59 04 87</a><br>
+                <a href="tel:+33677658774" class="nav-link p-0 text-body-secondary mt-5 d-inline-block">Tél : 06 77 65 87 74</a><br>
+                <a href="geo:0,0?q=7+Avn.Pierre+le+Vénérable,71250+Cluny" class="nav-link p-0 text-body-secondary mt-5 pb-4 d-inline-block">7 Av. Pierre le Vénérable, 71250 Cluny</a>
 
-                        <div class="row">    
-                            <div class="col-lg-6 ps-3 pe-3">{{ form_row(formulaire.Telephone) }}</div>
-                            <div class="col-lg-6 ps-3 pe-3">{{ form_row(formulaire.email) }}</div>
-                        </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2749.5379384110047!2d4.652024377010696!3d46.43803726793772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f30aeb8182f371%3A0xbf3199329fef4a95!2sLA%20CLUNYSOISE%20AMBULANCES%20ET%20TAXIS!5e0!3m2!1sfr!2sfr!4v1689871120391!5m2!1sfr!2sfr" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-lg-6 mt-5 sub_content">
+                {{ form_start(formulaire) }}
+                <div>
+                    <div class="row">
+                        <div class="col-lg-2 ps-3 pe-3">{{ form_row(formulaire.Civilite) }}</div>
+                        <div class="col-lg-5 ps-3 pe-3">{{ form_row(formulaire.Nom) }}</div>
+                        <div class="col-lg-5 ps-3 pe-3">{{ form_row(formulaire.Prenom) }}</div>
                     </div>
-                    <div class="col-lg-12 ps-3 pe-3">
-                        {{ form_row(formulaire.sujet) }}
+
+                    <div class="row">
+                        <div class="col-lg-6 ps-3 pe-3">{{ form_row(formulaire.Telephone) }}</div>
+                        <div class="col-lg-6 ps-3 pe-3">{{ form_row(formulaire.email) }}</div>
                     </div>
-                    <div class="col-lg-12 ps-3 pe-3">
-                        {{ form_row(formulaire.content) }}
-                    </div>      
-                    <div class="col-lg-12 ps-3 pe-3">
-                        {{ form_row(formulaire.envoyer) }}
-                    </div>
+                </div>
+                <div class="col-lg-12 ps-3 pe-3">
+                    {{ form_row(formulaire.sujet) }}
+                </div>
+                <div class="col-lg-12 ps-3 pe-3">
+                    {{ form_row(formulaire.content) }}
+                </div>      
+                <div class="col-lg-12 ps-3 pe-3">
+                    {{ form_row(formulaire.envoyer) }}
+                </div>
                 {{ form_end(formulaire) }}
 
                 {% for flashMessage in app.flashes('success') %}
-                    <div class="alert alert-success m-5">
-                        {{ flashMessage }}
-                    </div>
+                <div class="alert alert-success m-5">
+                    {{ flashMessage }}
+                </div>
                 {% endfor %}
 
-                {% for flashMessage in app.flashes('danger') %}
-                    <div class="alert alert-danger m-5">
-                        {{ flashMessage }}
-                    </div>
+                {% for flashMessage in app.flashes('success') %}
+                <div class="alert alert-success m-5">
+                    {{ flashMessage }}
+                </div>
                 {% endfor %}
             </div>
         </div>

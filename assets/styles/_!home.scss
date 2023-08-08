@@ -6,10 +6,9 @@
 .titles_top {
     position: absolute;
     z-index: 1000;
-    top: 7%;
+    top: 9%;
     left: 50%;
     transform: translateX(-55%);
-    color: #0059C6!important;
 }
 
 small {
@@ -18,7 +17,7 @@ small {
 
 .pages_section {
     padding-top:200px;
-    background-size:contain;
+    background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -29,7 +28,7 @@ small {
 }
 
 .content {
-    background-color: hsla(0, 0%, 100%, 0.55);
+    background-color: rgba(255, 255, 255, 0.70);
     width: 100%;
     height: auto !important;
     border-radius: 20px !important;
@@ -61,6 +60,10 @@ small {
 .sub_content #about_i {
     color: #0059C6!important;
 font-size: 3rem !important;
+}
+
+.aboutText {
+    overflow-wrap: break-word;
 }
 
 @media (max-width: 1200px) { 

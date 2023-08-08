@@ -65,7 +65,6 @@ class AppointmentType extends AbstractType
                 'required' => true,
             ])
 
-
             // ---------- Rendez-vous ----------
             ->add('DateRendezVous', DateType::class, [
                 'attr' => ['class' => 'form-control border-black','placeholder' => 'Date du rendez-vous'],
@@ -89,13 +88,11 @@ class AppointmentType extends AbstractType
                 'required' => false,
                 'empty_data' => '00:00',
             ])
-
             ->add('LieuxRendezVous', TextType::class, [
                 'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Lieux du rendez-vous *'],
                 'label' => ' ',
                 'required' => true,
             ])
-
             ->add('TypeEtablissement', ChoiceType::class, [
                 'choices' => [
                     'Hopital' => 'Hôpital',
@@ -123,7 +120,6 @@ class AppointmentType extends AbstractType
                 'label' => ' ',
                 'required' => true,
             ])
-
             ->add('ModeTransport', ChoiceType::class, [
                 'choices' => [
                     '<div class="appointmentBtn col-lg-6 pe-3 ps-3 me-4 text-center"><img src="assis.png"></div>' => 'assis',
@@ -144,7 +140,6 @@ class AppointmentType extends AbstractType
                 'label_html' => true,
                 'required' => true,
             ])
-
             ->add('content', TextareaType::class, [
                 'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Commentaires éventuels'],
                 'required' => false,
@@ -159,7 +154,6 @@ class AppointmentType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            // Configure your form options here
         ]);
     }
 }
