@@ -19,12 +19,7 @@
     <body>
     {{ include("header.html.twig") }}
         {% block body %}
-        <script src="{{ asset('path/to/tinymce/tinymce.min.js') }}"></script>
-        <script>
-            tinymce.init({
-                selector: '.tinymce',
-            });
-        </script>
+
         {% endblock %}
     {{ include("footer.html.twig") }}
     </body>
