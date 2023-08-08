@@ -45,34 +45,34 @@ class PostCrudController extends AbstractCrudController
         return Post::class;
     }
 
-    public function configureActions(Actions $actions): Actions
-    {
-        return $actions
+    // public function configureActions(Actions $actions): Actions
+    // {
+    //     return $actions
 
-        ->update(Crud::PAGE_INDEX, Action::EDIT, function (Action $action) {
-            return $action->setLabel('Modifier');
-        })
+    //     ->update(Crud::PAGE_INDEX, Action::EDIT, function (Action $action) {
+    //         return $action->setLabel('Modifier');
+    //     })
 
-        ->update(Crud::PAGE_INDEX, Action::DELETE, function (Action $action) {
-            return $action->setLabel('Supprimer');
-        })
+    //     ->update(Crud::PAGE_INDEX, Action::DELETE, function (Action $action) {
+    //         return $action->setLabel('Supprimer');
+    //     })
 
-        ->update(Crud::PAGE_NEW, Action::SAVE_AND_RETURN, function (Action $action) {
-            return $action->setLabel('Sauvegarder et quitter');
-        })
+    //     ->update(Crud::PAGE_NEW, Action::SAVE_AND_RETURN, function (Action $action) {
+    //         return $action->setLabel('Sauvegarder et quitter');
+    //     })
 
-        ->update(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER, function (Action $action) {
-            return $action->setLabel('Sauvegarder et continuer');
-        })
+    //     ->update(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER, function (Action $action) {
+    //         return $action->setLabel('Sauvegarder et continuer');
+    //     })
         
-        ->update(Crud::PAGE_EDIT, Action::SAVE_AND_RETURN, function (Action $action) {
-            return $action->setLabel('Sauvegarder et quitter');
-        })
+    //     ->update(Crud::PAGE_EDIT, Action::SAVE_AND_RETURN, function (Action $action) {
+    //         return $action->setLabel('Sauvegarder et quitter');
+    //     })
 
-        ->update(Crud::PAGE_EDIT, Action::SAVE_AND_CONTINUE, function (Action $action) {
-            return $action->setLabel('Sauvegarder et continuer');
-        });
-    }
+    //     ->update(Crud::PAGE_EDIT, Action::SAVE_AND_CONTINUE, function (Action $action) {
+    //         return $action->setLabel('Sauvegarder et continuer');
+    //     });
+    // }
 
     // Constantes pour le chemin de base et le répertoire de téléversement des images
     public const POSTS_BASE_PATH = 'upload/images';

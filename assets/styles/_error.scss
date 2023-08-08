@@ -1,0 +1,20 @@
+.error_title {
+    margin-top: 300px !important;
+    // margin-bottom: 300px !important;
+    width: 100vw !important;
+    height: 32vh !important;
+}
+
+@media (max-width: 1200px) { 
+    .error_title {
+        margin-top: 500px !important;
+        margin-bottom: 0!important;
+        margin-left: 0!important;
+        margin-right: 0!important;
+
+        padding: 0 !important;;
+        // margin-bottom: 300px !important;
+        width: 100vw !important;
+        height: 32vh !important;
+    }
+}
