@@ -2,6 +2,34 @@
 {% block body %}
 <section class="pages_section" style="background-image: url('{{ asset("background.png") }}'); background-size: cover;">
     <h1 class="titles_top fst-italic fw-bolder text-center">Nous rejoindre</h1>
+{% set counter = 0 %}
+{% for posts in post %}
+    {% if counter is divisible by(2) %}
+        <div class="container-fluid pt-5 pb-5">
+            <div class="row content fade-in-up" id="join_post">
+                <div class="col-lg-12 sub_content">
+                    <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
+                    {% if posts.mediaUrl is not null %}
+                    <img class="img-fluid rounded-5 img_left" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    {% endif %}
+                    <p>{{ posts.content|raw }}</p>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="container-fluid pt-5 pb-5">
+            <div class="row content">
+                <div class="col-lg-12 sub_content">
+                    <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
+                    {% if posts.mediaUrl is not null %}
+                    <img class="img-fluid rounded-5 img_right" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    {% endif %}
+                    <p>{{ posts.content|raw }}</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% set counter = counter + 1 %}
 
     <div class="container-fluid pt-5 pb-5">
         <div class="row content fade-in-up" id="join_form">
@@ -51,34 +79,6 @@
             </div>
         </div>
     </div>
-{% set counter = 0 %}
-{% for posts in post %}
-    {% if counter is divisible by(2) %}
-        <div class="container-fluid pt-5 pb-5">
-            <div class="row content fade-in-up" id="join_post">
-                <div class="col-lg-12 sub_content">
-                    <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
-                    {% if posts.mediaUrl is not null %}
-                    <img class="img-fluid rounded-5 img_left" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                    {% endif %}
-                    <p>{{ posts.content|raw }}</p>
-                </div>
-            </div>
-        </div>
-        {% else %}
-        <div class="container-fluid pt-5 pb-5">
-            <div class="row content">
-                <div class="col-lg-12 sub_content">
-                    <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
-                    {% if posts.mediaUrl is not null %}
-                    <img class="img-fluid rounded-5 img_right" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                    {% endif %}
-                    <p>{{ posts.content|raw }}</p>
-                </div>
-            </div>
-        </div>
-    {% endif %}
-    {% set counter = counter + 1 %}
 {% endfor %}
 </section>
 {% endblock %}

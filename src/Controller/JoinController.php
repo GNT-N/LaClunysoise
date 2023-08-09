@@ -53,11 +53,8 @@ class JoinController extends AbstractController
                 $this->addFlash('danger', 'Les champs du formulaire sont obligatoires.');
                 return $this->redirectToRoute('app_contact');
             }
-
             $message = sprintf(
-
                 "Nouveau Candidat(e) ,\n\nCivilité: %s\n\nNom: %s\nPrénom: %s\n\nTéléphone: %s\nAdresse e-mail: %s\n\nCv: %s\n\nCommentaires: \n%s",
-
                 $gender,
                 $lastname,
                 $firstname,

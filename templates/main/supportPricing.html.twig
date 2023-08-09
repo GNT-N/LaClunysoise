@@ -12,7 +12,7 @@
                     {% if posts.mediaUrl is not null %}
                     <img class="img-fluid rounded-5 img_left fade-in-left" id="support_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
                     {% endif %}
-                    <div class="fade-in-right" id="support_content">{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</div>
+                    <div class="fade-in-right" id="support_content">{{ posts.content|raw }}</div>
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
                 {% if posts.mediaUrl is not null %}
                 <img class="img-fluid rounded-5 img_right" src="upload/images/{{ asset(posts.mediaUrl) }}">
                 {% endif %}
-                <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                <p>{{ posts.content|raw }}</p>
             </div>
         </div>
     </div>

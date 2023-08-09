@@ -10,29 +10,33 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
+// Définition de la classe AppointmentController qui hérite de AbstractController
 class AppointmentController extends AbstractController
 {
-    #[Route('/vos-rendez-vous', name: 'app_appointment')]    
+    // Définition de la route '/vos-rendez-vous' avec le nom 'app_appointment'
+    #[Route('/vos-rendez-vous', name: 'app_appointment')]
     public function index(Request $request, MailerInterface $mailer): Response
     {
+        // Création du formulaire à partir de la classe AppointmentType
         $form = $this->createForm(AppointmentType::class);
 
+        // Gestion de la requête HTTP avec le formulaire
         $form->handleRequest($request);
 
+        // Vérification si le formulaire a été soumis et est valide
         if ($form->isSubmitted() && $form->isValid()) {
 
+            // Récupération des données du formulaire
             $data = $form->getData();
-
+            // Extraction des données du formulaire dans des variables
             $gender = $data['Civilite'];
             $lastname = $data['Nom'];
             $firstname = $data['Prenom'];
             $phone = $data['Telephone'];
             $email = $data['email'];
-
             $street = $data['Rue'];
             $city = $data['Ville'];
             $postcode = $data['Postcode'];
-
             $date = $data['DateRendezVous']->format('d-m-Y');
             $time = $data['HeureRendezVous']->format('H:i');
             $during = $data['DureeEstimee'];
@@ -44,30 +48,34 @@ class AppointmentController extends AbstractController
             $go = $data['Aller'];
             $content = $data['content'];
 
-            // Convertir la valeur de $date en un objet DateTimeImmutable
+            // Conversion des valeurs de date et heure en objets DateTimeImmutable
             $date = new \DateTimeImmutable($data['DateRendezVous']->format('Y-m-d'));
-
-            // Convertir la valeur de $during en un objet DateTimeImmutable (si ce n'est pas déjà fait dans le formulaire)
             $during = new \DateTimeImmutable($data['DureeEstimee']->format('H:i'));
-
-            // Convertir la valeur de $time en un objet DateTimeImmutable (si ce n'est pas déjà fait dans le formulaire)
             $time = new \DateTimeImmutable($data['HeureRendezVous']->format('H:i'));
 
-            // Vérifier si l'heure du rendez-vous est en dehors de la plage horaire autorisée (9h à 18h)
+            // Vérification si l'heure du rendez-vous est en dehors de la plage horaire autorisée (6h à 20h)
             $startHour = new \DateTimeImmutable('06:00');
             $endHour = new \DateTimeImmutable('20:00');
-
             if ($time < $startHour || $time > $endHour) {
-                // Heure de rendez-vous en dehors de la plage horaire autorisée, afficher un message d'erreur
+                if ($time < $startHour || $time > $endHour) {
+                    // Heure de rendez-vous en dehors de la plage horaire autorisée, afficher un message d'erreur
+                    $this->addFlash('error', 'Les rendez-vous ne sont autorisés qu\'entre 6h et 20h.');
+                    // Redirige l'utilisateur vers la page de prise de rendez-vous
+                    return $this->redirectToRoute('app_appointment');
+                }
+
+                // Vérifie si les champs du formulaire sont vides ou nuls
+                if ((empty($email) && is_null($email)) || (empty($content) && is_null($content)) || (empty($date) && is_null($date))) {
+                    // Si l'un des champs est vide ou nul, ajoute un message d'erreur
+                    $this->addFlash('danger', 'Les champs du formulaire sont obligatoires.');
+                    // Redirige l'utilisateur vers la page de prise de rendez-vous
+                    return $this->redirectToRoute('app_appointment');
+                }
                 $this->addFlash('error', 'Les rendez-vous ne sont autorisés qu\'entre 6h et 20h.');
                 return $this->redirectToRoute('app_appointment');
             }
 
-            // if ((empty($email) && is_null($email)) || (empty($content) && is_null($content)) || (empty($date) && is_null($date)) )  {
-            //     $this->addFlash('danger', 'Les champs du formulaire sont obligatoires.');
-            //     return $this->redirectToRoute('app_contact');
-            // }
-
+            // sprintf retourne une chaîne de caractères formatée
             $message = sprintf(
 
                 "Nouvelle demande de rendez-vous :
@@ -117,7 +125,7 @@ class AppointmentController extends AbstractController
                 $date->format('d-m-Y'),
                 $time->format('H:i'),
                 $during->format('H:i'),
-                
+
                 $place,
                 $prescripteur,
                 $motif,
@@ -125,28 +133,26 @@ class AppointmentController extends AbstractController
 
                 $content
             );
-            
-            
 
+            // Création de l'e-mail avec le message
             $email = (new Email())
                 ->from($email)
                 ->to('admin@admin.com')
                 ->subject('Demande de Rendez-vous')
                 ->text($message);
 
-
+            // Envoi de l'e-mail avec le service MailerInterface
             $mailer->send($email);
 
-            // Ajout du message flash dans la session
+            // Ajout de messages flash dans la session
             $this->addFlash('success', 'Votre demande de rendez-vous a été envoyé avec succès !');
-
-            // Ajout d'un autre message flash dans la session
             $this->addFlash('info', 'Merci pour votre demande. Nous vous confirmerons ce rendez-vous dès que possible.');
 
-            // Rediriger l'utilisateur après envoi du formulaire pour éviter de le renvoyer en actualisant la page (Post-Redirect-Get pattern)
+            // Redirection de l'utilisateur après envoi du formulaire pour éviter de le renvoyer en actualisant la page (Post-Redirect-Get pattern)
             return $this->redirectToRoute('app_appointment');
 
         }
+        // Rendu du template 'main/appointment.html.twig' avec le formulaire
         return $this->render('main/appointment.html.twig', [
             'controller_name' => 'AppointmentController',
             'formulaire' => $form
