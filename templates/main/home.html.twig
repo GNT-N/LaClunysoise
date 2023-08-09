@@ -11,6 +11,7 @@
 
             <div class="col-lg-6 d-flex justify-content-center align-items-center" id="home-description">
                 <div>
+                    {# Description entreprise + compteur annimé #}
                     <div id="title-desc" class="d-flex flex-column justify-content-center align-items-center fade-in-left">
                         <h1 class="fst-italic">La Clunysoise</h1>
                         <div class="row">
@@ -21,24 +22,26 @@
                         <p class="text-center ps-3 pe-3">L'entreprise « La Clunysoise » est une société d'ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis.La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d'interventions d'urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d'appel 15.</p>
                     </div>
 
+                    {# Bouttons #}
                     <div id="buttons-container" class="d-flex row fade-in-left">
 
-                            <button type="button" class="btn bg-primary text-decoration-none">
-                                <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/contact">Contactez Nous</a>
-                            </button>
+                        <button type="button" class="btn bg-primary text-decoration-none">
+                            <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/contact">Contactez Nous</a>
+                        </button>
 
-                            <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none">
-                                <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/vos-rendez-vous">Prenez Rendez-Vous</a>
-                            </button>
+                        <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none">
+                            <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/vos-rendez-vous">Prenez Rendez-Vous</a>
+                        </button>
 
-                            <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none">
-                                <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/nous-rejoindre">Rejoignez Nous</a>
-                            </button>
+                        <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none">
+                            <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/nous-rejoindre">Rejoignez Nous</a>
+                        </button>
                         
                     </div>
                 </div>
             </div>
             
+            {# Carrousel photos #}
             <div class="col-lg-6" id="diapo">
                 <div id="carouselExampleAutoplaying" class="carousel slide fade-in-right" data-bs-ride="carousel" data-bs-pause="false">
                     <div id="carousel" class="carousel-inner text-center">
@@ -60,6 +63,7 @@
                     </div>
                 </div>
 
+                {# Carrousel text #}
                 <a href="/notre-identite">
                     <div id="carouselExampleControls" class="carousel slide fade-in-right" data-mdb-ride="carousel"  data-bs-ride="carousel" data-bs-pause="false">
                         <div class="carousel-inner text-center" id="text-carousel">
@@ -78,14 +82,19 @@
             </div>           
     </section>
 
+    {# Galerie des posts #}
     <section class="grid-gallery">
         <h2 class="text-center pt-5 fw-bolder">Nos actualités</h2>
         <div class="container">
             <div class="row justify-content-center">
+
+                {# Cette ligne définit une variable appelée "switchBox" et l'initialise avec la valeur "false".#}
                 {% set switchBox = false %}
 
                 {% for posts in post %}
+                    {# Cette ligne vérifie si l'index de la boucle est impair. Si c'est le cas, elle exécute le code à l'intérieur de ce bloc #}
                     {% if loop.index is odd %}
+                        {# Cette ligne vérifie la valeur de la variable "switchBox" pour déterminer quel style de boîte utiliser. #}
                         {% if switchBox %}
                             <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none box-two tile" style="{% if posts.mediaUrl is empty %}background-color: #0059C6;{% else %}background-image: linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}');{% endif %}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
@@ -121,7 +130,10 @@
                         </a>
                     {% endif %}
 
+                    {# Cette ligne vérifie si l'index de la boucle est divisible par 2. Si c'est le cas, cela signifie que nous avons atteint chaque deuxième itération dans la boucle. #}
                     {% if loop.index is divisible by 2 %}
+                    
+                        {# inverse la valeur de la variable "switchBox" en utilisant le mot clé "not". Elle alterne entre "true" et "false" à chaque deuxième itération, changeant le style de la boîte pour chaque deuxième élément dans la boucle. #}
                         {% set switchBox = not switchBox %}
                     {% endif %}
                 {% endfor %}

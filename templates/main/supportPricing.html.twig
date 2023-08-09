@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+{# initialise une variable counter à 0. Ce compteur sera utilisé pour suivre le nombre d'itérations dans la boucle et déterminer si l'élément actuel doit être affiché à gauche ou à droite. #}
 {% set counter = 0 %}
 {% for posts in post %}
+
+    {# vérifie si la valeur de counter est divisible par 2. Si c'est le cas, cela signifie que nous sommes en train d'itérer sur un élément pair dans la liste. Le contenu à l'intérieur de cette condition sera affiché du côté gauche. #}
     {% if counter is divisible by(2) %}
     <section class="pages-section" style="background-image: url('{{ asset("croixGrey.png") }}');">
         <h1 class="titles-top fst-italic fw-bolder text-center">Prise en charge - Tarification</h1>
@@ -30,6 +33,7 @@
         </div>
     </section>
     {% endif %}
+    {# À la fin de chaque itération de la boucle, le compteur est incrémenté de 1 pour passer à l'élément suivant. #}
     {% set counter = counter + 1 %}
 {% endfor %}
 
