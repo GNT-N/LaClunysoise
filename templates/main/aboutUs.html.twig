@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
+
 {% block body %}
-<section class="pages-section" style="background-image: url('{{ asset("background.png") }}');background-size: cover;">
+
+<section class="pages-section" style="background-image: url('{{ asset(" background.png") }}');background-size: cover;">
     <h1 class="titles-top fst-italic fw-bolder text-center">Notre identité</h1>
 
+    {# Conteneur principal pour le contenu de la page #}
     <div class="container-fluid fade-in-up pb-5" id="about-desc">
         <div class="content">
             <div class="row col-lg-12 sub-content">
@@ -14,6 +17,8 @@
                         médical sur rendez - vous), les particuliers peuvent bénéficier de nos services.</p>
                     <p>Sur chacune de nos prestations et nos véhicules, nous garantissons :</p>
                 </div>
+
+                {# Blocs d'engagements avec des icônes et des descriptions #}
                 <div class="col-lg-3 col-sm-12 ps-2 pe-2">
                     <i aria-hidden="true" class="fas fa-snowflake pb-2 about-i"></i>
                     <h4>Le confort et l’hygiène :</h4>
@@ -44,26 +49,28 @@
         </div>
     </div>
 
+    {# Initialisation du compteur à 0 #}
     {% set counter = 0 %}
+
     {# Boucle qui parcourt chaque publications dans post #}
     {% for posts in post %}
-    {# Si le compteur est divisible par 2 ( nombre pair ), le code suivant ext exécuté #}
-    {# Si posts.mediaUrl n'est pas null, l'image est affichée à gauche du contenu de la publication. #}
+
+    {# Si le compteur est divisible par 2 (nombre pair), l'image est affichée à gauche du contenu de la publication. #}
     {% if counter is divisible by(2) %}
     <div class="container-fluid pt-5 pb-5">
         <div class="row content">
             <div class="col-lg-12 sub-content">
                 <h1 class="pb-5 text-center">{{ posts.title }}</h1>
                 {% if posts.mediaUrl is not null %}
-                <img class="img-fluid rounded-5 img-left fade-in-left"
-                    src="upload/images/{{ asset(posts.mediaUrl) }}">
+                <img class="img-fluid rounded-5 img-left fade-in-left" src="upload/images/{{ asset(posts.mediaUrl) }}">
                 {% endif %}
                 <div class="fade-in-right">{{ posts.content|raw }}</div>
             </div>
         </div>
     </div>
-    {# Si le compteur n'est pas divisible par 2 ( nombre impair ), le code suivant ext exécuté #}
-    {# Si posts.mediaUrl n'est pas null, l'image est affichée à droite du contenu de la publication. #}
+
+    {# Si le compteur n'est pas divisible par 2 (nombre impair), l'image est affichée à droite du contenu de la
+    publication. #}
     {% else %}
     <div class="container-fluid pt-5 pb-5">
         <div class="row content">
@@ -78,9 +85,12 @@
         </div>
     </div>
     {% endif %}
+
     {# Incrémentation du compteur de 1 #}
     {% set counter = counter + 1 %}
+
     {# Fin de la boucle #}
     {% endfor %}
 </section>
+
 {% endblock %}

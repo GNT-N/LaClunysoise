@@ -1,35 +1,44 @@
 {% extends 'base.html.twig' %}
+
 {% block body %}
-<section class="pages-section" style="background-image: url('{{ asset("background.png") }}'); background-size: cover;">
+
+<section class="pages-section" style="background-image: url('{{ asset(" background.png") }}'); background-size: cover;">
     <h1 class="titles-top fst-italic fw-bolder text-center">Vos rendez-vous</h1>
     <div class="container container-fluid pb-5">
         <div class="row content fade-in-up">
 
             <div class="col-lg-12 sub-content">
 
+                {# Boucle pour afficher les messages flash de type 'danger' #}
                 {% for flashMessage in app.flashes('danger') %}
                 <div class="alert alert-danger m-5">
                     {{ flashMessage }}
                 </div>
                 {% endfor %}
 
+                {# Boucle pour afficher les messages flash de type 'success' #}
                 {% for flashMessage in app.flashes('success') %}
                 <div class="alert alert-success m-5">{{ flashMessage }}</div>
                 {% endfor %}
 
+                {# Boucle pour afficher les messages flash de type 'info' #}
                 {% for flashMessage in app.flashes('info') %}
                 <div class="alert alert-primary">
                     {{ flashMessage }}
                 </div>
                 {% endfor %}
 
+                {# Boucle pour afficher les messages flash de type 'error' #}
                 {% for flashMessage in app.flashes('error') %}
                 <div class="alert alert-danger m-5">{{ flashMessage }}</div>
                 {% endfor %}
 
+                {# Début du formulaire #}
                 {{ form_start(formulaire) }}
+
                 <div class="identity">
                     <h2 class="text-center sub-titles"> Informations Personnelles </h2>
+                    {# Champs du formulaire pour les informations personnelles #}
                     <div class="row">
                         <div class="col-lg-2 pe-3">{{ form_row(formulaire.Civilite) }}</div>
                         <div class="col-lg-4 pe-3 ps-3">{{ form_row(formulaire.Nom) }}</div>
@@ -50,6 +59,7 @@
 
                 <div class="details mb-5 pt-5">
                     <h2 class="text-center pb-3"> Détails du Rendez-Vous </h2>
+                    {# Champs du formulaire pour les détails du rendez-vous #}
                     <div class="row">
                         <div class="col-lg-4 pe-3 ps-3 pb-2"><label class="fs-4">Date du rendez-vous *</label>{{
                             form_row(formulaire.DateRendezVous) }}</div>
@@ -84,11 +94,11 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12 pe-3 ps-3">
-                        {{ form_row(formulaire.envoyer) }}
+                        {{ form_row(formulaire.envoyer) }} {# Bouton d'envoi du formulaire #}
                     </div>
                 </div>
 
-                {{ form_end(formulaire) }}
+                {{ form_end(formulaire) }} {# Fin du formulaire #}
 
             </div>
         </div>
