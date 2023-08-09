@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 {% block stylesheets %}
 {{ encore_entry_link_tags('app') }}
 {% endblock %}
@@ -10,6 +11,7 @@
 
 {% block body %}
 <form method="post">
+    {# Formulaire de connexion #}
     <section class="vh-100 gradient-custom">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -18,16 +20,19 @@
                         <div class="card-body p-5 text-center">
 
                             <div class="mb-md-5 mt-md-4 pb-5">
+                                {# Affichage d'une alerte en cas d'erreur #}
                                 {% if error %}
                                 <div class="alert alert-danger text-center"><span>Nom d'utilisateur ou Mot de passe
                                         incorrecte</span></div>
                                 {% endif %}
                                 <h2 class="fw-bold mb-2 text-uppercase mb-5">Connexion</h2>
 
+                                {# Affichage du message de bienvenue si l'utilisateur est déjà connecté #}
                                 {% if app.user %}
                                 <div class="fw-bold mb-2 text-uppercase mb-5">
                                     Vous êtes connecté(e) en tant qu' {{ app.user.userIdentifier }}
 
+                                    {# Bouton de déconnexion #}
                                     <button class="btn btn-outline-light btn-lg px-5 mt-3">
                                         <a href="{{ path('app_logout') }}"
                                             class="text-decoration-none text-danger">Déconnexion</a>
@@ -35,6 +40,7 @@
                                 </div>
                                 {% endif %}
 
+                                {# Champ de saisie du nom d'utilisateur #}
                                 <div class="form-outline form-white mb-4">
                                     <label for="inputUsername">Nom d'utilisateur</label>
                                     <input type="text" value="{{ last_username }}" name="username" id="inputUsername"
@@ -42,26 +48,24 @@
                                         autofocus />
                                 </div>
 
+                                {# Champ de saisie du mot de passe #}
                                 <div class="form-outline form-white mb-4">
                                     <label for="inputPassword">Mot de passe</label>
                                     <input type="password" name="password" id="inputPassword"
                                         class="form-control form-control-lg" autocomplete="current-password" required />
                                 </div>
 
+                                {# Token CSRF pour la sécurité #}
                                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-                                {#
-                                Uncomment this section and add a remember_me option below your firewall to activate
-                                remember me functionality.
-                                See https://symfony.com/doc/current/security/remember_me.html
-
-                                <div class="checkbox mb-3">
+                                {# Option "Se souvenir de moi" #}
+                                {# <div class="checkbox mb-3">
                                     <label>
                                         <input type="checkbox" name="_remember_me"> Remember me
                                     </label>
-                                </div>
-                                #}
+                                </div> #}
 
+                                {# Bouton de soumission du formulaire #}
                                 <button class="btn btn-outline-light btn-lg px-5 text-success"
                                     type="submit">Connexion</button>
                             </div>

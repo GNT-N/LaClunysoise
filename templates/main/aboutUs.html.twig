@@ -61,6 +61,7 @@
         <div class="row content">
             <div class="col-lg-12 sub-content">
                 <h1 class="pb-5 text-center">{{ posts.title }}</h1>
+                {# Vérification de l'existence de l'URL du média #}
                 {% if posts.mediaUrl is not null %}
                 <img class="img-fluid rounded-5 img-left fade-in-left" src="upload/images/{{ asset(posts.mediaUrl) }}">
                 {% endif %}
@@ -76,6 +77,7 @@
         <div class="row content">
             <div class="col-lg-12 sub-content">
                 <h1 class="pb-5 text-center">{{ posts.title }}</h1>
+                {# Vérification de l'existence de l'URL du média #}
                 {% if posts.mediaUrl is not null %}
                 <img class="img-fluid rounded-5 img-right fade-in-right"
                     src="upload/images/{{ asset(posts.mediaUrl) }}">

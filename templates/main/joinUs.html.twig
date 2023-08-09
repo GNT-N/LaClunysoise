@@ -1,34 +1,50 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<section class="pages-section" style="background-image: url('{{ asset("background.png") }}'); background-size: cover;">
+<section class="pages-section" style="background-image: url('{{ asset(" background.png") }}'); background-size: cover;">
     <h1 class="titles-top fst-italic fw-bolder text-center">Nous rejoindre</h1>
+
+    {# Initialisation d'un compteur pour alterner le style d'affichage #}
     {% set counter = 0 %}
+
+    {# Boucle à travers les posts pour les afficher #}
     {% for posts in post %}
+
+    {# Si le compteur est divisible par 2 (nombre pair), l'image est affichée à gauche du contenu de la publication. #}
     {% if counter is divisible by(2) %}
     <div class="container-fluid pt-5 pb-5">
         <div class="row content fade-in-up" id="join_post">
             <div class="col-lg-12 sub-content">
                 <h1 class="pb-5 text-center">{{ posts.title }}</h1>
+
+                {# Vérification de l'existence de l'URL du média #}
                 {% if posts.mediaUrl is not null %}
                 <img class="img-fluid rounded-5 img-left" src="upload/images/{{ asset(posts.mediaUrl) }}">
                 {% endif %}
+
                 <p>{{ posts.content|raw }}</p>
             </div>
         </div>
     </div>
+    {# Si le compteur n'est pas divisible par 2 (nombre impair), l'image est affichée à droite du contenu de la
+    publication. #}
     {% else %}
     <div class="container-fluid pt-5 pb-5">
         <div class="row content">
             <div class="col-lg-12 sub-content">
                 <h1 class="pb-5 text-center">{{ posts.title }}</h1>
+
+                {# Vérification de l'existence de l'URL du média #}
                 {% if posts.mediaUrl is not null %}
                 <img class="img-fluid rounded-5 img-right" src="upload/images/{{ asset(posts.mediaUrl) }}">
                 {% endif %}
+
                 <p>{{ posts.content|raw }}</p>
             </div>
         </div>
     </div>
     {% endif %}
+
+    {# Incrémentation du compteur #}
     {% set counter = counter + 1 %}
 
     <div class="container-fluid pt-5 pb-5">
@@ -45,6 +61,8 @@
 
             <div class="col-lg-6 mt-5 sub-content">
                 <h2 class="text-center">Formulaire de recrutement</h2>
+
+                {# Affichage du formulaire de recrutement #}
                 {{ form_start(formulaire) }}
                 <div>
                     <div class="row">
@@ -69,12 +87,15 @@
                     {{ form_row(formulaire.envoyer) }}
                 </div>
                 {{ form_end(formulaire) }}
+
+                {# Affichage des messages flash en cas de succès #}
                 {% for flashMessage in app.flashes('success') %}
                 <div class="alert alert-success m-5">
                     {{ flashMessage }}
                 </div>
                 {% endfor %}
 
+                {# Affichage des messages flash en cas d'erreur #}
                 {% for flashMessage in app.flashes('danger') %}
                 <div class="alert alert-danger m-5">
                     {{ flashMessage }}

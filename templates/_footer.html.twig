@@ -1,7 +1,8 @@
 {% block footer %}
-
 <div class="container" id="footerAll">
     <footer class="row py-5 my-5 border-top justify-content-center" id="footer">
+
+        {# Première colonne du footer #}
         <div class="col-lg-4 mb-3 p-col">
             <img id="logo" class="pb-3" src="{{ asset('footerLogo.png') }}">
             <br>
@@ -11,6 +12,7 @@
             <p class="text-body-secondary">&copy; 2023</p>
         </div>
 
+        {# Deuxième colonne du footer #}
         <div class="col-lg-4 mb-3 p-col">
             <h5>Coordonnées</h5>
             <hr class="border border-white opacity-100 border-1">
@@ -24,6 +26,7 @@
             </ul>
         </div>
 
+        {# Troisième colonne du footer #}
         <div class="col-lg-4 mb-3 p-col">
             <h5>Informations</h5>
             <hr class="border border-white opacity-100 border-1">
@@ -38,6 +41,4 @@
         </div>
     </footer>
 </div>
-
-
 {% endblock %}

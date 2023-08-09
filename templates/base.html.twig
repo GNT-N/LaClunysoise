@@ -11,20 +11,23 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     {% block stylesheets %}
+    {# Inclusion du scss par Webpack #}
     {{ encore_entry_link_tags('app') }}
     {% endblock %}
 
     {% block javascripts %}
+    {# Inclusion du js généré Webpack #}
     {{ encore_entry_script_tags('app') }}
-
     {% endblock %}
 </head>
 
 <body>
+
     {{ include("_header.html.twig") }}
     {% block body %}
 
     {% endblock %}
+
     {{ include("_footer.html.twig") }}
 </body>
 
