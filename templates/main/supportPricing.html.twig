@@ -24,7 +24,7 @@
                     {% if posts.mediaUrl is not null %}
                     <img class="img-fluid rounded-5 img-right" src="upload/images/{{ asset(posts.mediaUrl) }}">
                     {% endif %}
-                    <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
+                    <p>{{ posts.content|raw }}</p>
                 </div>
             </div>
         </div>
