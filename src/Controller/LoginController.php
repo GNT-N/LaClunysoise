@@ -3,13 +3,10 @@
 // Déclaration du namespace du contrôleur
 namespace App\Controller;
 
-// Importation de la classe de base pour les contrôleurs Symfony
+// Importation des classes nécessaires
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-// Importation de la classe Response pour la réponse HTTP
 use Symfony\Component\HttpFoundation\Response;
-// Importation de l'annotation de routage Symfony
 use Symfony\Component\Routing\Annotation\Route;
-// Importation de la classe AuthenticationUtils pour l'authentification
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 // Déclaration de la classe du contrôleur

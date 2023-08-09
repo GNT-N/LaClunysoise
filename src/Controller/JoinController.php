@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-// Importer les classes nécessaires
+// Importation des classes nécessaires
 use App\Form\JoinType;
 use App\Repository\PostRepository;
 use Doctrine\ORM\EntityManagerInterface;

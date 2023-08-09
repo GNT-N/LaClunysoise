@@ -2,29 +2,18 @@
 
 namespace App\Security;
 
-// Importe la classe Security du bundle Symfony\Bundle\SecurityBundle.
+// Importation les classes nécessaires
 use Symfony\Bundle\SecurityBundle\Security;
-// Importe la classe RedirectResponse du composant Symfony\Component\HttpFoundation.
 use Symfony\Component\HttpFoundation\RedirectResponse;
-// Importe la classe Request du composant Symfony\Component\HttpFoundation.
 use Symfony\Component\HttpFoundation\Request;
-// Importe la classe Response du composant Symfony\Component\HttpFoundation.
 use Symfony\Component\HttpFoundation\Response;
-// Importe l'interface UrlGeneratorInterface du composant Symfony\Component\Routing\Generator.
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-// Importe l'interface TokenInterface du composant Symfony\Component\Security\Core\Authentication\Token.
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-// Importe la classe AbstractLoginFormAuthenticator du composant Symfony\Component\Security\Http\Authenticator.
 use Symfony\Component\Security\Http\Authenticator\AbstractLoginFormAuthenticator;
-// Importe la classe CsrfTokenBadge du composant Symfony\Component\Security\Http\Authenticator\Passport\Badge. 
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\CsrfTokenBadge;
-// Importe la classe UserBadge du composant Symfony\Component\Security\Http\Authenticator\Passport\Badge.
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
-// Importe la classe PasswordCredentials du composant Symfony\Component\Security\Http\Authenticator\Passport\Credentials.
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
-// Importe la classe Passport du composant Symfony\Component\Security\Http\Authenticator\Passport.
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
-// Importe le trait TargetPathTrait du composant Symfony\Component\Security\Http\Util.
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
 
