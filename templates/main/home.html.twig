@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 
-<main style="background-image: url('{{ asset(" background.png") }}'); background-size: cover;">
+<main style="background-image: url('{{ asset("background.png") }}'); background-size: cover;">
     {# Flèche vers le bas pour indiquer le défilement #}
     <div id="faArrow" class="text-center">
         <i class="fa-solid fa-circle-arrow-down fa-bounce" style="color: #000000 #ffffff; font-size: 2.5rem;"></i>
@@ -12,16 +12,16 @@
         <div class="row">
 
             {# Description de l'entreprise #}
-            <div class="col-lg-6 d-flex justify-content-center align-items-center" id="home-description">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center bg-white" id="home-description">
                 <div>
                     <div id="title_desc"
                         class="d-flex flex-column justify-content-center align-items-center fade-in-left">
                         <h1 class="fst-italic">La Clunysoise</h1>
                         <div class="row" id="countContainer">
                             <span class="col-lg-4 countText fw-bold d-block text-black pe-4 text-center"><span
-                                    class="count fw-bold">8 </span><br> Urgences / jour</span>
+                                    class="count fw-bold">8 </span><br> Urgences par jour</span>
                             <span class="col-lg-4 countText fw-bold d-block text-black pe-4 text-center"><span
-                                    class="count fw-bold">14 </span><br> Interventions / jour</span>
+                                    class="count fw-bold">14 </span><br> Interventions par jour</span>
                             <span class="col-lg-4 countText fw-bold d-block text-black pe-4 text-center"><span
                                     class="count fw-bold">25 </span><br> Salariés</span>
                         </div>
@@ -54,7 +54,7 @@
             </div>
 
             {# Carrousel d'images #}
-            <div class="col-lg-6" id="diapo">
+            <div class="col-lg-6 bg-white" id="diapo">
                 <div id="carouselExampleAutoplaying" class="carousel slide fade-in-right" data-bs-ride="carousel"
                     data-bs-pause="false">
                     <div id="carousel" class="carousel-inner text-center">
@@ -81,7 +81,7 @@
 
                 {# Carrousel de textes #}
                 <a href="/notre-identite">
-                    <div id="carouselExampleControls" class="carousel slide fade-in-right" data-mdb-ride="carousel"
+                    <div id="carouselExampleControls" class="carousel slide fade-in-right bg-white" data-mdb-ride="carousel"
                         data-bs-ride="carousel" data-bs-pause="false">
                         <div class="carousel-inner text-center" id="text-carousel">
                             <div class="carousel-item active" data-bs-interval="2900">
