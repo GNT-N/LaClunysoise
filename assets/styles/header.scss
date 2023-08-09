@@ -9,7 +9,7 @@
     padding-top: 30px!important;
 }
 
-#logoHead {
+#logo-head {
     width: 200px;
     height: auto;
     position: absolute;
@@ -18,23 +18,23 @@
     left: 0;
 }
 
-.menuButton {
+.menu-button {
     background-color: #0059C6!important;
     transition: transform 0.1s ease-in-out;
 }
 
-.menuButton:hover,
-.menuButton:focus {
+.menu-button:hover,
+.menu-button:focus {
     transform: scale(1.1);
 }
 
-.menuButtonIn {
+.menu-button-in {
     background-color: white!important;
     transition: transform 0.1s ease-in-out;
 }
 
-.menuButtonIn:hover,
-.menuButtonIn:focus {
+.menu-button-in:hover,
+.menu-button-in:focus {
     transform: scale(1.1);
 }
 
@@ -59,7 +59,7 @@
     transform: translate(-50%, -50%)!important;
 }
 
-#menuLogo {
+#menu-logo {
     width: 300px; 
     height: auto;
     position: fixed!important;
@@ -88,13 +88,13 @@
         color: #b0b8bf!important;
 }
 
-#mobileKey {
+#mobile-key {
     display: none;
 }
 
 
 @media (max-width: 1200px) { 
-    #logoHead {
+    #logo-head {
         width: 400px;
         height: auto;
         position: absolute;
@@ -116,7 +116,7 @@
         height: 200px;
     }
 
-    #menuLogo {
+    #menu-logo {
         width: 75%; 
         height: auto;
         position: fixed!important;
@@ -135,11 +135,11 @@
         line-height: 100px;
     }
 
-    #desktopKey {
+    #desktop-key {
         display: none;
     }
 
-    #mobileKey {
+    #mobile-key {
         display: initial;
     }
  }

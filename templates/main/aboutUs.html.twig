@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<section class="pages_section" style="background-image: url('{{ asset("croixGrey.png") }}');">
-    <h1 class="titles_top fst-italic fw-bolder text-center">Notre identité</h1>
+<section class="pages-section" style="background-image: url('{{ asset("croixGrey.png") }}');">
+    <h1 class="titles-top fst-italic fw-bolder text-center">Notre identité</h1>
 
-    <div class="container-fluid fade-in-up" id="about_desc">
+    <div class="container-fluid fade-in-up" id="about-desc">
         <div class="content">
-            <div class="row col-lg-12 sub_content">
+            <div class="row col-lg-12 sub-content">
                 <div class="col-12">
                     <h2 class="text-center">Nos engagements</h2></br>
                     <h4 class="text-center">Nous vous proposons des transports médicalisés sur Cluny et ses environs pour tous vos besoins et transferts.</h4></br>
@@ -43,10 +43,10 @@
         {% if counter is divisible by(2) %}
             <div class="container-fluid pt-5 pb-5">
                 <div class="row content">
-                    <div class="col-lg-12 sub_content">
+                    <div class="col-lg-12 sub-content">
                         <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
                         {% if posts.mediaUrl is not null %}
-                        <img class="img-fluid rounded-5 img_left fade-in-left" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                        <img class="img-fluid rounded-5 img-left fade-in-left" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
                         {% endif %}
                         <div class="fade-in-right" id="about_content">{{ posts.content|raw }}</div>
                     </div>
@@ -55,10 +55,10 @@
             {% else %}
             <div class="container-fluid pt-5 pb-5">
                 <div class="row content">
-                    <div class="col-lg-12 sub_content">
+                    <div class="col-lg-12 sub-content">
                         <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
                         {% if posts.mediaUrl is not null %}
-                        <img class="img-fluid rounded-5 img_right fade-in-right" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                        <img class="img-fluid rounded-5 img-right fade-in-right" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
                         {% endif %}
                         <div class="fade-in-right" id="about_content">{{ posts.content|raw }}</div>
                     </div>

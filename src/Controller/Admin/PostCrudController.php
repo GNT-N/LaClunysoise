@@ -26,13 +26,13 @@ use Symfony\Component\Routing\Annotation\Route;
 // Importation de la classe SluggerInterface pour la génération de slugs
 use Symfony\Component\String\Slugger\SluggerInterface;
 
-use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+// use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+// use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+// use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
-use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
-use EasyCorp\Bundle\EasyAdminBundle\Filter\EntityFilter;
+// use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
+// use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+// use EasyCorp\Bundle\EasyAdminBundle\Filter\EntityFilter;
 
 #[Route('/',  name: 'app_posts_' )]
 

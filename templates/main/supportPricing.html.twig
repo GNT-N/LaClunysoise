@@ -3,26 +3,26 @@
 {% set counter = 0 %}
 {% for posts in post %}
     {% if counter is divisible by(2) %}
-    <section class="pages_section" style="background-image: url('{{ asset("croixGrey.png") }}');">
-        <h1 class="titles_top fst-italic fw-bolder text-center">Prise en charge - Tarification</h1>
+    <section class="pages-section" style="background-image: url('{{ asset("croixGrey.png") }}');">
+        <h1 class="titles-top fst-italic fw-bolder text-center">Prise en charge - Tarification</h1>
         <div class="container-fluid pt-5 pb-5">
             <div class="row content">
-                <div class="col-lg-12 sub_content">
+                <div class="col-lg-12 sub-content">
                     <h1 class="pb-5 text-center fade-in-up" id="support_title">{{ posts.title }}</h1> 
                     {% if posts.mediaUrl is not null %}
-                    <img class="img-fluid rounded-5 img_left fade-in-left" id="support_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    <img class="img-fluid rounded-5 img-left fade-in-left" id="support_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
                     {% endif %}
-                    <div class="fade-in-right" id="support_content">{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</div>
+                    <div class="fade-in-right" id="support_content">{{ posts.content|raw }}</div>
                 </div>
             </div>
         </div>
         {% else %}
         <div class="container-fluid pt-5 pb-5">
             <div class="row content">
-                <div class="col-lg-12 sub_content">
+                <div class="col-lg-12 sub-content">
                     <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
                     {% if posts.mediaUrl is not null %}
-                    <img class="img-fluid rounded-5 img_right" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                    <img class="img-fluid rounded-5 img-right" src="upload/images/{{ asset(posts.mediaUrl) }}">
                     {% endif %}
                     <p>{{ posts.content|striptags|replace({'&nbsp;': ''}) }}</p>
                 </div>
