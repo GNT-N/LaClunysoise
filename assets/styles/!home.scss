@@ -76,11 +76,7 @@ small {
     }
 
     .titles-top {
-        top: 19%;
-    }
-
-    .sub-titles {
-        padding-top: 200px;
+        top: 22%;
     }
 
     .container-fluid {
@@ -100,19 +96,17 @@ small {
     }
 
     .img-left {
-        max-width: 80vw !important;
+        width: 100% !important;
         height: auto !important;
-        float: left;
-        margin-left: 20px;
-        margin-right: 20px;
+        max-height: none !important;
+        padding-bottom: 20px;
     }
     
     .img-right {
-        max-width: 80vw !important;
+        width: 100% !important;
         height: auto !important;
-        float: right;
-        margin-left: 20px;
-        margin-right: 20px;
+        max-height: none !important;
+        padding-bottom: 20px;
     }
 
     .pages-section {
