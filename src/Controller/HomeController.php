@@ -32,9 +32,9 @@ class HomeController extends AbstractController
     #[Route('/notre-identite', name: 'about')]
     public function about(PostRepository $postRepository): Response
     {
-        // Rendu du template '/aboutUs.html.twig' avec les posts filtrés par page et visibilité
+        // Rendu du template '/aboutus.html.twig' avec les posts filtrés par page et visibilité
         // Les posts sont filtrés pour n'afficher que ceux qui sont visibles et qui appartiennent à la page 'Notre Identité'
-        return $this->render('main/aboutUs.html.twig', [
+        return $this->render('main/aboutus.html.twig', [
             'post' => $postRepository->findBy(array('page' => 'notre-identite', 'visible' => true)),
         ]);
     }
@@ -51,10 +51,10 @@ class HomeController extends AbstractController
         ]);
     }
 
-    // Définition de la route '/joinUs' avec le nom 'joinUs'
+    // Définition de la route '/joinus' avec le nom 'joinus'
     // Cette méthode est utilisée pour rediriger vers le contrôleur 'JoinController'
-    #[Route('/nous-rejoindre', name: 'joinUs')]
-    public function joinUs(PostRepository $postRepository): Response
+    #[Route('/nous-rejoindre', name: 'joinus')]
+    public function joinus(PostRepository $postRepository): Response
     {
         // Redirection vers le contrôleur 'JoinController'
         return $this->forward('App\Controller\JoinController::index');
