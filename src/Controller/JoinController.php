@@ -49,10 +49,15 @@ class JoinController extends AbstractController
             $file = $data['Fichier'];
             $content = $data['content'];
 
+            // Vérifier si les champs email et content sont vides
             if ((empty($email) && is_null($email)) || (empty($content) && is_null($content))) {
+                // Ajouter un message flash d'erreur
                 $this->addFlash('danger', 'Les champs du formulaire sont obligatoires.');
-                return $this->redirectToRoute('app_contact');
+                // Rediriger vers la page de formulaire
+                return $this->redirectToRoute('app_join');
             }
+
+            // Préparer le message à envoyer par email
             $message = sprintf(
                 "Nouveau Candidat(e) ,\n\nCivilité: %s\n\nNom: %s\nPrénom: %s\n\nTéléphone: %s\nAdresse e-mail: %s\n\nCv: %s\n\nCommentaires: \n%s",
                 $gender,
@@ -100,8 +105,10 @@ class JoinController extends AbstractController
 
         // Rendre le template 'main/joinUs.html.twig' avec les variables à passer au template
         return $this->render('main/joinUs.html.twig', [
-            'controller_name' => 'JoinController', // Variable pour afficher le nom du contrôleur dans le template (utilisation optionnelle)
-            'formulaire' => $form->createView(), // Utilisez createView() pour obtenir la vue du formulaire
+            'controller_name' => 'JoinController',
+            // Variable pour afficher le nom du contrôleur dans le template (utilisation optionnelle)
+            'formulaire' => $form->createView(),
+            // Utilisez createView() pour obtenir la vue du formulaire
             'post' => $posts, // Variable contenant les posts filtrés par page et visibilité
         ]);
     }

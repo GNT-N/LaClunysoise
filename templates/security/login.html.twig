@@ -1,72 +1,77 @@
 <!DOCTYPE html>
 <html>
-    {% block stylesheets %}
-        {{ encore_entry_link_tags('app') }}
-    {% endblock %}
+{% block stylesheets %}
+{{ encore_entry_link_tags('app') }}
+{% endblock %}
 
-    {% block javascripts %}
-        {{ encore_entry_script_tags('app') }}
-    {% endblock %}
+{% block javascripts %}
+{{ encore_entry_script_tags('app') }}
+{% endblock %}
 
-    {% block body %}
-        <form method="post">
+{% block body %}
+<form method="post">
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
 
+                            <div class="mb-md-5 mt-md-4 pb-5">
+                                {% if error %}
+                                <div class="alert alert-danger text-center"><span>Nom d'utilisateur ou Mot de passe
+                                        incorrecte</span></div>
+                                {% endif %}
+                                <h2 class="fw-bold mb-2 text-uppercase mb-5">Connexion</h2>
 
-            <form method="post">
-                <section class="vh-100 gradient-custom">
-                    <div class="container py-5 h-100">
-                        <div class="row d-flex justify-content-center align-items-center h-100">
-                            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                                <div class="card bg-dark text-white" style="border-radius: 1rem;">
-                                    <div class="card-body p-5 text-center">
+                                {% if app.user %}
+                                <div class="fw-bold mb-2 text-uppercase mb-5">
+                                    Vous êtes connecté(e) en tant qu' {{ app.user.userIdentifier }}
 
-                                        <div class="mb-md-5 mt-md-4 pb-5">
-                                            {% if error %}
-                                                <div class="alert alert-danger text-center"><span>Nom d'utilisateur ou Mot de passe incorrecte</span></div>
-                                            {% endif %}
-                                            <h2 class="fw-bold mb-2 text-uppercase mb-5">Connexion</h2>
-
-                                            {% if app.user %}
-                                                <div class="fw-bold mb-2 text-uppercase mb-5">
-                                                    Vous êtes connecté(e) en tant qu' {{ app.user.userIdentifier }}
-
-                                                    <button class="btn btn-outline-light btn-lg px-5 mt-3">
-                                                        <a href="{{ path('app_logout') }}" class="text-decoration-none text-danger">Déconnexion</a>
-                                                    </button>
-                                                </div>
-                                            {% endif %}
-
-                                            <div class="form-outline form-white mb-4">
-                                                <label for="inputUsername">Nom d'utilisateur</label>
-                                                <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control form-control-lg" autocomplete="username" required autofocus/>
-                                            </div>
-
-                                            <div class="form-outline form-white mb-4">
-                                                <label for="inputPassword">Mot de passe</label>
-                                                <input type="password" name="password" id="inputPassword"  class="form-control form-control-lg" autocomplete="current-password" required/>
-                                            </div>
-
-                                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-                                            {#
-                                                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                                                See https://symfony.com/doc/current/security/remember_me.html
-
-                                                <div class="checkbox mb-3">
-                                                    <label>
-                                                        <input type="checkbox" name="_remember_me"> Remember me
-                                                    </label>
-                                                </div>
-                                            #}
-
-                                            <button class="btn btn-outline-light btn-lg px-5 text-success" type="submit">Connexion</button>
-                                        </div>
-                                    </div>
+                                    <button class="btn btn-outline-light btn-lg px-5 mt-3">
+                                        <a href="{{ path('app_logout') }}"
+                                            class="text-decoration-none text-danger">Déconnexion</a>
+                                    </button>
                                 </div>
+                                {% endif %}
+
+                                <div class="form-outline form-white mb-4">
+                                    <label for="inputUsername">Nom d'utilisateur</label>
+                                    <input type="text" value="{{ last_username }}" name="username" id="inputUsername"
+                                        class="form-control form-control-lg" autocomplete="username" required
+                                        autofocus />
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <label for="inputPassword">Mot de passe</label>
+                                    <input type="password" name="password" id="inputPassword"
+                                        class="form-control form-control-lg" autocomplete="current-password" required />
+                                </div>
+
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                                {#
+                                Uncomment this section and add a remember_me option below your firewall to activate
+                                remember me functionality.
+                                See https://symfony.com/doc/current/security/remember_me.html
+
+                                <div class="checkbox mb-3">
+                                    <label>
+                                        <input type="checkbox" name="_remember_me"> Remember me
+                                    </label>
+                                </div>
+                                #}
+
+                                <button class="btn btn-outline-light btn-lg px-5 text-success"
+                                    type="submit">Connexion</button>
                             </div>
                         </div>
                     </div>
-                </section>
-            </form>
-        {% endblock %}
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+{% endblock %}
+
 </html>

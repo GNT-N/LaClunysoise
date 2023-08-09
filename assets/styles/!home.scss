@@ -1,9 +1,9 @@
-#about_desc {
+#about-desc {
     max-width: 80vw !important;
     border-radius: 20px !important;
 }
 
-.titles_top {
+.titles-top {
     position: absolute;
     z-index: 1000;
     top: 9%;
@@ -15,7 +15,7 @@ small {
     background-color: hsla(0, 0%, 100%, 0.55)!important;
 }
 
-.pages_section {
+.pages-section {
     padding-top:200px;
     background-size:cover;
     background-repeat: no-repeat;
@@ -34,32 +34,32 @@ small {
     border-radius: 20px !important;
 }
 
-.img_left {
+.img-left {
     max-width: 1000px !important;
     max-height: 800px !important;
     float: left;
     margin: 10px 20px 10px 0;
 }
 
-.img_right {
+.img-right {
     max-width: 1000px !important;
     max-height: 800px !important;
     float: right;
     margin: 10px 20px 10px 0;
 }
 
-.sub_content {
+.sub-content {
     height: 100%;
     padding: 20px 20px !important;
 }
 
-.sub_content p {
+.sub-content p {
     text-align: left !important;
 }
 
-.sub_content #about_i {
+.about-i {
     color: #0059C6!important;
-font-size: 3rem !important;
+    font-size: 3rem !important;
 }
 
 .aboutText {
@@ -75,11 +75,11 @@ font-size: 3rem !important;
         padding-top: 200px;
     }
 
-    .titles_top {
+    .titles-top {
         top: 19%;
     }
 
-    .sub_titles {
+    .sub-titles {
         padding-top: 200px;
     }
 
@@ -87,19 +87,19 @@ font-size: 3rem !important;
         width: 90vw!important;
     }
 
-    // .sub_content img {
+    // .sub-content img {
     //     height: 50% !important;
     //     margin: 0 0 15px 0;
     // }
-    .sub_content p {
+    .sub-content p {
         text-align: center !important;
     }
 
-    .sub_content h1 {
+    .sub-content h1 {
         padding-bottom: 0!important;
     }
 
-    .img_left {
+    .img-left {
         max-width: 80vw !important;
         height: auto !important;
         float: left;
@@ -107,7 +107,7 @@ font-size: 3rem !important;
         margin-right: 20px;
     }
     
-    .img_right {
+    .img-right {
         max-width: 80vw !important;
         height: auto !important;
         float: right;
@@ -115,7 +115,7 @@ font-size: 3rem !important;
         margin-right: 20px;
     }
 
-    .pages_section {
+    .pages-section {
         margin-top:410px;
     }
     

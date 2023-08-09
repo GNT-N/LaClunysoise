@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+// Importation des classes nécessaires
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -11,11 +12,14 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
+// Définition de la classe ContactType qui étend AbstractType
 class ContactType extends AbstractType
 {
+    // Fonction pour construire le formulaire
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            // Section Identité
             ->add('Civilite', ChoiceType::class, [
                 'choices' => [
                     'M.' => 'Monsieur',
@@ -25,7 +29,7 @@ class ContactType extends AbstractType
                 'label' => ' ',
                 'required' => true,
             ])
-            ->add('Nom',TextType::class, [
+            ->add('Nom', TextType::class, [
                 'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Nom'],
                 'label' => ' ',
                 'required' => true,
@@ -55,13 +59,13 @@ class ContactType extends AbstractType
                 'label' => ' ',
                 'required' => true,
             ])
-            
+            // Bouton d'envoi ( submit )
             ->add('envoyer', SubmitType::class, [
                 'attr' => ['class' => 'form-control mt-4 btn btn-primary'],
             ])
         ;
     }
-
+    // Fonction pour configurer les options du formulaire
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

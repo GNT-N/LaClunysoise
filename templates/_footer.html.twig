@@ -1,0 +1,43 @@
+{% block footer %}
+
+<div class="container" id="footerAll">
+    <footer class="row py-5 my-5 border-top justify-content-center" id="footer">
+        <div class="col-lg-4 mb-3 pCol">
+            <img id="logo" class="pb-3" src="{{ asset('footerLogo.png') }}">
+            <br>
+            <p class="nav-item mb-2"><a target="_blank"
+                    href="geo:46.437944,4.654481?q=7+Avn.Pierre+le+Vénérable,71250+Cluny"
+                    class="nav-link p-0 mt-3 text-body-secondary">7 Avn.Pierre le Vénérable, 71250 Cluny</a></p><br>
+            <p class="text-body-secondary">&copy; 2023</p>
+        </div>
+
+        <div class="col-lg-4 mb-3 pCol">
+            <h5>Coordonnées</h5>
+            <hr class="border border-white opacity-100 border-1">
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="tel:+33385590487" class="nav-link p-0 text-body-secondary">03 85 59
+                        04 87</a></li>
+                <li class="nav-item mb-2"><a href="tel:+33677658774" class="nav-link p-0 text-body-secondary">06 77 65
+                        87 74</a></li>
+                <li class="nav-item mb-2"><a href="mailto:la.clunysoise@orange.fr"
+                        class="nav-link p-0 text-body-secondary">la.clunysoise@orange.fr</a></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-4 mb-3 pCol">
+            <h5>Informations</h5>
+            <hr class="border border-white opacity-100 border-1">
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="/notre-identite" class="nav-link p-0 text-body-secondary">Nos
+                        formations et certifications</a></li>
+                <li class="nav-item mb-2"><a href="/prise-en-charge" class="nav-link p-0 text-body-secondary">Prise en
+                        charge - Tarification</a></li>
+                <li class="nav-item mb-2"><a href="/nous-rejoindre#join_form"
+                        class="nav-link p-0 text-body-secondary">Nos offres de recrutement</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+
+{% endblock %}

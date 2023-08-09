@@ -1,137 +1,201 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<main style="background-image: url('{{ asset("background.png") }}'); background-size: cover;">
+
+<main style="background-image: url('{{ asset(" background.png") }}'); background-size: cover;">
+    {# Flèche vers le bas pour indiquer le défilement #}
     <div id="faArrow" class="text-center">
         <i class="fa-solid fa-circle-arrow-down fa-bounce" style="color: #000000 #ffffff; font-size: 2.5rem;"></i>
     </div>
+
+    {# Section contenant la description de l'entreprise et le carrousel d'images #}
     <section class="container d-flex" id="home">
         <div class="row">
-            <div class="col-lg-6 d-flex justify-content-center align-items-center" id="home_description">
+
+            {# Description de l'entreprise #}
+            <div class="col-lg-6 d-flex justify-content-center align-items-center" id="home-description">
                 <div>
-                    <div id="title_desc" class="d-flex flex-column justify-content-center align-items-center fade-in-left">
+                    <div id="title_desc"
+                        class="d-flex flex-column justify-content-center align-items-center fade-in-left">
                         <h1 class="fst-italic">La Clunysoise</h1>
                         <div class="row" id="countContainer">
-                            <span class="col-lg-4 countText fw-bold d-block text-black pe-4 text-center"><span class="count fw-bold">8 </span><br> Urgences / jour</span>
-                            <span class="col-lg-4 countText fw-bold d-block text-black pe-4 text-center"><span class="count fw-bold">14 </span><br> Interventions / jour</span>
-                            <span class="col-lg-4 countText fw-bold d-block text-black pe-4 text-center"><span class="count fw-bold">25 </span><br> Salariés</span>
+                            <span class="col-lg-4 countText fw-bold d-block text-black pe-4 text-center"><span
+                                    class="count fw-bold">8 </span><br> Urgences / jour</span>
+                            <span class="col-lg-4 countText fw-bold d-block text-black pe-4 text-center"><span
+                                    class="count fw-bold">14 </span><br> Interventions / jour</span>
+                            <span class="col-lg-4 countText fw-bold d-block text-black pe-4 text-center"><span
+                                    class="count fw-bold">25 </span><br> Salariés</span>
                         </div>
-                        <p class="text-center ps-3 pe-3">L'entreprise « La Clunysoise » est une société d'ambulances privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis. La Clunysoise apporte une réponse efficace et dynamique à toute demande de transports médicalisés ou non tout en participant activement aux besoins permanents d'interventions d'urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le centre d'appel 15.</p>
+                        <p class="text-center ps-3 pe-3">L'entreprise « La Clunysoise » est une société d'ambulances
+                            privée située à Cluny. Avec à disposition des ambulances, des VSL, mais aussi des taxis. La
+                            Clunysoise apporte une réponse efficace et dynamique à toute demande de transports
+                            médicalisés ou non tout en participant activement aux besoins permanents d'interventions
+                            d'urgences et transferts inter hospitaliers effectués en collaboration avec le Samu et le
+                            centre d'appel 15.</p>
                     </div>
 
+                    {# Boutons de navigation #}
                     <div id="buttons_container" class="d-flex row fade-in-left">
-
-                            <button type="button" class="btn bg-primary text-decoration-none">
-                                <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/contact">Contactez Nous</a>
-                            </button>
-
-                            <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none">
-                                <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/vos-rendez-vous">Prenez Rendez-Vous</a>
-                            </button>
-
-                            <button type="button" class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none">
-                                <a class="text-white text-decoration-none d-flex align-items-center justify-content-center" href="/nous-rejoindre">Rejoignez Nous</a>
-                            </button>
-                        
+                        <button type="button" class="btn bg-primary text-decoration-none">
+                            <a class="text-white text-decoration-none d-flex align-items-center justify-content-center"
+                                href="/contact">Contactez Nous</a>
+                        </button>
+                        <button type="button"
+                            class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none">
+                            <a class="text-white text-decoration-none d-flex align-items-center justify-content-center"
+                                href="/vos-rendez-vous">Prenez Rendez-Vous</a>
+                        </button>
+                        <button type="button"
+                            class="btn bg-primary d-flex align-items-center justify-content-center text-decoration-none">
+                            <a class="text-white text-decoration-none d-flex align-items-center justify-content-center"
+                                href="/nous-rejoindre">Rejoignez Nous</a>
+                        </button>
                     </div>
                 </div>
             </div>
-            
+
+            {# Carrousel d'images #}
             <div class="col-lg-6" id="diapo">
-                <div id="carouselExampleAutoplaying" class="carousel slide fade-in-right" data-bs-ride="carousel" data-bs-pause="false">
+                <div id="carouselExampleAutoplaying" class="carousel slide fade-in-right" data-bs-ride="carousel"
+                    data-bs-pause="false">
                     <div id="carousel" class="carousel-inner text-center">
                         <div class="carousel-item active" data-bs-interval="3900">
-                                <div class="d-flex justify-content-center align-items-center d-block w-100">
-                                    <img src="{{ asset('car1.jpg') }}" class="d-block w-100 center-block" alt="..." style="filter: grayscale(.5)">
-                                </div>
+                            <div class="d-flex justify-content-center align-items-center d-block w-100">
+                                <img src="{{ asset('car1.jpg') }}" class="d-block w-100 center-block" alt="..."
+                                    style="filter: grayscale(.5)">
+                            </div>
                         </div>
                         <div class="carousel-item" data-bs-interval="3900">
-                                <div class="d-flex justify-content-center align-items-center d-block w-100">
-                                    <img src="{{ asset('car2.jpg') }}" class="d-block w-100 center-block" alt="..." style="filter: grayscale(.5)"> 
-                                </div>
+                            <div class="d-flex justify-content-center align-items-center d-block w-100">
+                                <img src="{{ asset('car2.jpg') }}" class="d-block w-100 center-block" alt="..."
+                                    style="filter: grayscale(.5)">
+                            </div>
                         </div>
                         <div class="carousel-item" data-bs-interval="3900">
-                                <div class="d-flex justify-content-center align-items-center d-block w-100">
-                                    <img src="{{ asset('car3.jpg') }}" class="d-block w-100 center-block" alt="..." style="filter: grayscale(.5)">
-                                </div>
+                            <div class="d-flex justify-content-center align-items-center d-block w-100">
+                                <img src="{{ asset('car3.jpg') }}" class="d-block w-100 center-block" alt="..."
+                                    style="filter: grayscale(.5)">
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                {# Carrousel de textes #}
                 <a href="/notre-identite">
-                    <div id="carouselExampleControls" class="carousel slide fade-in-right" data-mdb-ride="carousel"  data-bs-ride="carousel" data-bs-pause="false">
-                        <div class="carousel-inner text-center" id="text_carousel">
+                    <div id="carouselExampleControls" class="carousel slide fade-in-right" data-mdb-ride="carousel"
+                        data-bs-ride="carousel" data-bs-pause="false">
+                        <div class="carousel-inner text-center" id="text-carousel">
                             <div class="carousel-item active" data-bs-interval="2900">
-                                <span class="countText fw-bold d-block text-black"><span class="count fw-bold">5 </span><br> Ambulances</span>
+                                <span class="countText fw-bold d-block text-black"><span class="count fw-bold">5
+                                    </span><br> Ambulances</span>
                             </div>
                             <div class="carousel-item" data-bs-interval="2900">
-                                <span class="countText fw-bold d-block text-black"><span class="count fw-bold">10 </span><br> VSL</span>
+                                <span class="countText fw-bold d-block text-black"><span class="count fw-bold">10
+                                    </span><br> VSL</span>
                             </div>
                             <div class="carousel-item" data-bs-interval="2900">
-                                <span class="countText fw-bold d-block text-black"><span class="count fw-bold">8 </span><br> Taxis</span>
+                                <span class="countText fw-bold d-block text-black"><span class="count fw-bold">8
+                                    </span><br> Taxis</span>
                             </div>
                         </div>
                     </div>
                 </a>
-            </div>           
+            </div>
     </section>
 
-    <section class="grid_gallery">
+    {# Début de la section "Bento Grid" #}
+    <section class="grid-gallery">
         <h2 class="text-center pt-5 fw-bolder">Nos actualités</h2>
         <div class="container">
             <div class="row justify-content-center">
+                {# Initialisation de la variable switchBox à false #}
                 {% set switchBox = false %}
-
+                {# Boucle qui parcourt chaque publication dans post #}
                 {% for posts in post %}
-                    {% if loop.index is odd %}
-                        {% if switchBox %}
-                            <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none box_two tile" style="{% if posts.mediaUrl is empty %}background-color: #0059C6;{% else %}background-image: linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}');{% endif %}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
-                                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                                </svg>
-                        {% else %}
-                            <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none box_one tile" style="{% if posts.mediaUrl is empty %}background-color: #0059C6;{% else %}background-image: linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}');{% endif %}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
-                                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                                </svg>
-                        {% endif %}
-                            <div>
-                                <h1 class="fw-bolder text-white text-decoration-none text-center">{{ posts.title }}</h1> 
-                                <p class="text-white text-center animate-text">{{ posts.description | raw | slice(0, 310)}}</p>
-                            </div>
-                        </a>
+                {# Si l'index de la boucle est impair #}
+                {% if loop.index is odd %}
+                {# Si switchBox est vrai, alors le style de la boîte est défini à box-two #}
+                {% if switchBox %}
+                <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}"
+                    class="box-image d-flex align-items-center justify-content-center text-decoration-none box-two tile"
+                    style="{% if posts.mediaUrl is empty %}background-color: #0059C6;{% else %}background-image: linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}');{% endif %}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
+                        class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                    </svg>
+                    {# Sinon, le style de la boîte est défini à box-one #}
                     {% else %}
-                        {% if switchBox %}
-                            <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none box_one tile" style="{% if posts.mediaUrl is empty %}background-color: #0059C6;{% else %}background-image: linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}');{% endif %}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
-                                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                                </svg>
-                        {% else %}
-                            <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}" class="box-image d-flex align-items-center justify-content-center text-decoration-none box_two tile" style="{% if posts.mediaUrl is empty %}background-color: #0059C6;{% else %}background-image: linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}');{% endif %}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
-                                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                                </svg>
+                    <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}"
+                        class="box-image d-flex align-items-center justify-content-center text-decoration-none box-one tile"
+                        style="{% if posts.mediaUrl is empty %}background-color: #0059C6;{% else %}background-image: linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}');{% endif %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
+                            class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>
                         {% endif %}
+                        {# Affichage du titre et de la description de la publication #}
+                        <div>
+                            <h1 class="fw-bolder text-white text-decoration-none text-center">{{ posts.title }}</h1>
+                            <p class="text-white text-center animate-text">{{ posts.description | raw | slice(0, 310)}}
+                            </p>
+                        </div>
+                    </a>
+                    {# Si l'index de la boucle est pair #}
+                    {% else %}
+                    {# Si switchBox est vrai, alors le style de la boîte est défini à box-one #}
+                    {% if switchBox %}
+                    <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}"
+                        class="box-image d-flex align-items-center justify-content-center text-decoration-none box-one tile"
+                        style="{% if posts.mediaUrl is empty %}background-color: #0059C6;{% else %}background-image: linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}');{% endif %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
+                            class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg>
+                        {# Sinon, le style de la boîte est défini à box-two #}
+                        {% else %}
+                        <a href="{{ path('app_posts_show', {'slug': posts.slug}) }}"
+                            class="box-image d-flex align-items-center justify-content-center text-decoration-none box-two tile"
+                            style="{% if posts.mediaUrl is empty %}background-color: #0059C6;{% else %}background-image: linear-gradient(rgba(58, 58 ,58 ,0.3), rgba(58, 58 ,58 , 0.6)), url('upload/images/{{ asset(posts.mediaUrl) }}');{% endif %}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
+                                class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                            </svg>
+                            {% endif %}
+                            {# Affichage du titre et de la description de la publication #}
                             <div>
-                                <h1 class="fw-bolder text-white text-decoration-none text-center">{{ posts.title }}</h1> 
-                                <p class="text-white text-center animate-text">{{ posts.description | raw | slice(0, 310)}}</p>
+                                <h1 class="fw-bolder text-white text-decoration-none text-center">{{ posts.title }}</h1>
+                                <p class="text-white text-center animate-text">{{ posts.description | raw | slice(0,
+                                    310)}}</p>
                             </div>
                         </a>
-                    {% endif %}
-
-                    {% if loop.index is divisible by 2 %}
+                        {% endif %}
+                        {# Si l'index de la boucle est divisible par 2, switchBox est inversé #}
+                        {% if loop.index is divisible by 2 %}
                         {% set switchBox = not switchBox %}
-                    {% endif %}
-                {% endfor %}
+                        {% endif %}
+                        {% endfor %}
             </div>
         </div>
     </section>
 
+    {# Titre de la section de localisation #}
     <h2 class="pb-3 pt-5 text-center fw-bolder">Où nous trouver</h2>
     <div class="row text-center">
-        <iframe id="desktop_iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10998.152493979294!2d4.6545993!3d46.4380336!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f30aeb8182f371%3A0xbf3199329fef4a95!2sLA%20CLUNYSOISE%20AMBULANCES%20ET%20TAXIS!5e0!3m2!1sfr!2sfr!4v1689589206519!5m2!1sfr!2sfr" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        
-        <iframe id="mobile_iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2749.5379384110347!2d4.652024377356847!3d46.438037267937126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f30aeb8182f371%3A0xbf3199329fef4a95!2sLA%20CLUNYSOISE%20AMBULANCES%20ET%20TAXIS!5e0!3m2!1sfr!2sfr!4v1690210543131!5m2!1sfr!2sfr" width="600" height="1000" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        {# Iframe pour afficher la carte Google Maps sur le bureau #}
+        <iframe id="desktop-iframe"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10998.152493979294!2d4.6545993!3d46.4380336!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f30aeb8182f371%3A0xbf3199329fef4a95!2sLA%20CLUNYSOISE%20AMBULANCES%20ET%20TAXIS!5e0!3m2!1sfr!2sfr!4v1689589206519!5m2!1sfr!2sfr"
+            width="600" height="450" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        {# Iframe pour afficher la carte Google Maps sur mobile #}
+        <iframe id="mobile-iframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2749.5379384110347!2d4.652024377356847!3d46.438037267937126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f30aeb8182f371%3A0xbf3199329fef4a95!2sLA%20CLUNYSOISE%20AMBULANCES%20ET%20TAXIS!5e0!3m2!1sfr!2sfr!4v1690210543131!5m2!1sfr!2sfr"
+            width="600" height="1000" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </main>
 {% endblock %}

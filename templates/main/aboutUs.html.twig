@@ -1,37 +1,42 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<section class="pages_section" style="background-image: url('{{ asset("background.png") }}');background-size: cover;">
-    <h1 class="titles_top fst-italic fw-bolder text-center">Notre identité</h1>
+<section class="pages-section" style="background-image: url('{{ asset("background.png") }}');background-size: cover;">
+    <h1 class="titles-top fst-italic fw-bolder text-center">Notre identité</h1>
 
-    <div class="container-fluid fade-in-up pb-5" id="about_desc">
+    <div class="container-fluid fade-in-up pb-5" id="about-desc">
         <div class="content">
-            <div class="row col-lg-12 sub_content">
+            <div class="row col-lg-12 sub-content">
                 <div class="col-12">
                     <h2 class="text-center">Nos engagements</h2></br>
-                    <h4 class="text-center">Nous vous proposons des transports médicalisés sur Cluny et ses environs pour tous vos besoins et transferts.</h4></br>
-                    <p>En effet, dans différentes situations (accidents ou hospitalisation urgente mais encore transport médical sur rendez - vous), les particuliers peuvent bénéficier de nos services.</p>
+                    <h4 class="text-center">Nous vous proposons des transports médicalisés sur Cluny et ses environs
+                        pour tous vos besoins et transferts.</h4></br>
+                    <p>En effet, dans différentes situations (accidents ou hospitalisation urgente mais encore transport
+                        médical sur rendez - vous), les particuliers peuvent bénéficier de nos services.</p>
                     <p>Sur chacune de nos prestations et nos véhicules, nous garantissons :</p>
                 </div>
                 <div class="col-lg-3 col-sm-12 ps-2 pe-2">
-                    <i aria-hidden="true" class="fas fa-snowflake pb-2" id="about_i"></i>
+                    <i aria-hidden="true" class="fas fa-snowflake pb-2 about-i"></i>
                     <h4>Le confort et l’hygiène :</h4>
-                    <p>nos ambulances sont climatisées, issues de la dernière génération et désinfectées quotidiennement.</p>
+                    <p>nos ambulances sont climatisées, issues de la dernière génération et désinfectées
+                        quotidiennement.</p>
                 </div>
 
                 <div class="col-lg-3 col-sm-12 ps-2 pe-2">
-                    <i aria-hidden="true" class="fas fa-user-nurse pb-2" id="about_i"></i>
+                    <i aria-hidden="true" class="fas fa-user-nurse pb-2 about-i"></i>
                     <h4>Le professionnalisme :</h4>
-                    <p>nos ambulanciers et chauffeur sont tous diplômés d’État et mettront leur savoir-faire à votre disposition.</p>
+                    <p>nos ambulanciers et chauffeur sont tous diplômés d’État et mettront leur savoir-faire à votre
+                        disposition.</p>
                 </div>
 
                 <div class="col-lg-3 col-sm-12 ps-2 pe-2">
-                    <i aria-hidden="true" class="fas fa-shield-virus pb-2" id="about_i"></i>
+                    <i aria-hidden="true" class="fas fa-shield-virus pb-2 about-i"></i>
                     <h4>La sécurité :</h4>
-                    <p>nos véhicules sont équipés d’oxygène ainsi que du matériel de premier secours et de réanimation dernier cri. De plus, nous disposons de bonne humeur à bord.</p>
+                    <p>nos véhicules sont équipés d’oxygène ainsi que du matériel de premier secours et de réanimation
+                        dernier cri. De plus, nous disposons de bonne humeur à bord.</p>
                 </div>
 
                 <div class="col-lg-3 col-sm-12 ps-2 pe-2">
-                    <i aria-hidden="true" class="fas fa-stopwatch pb-2" id="about_i"></i>
+                    <i aria-hidden="true" class="fas fa-stopwatch pb-2 about-i"></i>
                     <h4>Une intervention 7j/7 et 24h/24 :</h4>
                     <p>nos véhicules sont disponible tous les jours à n'importe quel moment.</p>
                 </div>
@@ -39,36 +44,43 @@
         </div>
     </div>
 
-    {# Post #}
     {% set counter = 0 %}
+    {# Boucle qui parcourt chaque publications dans post #}
     {% for posts in post %}
-        {% if counter is divisible by(2) %}
-            <div class="container-fluid pt-5 pb-5">
-                <div class="row content">
-                    <div class="col-lg-12 sub_content">
-                        <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
-                        {% if posts.mediaUrl is not null %}
-                        <img class="img-fluid rounded-5 img_left fade-in-left" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                        {% endif %}
-                        <div class="fade-in-right">{{ posts.content|raw }}</div>
-                    </div>
-                </div>
+    {# Si le compteur est divisible par 2 ( nombre pair ), le code suivant ext exécuté #}
+    {# Si posts.mediaUrl n'est pas null, l'image est affichée à gauche du contenu de la publication. #}
+    {% if counter is divisible by(2) %}
+    <div class="container-fluid pt-5 pb-5">
+        <div class="row content">
+            <div class="col-lg-12 sub-content">
+                <h1 class="pb-5 text-center">{{ posts.title }}</h1>
+                {% if posts.mediaUrl is not null %}
+                <img class="img-fluid rounded-5 img-left fade-in-left"
+                    src="upload/images/{{ asset(posts.mediaUrl) }}">
+                {% endif %}
+                <div class="fade-in-right">{{ posts.content|raw }}</div>
             </div>
-            {% else %}
-            <div class="container-fluid pt-5 pb-5">
-                <div class="row content">
-                    <div class="col-lg-12 sub_content">
-                        <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
-                        {% if posts.mediaUrl is not null %}
-                        <img class="img-fluid rounded-5 img_right fade-in-right" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                        {% endif %}
-                        <div class="fade-in-right">{{ posts.content|raw }}</div>
-                    </div>
-                </div>
+        </div>
+    </div>
+    {# Si le compteur n'est pas divisible par 2 ( nombre impair ), le code suivant ext exécuté #}
+    {# Si posts.mediaUrl n'est pas null, l'image est affichée à droite du contenu de la publication. #}
+    {% else %}
+    <div class="container-fluid pt-5 pb-5">
+        <div class="row content">
+            <div class="col-lg-12 sub-content">
+                <h1 class="pb-5 text-center">{{ posts.title }}</h1>
+                {% if posts.mediaUrl is not null %}
+                <img class="img-fluid rounded-5 img-right fade-in-right"
+                    src="upload/images/{{ asset(posts.mediaUrl) }}">
+                {% endif %}
+                <div class="fade-in-right">{{ posts.content|raw }}</div>
             </div>
-        {% endif %}
-
-        {% set counter = counter + 1 %}
+        </div>
+    </div>
+    {% endif %}
+    {# Incrémentation du compteur de 1 #}
+    {% set counter = counter + 1 %}
+    {# Fin de la boucle #}
     {% endfor %}
 </section>
 {% endblock %}

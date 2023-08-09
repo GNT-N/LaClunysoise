@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+// Importation des classes nécessaires
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -13,12 +14,14 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\File;
 
-
+// Définition de la classe JoinType qui étend AbstractType
 class JoinType extends AbstractType
 {
+    // Fonction pour construire le formulaire
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            // Section Identité
             ->add('Civilite', ChoiceType::class, [
                 'choices' => [
                     'M.' => 'Monsieur',
@@ -28,7 +31,7 @@ class JoinType extends AbstractType
                 'label' => ' ',
                 'required' => true,
             ])
-            ->add('Nom',TextType::class, [
+            ->add('Nom', TextType::class, [
                 'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Nom *'],
                 'label' => ' ',
                 'required' => true,
@@ -53,6 +56,7 @@ class JoinType extends AbstractType
                 'label' => ' ',
                 'required' => true,
             ])
+            // Upload d'un fichier au format pdf seulement
             ->add('Fichier', FileType::class, [
                 'label' => ' ',
                 'required' => true,
@@ -66,8 +70,9 @@ class JoinType extends AbstractType
                     ]),
                 ],
             ])
+            // Bouton d'envoi ( submit )
             ->add('envoyer', SubmitType::class, [
-            'attr' => ['class' => 'form-control mt-4 btn btn-primary'],
+                'attr' => ['class' => 'form-control mt-4 btn btn-primary'],
             ])
         ;
     }

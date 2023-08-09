@@ -7,10 +7,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+// Définition de la classe Admin comme une entité Doctrine avec le repository associé
 #[ORM\Entity(repositoryClass: AdminRepository::class)]
+// Nom de la table associée à cette entité dans la base de données
 #[ORM\Table(name: '`admin`')]
 class Admin implements UserInterface, PasswordAuthenticatedUserInterface
 {
+    // Définition des propriétés de l'entité avec leurs annotations Doctrine correspondantes
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -28,6 +31,7 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+    // Getters et setters pour les propriétés de l'entité
     public function getId(): ?int
     {
         return $this->id;
@@ -61,7 +65,7 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
     public function getRoles(): array
     {
         $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
+        // garantit que chaque utilisateur a au moins le rôle ROLE_USER
         $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
@@ -94,7 +98,7 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function eraseCredentials(): void
     {
-        // If you store any temporary, sensitive data on the user, clear it here
+        // Si on stockez des données temporaires ou sensibles sur l'utilisateur, les effacer ici
         // $this->plainPassword = null;
     }
 }

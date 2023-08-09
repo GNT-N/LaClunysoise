@@ -1,0 +1,73 @@
+{% block header %}
+<a href="/"><img src="{{ asset('logo2.png') }}" id="logoHead"></a>
+<nav class="navbar fixed-top" aria-label="Light offcanvas navbar">
+  <div class="container-fluid g-0">
+    <div class="square rounded menuButton">
+      <button class="navbar-toggler me-3 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark" aria-label="Toggle navigation">
+        <span class="text-white">Menu</span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="offcanvas offcanvas-end text-bg-Light" tabindex="-1" id="offcanvasNavbarDark"
+      aria-labelledby="offcanvasNavbarDarkLabel">
+      <div class="offcanvas-body pt-5">
+        <img src="{{ asset('ClunyTextWhite.png') }}" id="menuLogo">
+        <div class="navbar fixed-top">
+          <div class="square rounded menuButtonIn">
+            <button class="navbar-toggler me-3 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark" aria-label="Toggle navigation">
+              <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="#0059C6" class="bi bi-x"
+                viewBox="0 0 16 16">
+                <path
+                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 pt-5 ps-3 mt-5">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/notre-identite">Notre identité</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/prise-en-charge">Prise en charge - Tarification</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/nous-rejoindre">Nous rejoindre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/vos-rendez-vous">Vos rendez-vous</a>
+          </li>
+          <li class="nav-item pb-5">
+            <a class="nav-link text-white" href="/contact">Contact</a>
+          </li>
+          <hr class="border border-white opacity-100 border-1 m-5">
+          {% if is_granted('ROLE_ADMIN') %}
+          <li class="nav-item" id="desktopKey"><a class="nav-link active" aria-current="page" href="/admin"><svg
+                xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="red" class="bi bi-key"
+                viewBox="0 0 16 16">
+                <path
+                  d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z" />
+                <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+              </svg></a></li>
+
+
+          <li class="nav-item" id="mobileKey"><a class="nav-link active" aria-current="page" href="/admin"><svg
+                xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="red" class="bi bi-key"
+                viewBox="0 0 16 16">
+                <path
+                  d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z" />
+                <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+              </svg></a></li>
+          {% endif %}
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+{% endblock %}

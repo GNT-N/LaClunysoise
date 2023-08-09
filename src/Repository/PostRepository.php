@@ -13,14 +13,27 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Post|null findOneBy(array $criteria, array $orderBy = null)
  * @method Post[]    findAll()
  * @method Post[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ *
+ * La classe PostRepository étend ServiceEntityRepository pour fournir des méthodes de récupération de données.
  */
 class PostRepository extends ServiceEntityRepository
 {
+    /**
+     * Constructeur de la classe PostRepository.
+     *
+     * @param ManagerRegistry $registry Le registre des gestionnaires.
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Post::class);
     }
 
+    /**
+     * Enregistre une entité Post dans la base de données.
+     *
+     * @param Post $entity L'entité à enregistrer.
+     * @param bool $flush Si vrai, flush les changements dans la base de données.
+     */
     public function save(Post $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
@@ -30,6 +43,12 @@ class PostRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * Supprime une entité Post de la base de données.
+     *
+     * @param Post $entity L'entité à supprimer.
+     * @param bool $flush Si vrai, flush les changements dans la base de données.
+     */
     public function remove(Post $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
@@ -38,29 +57,4 @@ class PostRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-
-//    /**
-//     * @return Post[] Returns an array of Post objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('p.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Post
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
 }

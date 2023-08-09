@@ -16,14 +16,27 @@ use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
  * @method Admin|null findOneBy(array $criteria, array $orderBy = null)
  * @method Admin[]    findAll()
  * @method Admin[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ *
+ * Cette classe est le dépôt pour l'entité Admin. Elle étend ServiceEntityRepository et implémente PasswordUpgraderInterface.
  */
 class AdminRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
 {
+    /**
+     * Constructeur de la classe AdminRepository.
+     *
+     * @param ManagerRegistry $registry Le registre des gestionnaires.
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Admin::class);
     }
 
+    /**
+     * Enregistre une entité Admin dans la base de données.
+     *
+     * @param Admin $entity L'entité à enregistrer.
+     * @param bool $flush Si vrai, flush les changements dans la base de données.
+     */
     public function save(Admin $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
@@ -33,6 +46,12 @@ class AdminRepository extends ServiceEntityRepository implements PasswordUpgrade
         }
     }
 
+    /**
+     * Supprime une entité Admin de la base de données.
+     *
+     * @param Admin $entity L'entité à supprimer.
+     * @param bool $flush Si vrai, flush les changements dans la base de données.
+     */
     public function remove(Admin $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
@@ -43,7 +62,12 @@ class AdminRepository extends ServiceEntityRepository implements PasswordUpgrade
     }
 
     /**
-     * Used to upgrade (rehash) the user's password automatically over time.
+     * Utilisé pour mettre à jour (rehash) le mot de passe de l'utilisateur automatiquement avec le temps.
+     *
+     * @param PasswordAuthenticatedUserInterface $user L'utilisateur dont le mot de passe doit être mis à jour.
+     * @param string $newHashedPassword Le nouveau mot de passe haché.
+     *
+     * @throws UnsupportedUserException Si l'utilisateur n'est pas une instance de Admin.
      */
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void
     {
@@ -55,29 +79,4 @@ class AdminRepository extends ServiceEntityRepository implements PasswordUpgrade
 
         $this->save($user, true);
     }
-
-//    /**
-//     * @return Admin[] Returns an array of Admin objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('a.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Admin
-//    {
-//        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
 }

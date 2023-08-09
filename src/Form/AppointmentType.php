@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+// Importation des classes nécessaires
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -13,12 +14,14 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 
+// Définition de la classe AppointmentType qui étend AbstractType
 class AppointmentType extends AbstractType
 {
+    // Fonction pour construire le formulaire
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            // ---------- Identité ----------
+            // Section Identité
             ->add('Civilite', ChoiceType::class, [
                 'choices' => [
                     'M.' => 'Monsieur',
@@ -65,24 +68,25 @@ class AppointmentType extends AbstractType
                 'required' => true,
             ])
 
-            // ---------- Rendez-vous ----------
+            // Section Rendez-vous
             ->add('DateRendezVous', DateType::class, [
-                'attr' => ['class' => 'form-control border-black','placeholder' => 'Date du rendez-vous'],
-                'input'  => 'datetime_immutable',
+                'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Date du rendez-vous'],
+                'input' => 'datetime_immutable',
                 'widget' => 'single_text',
                 'label' => ' ',
                 'required' => true,
             ])
             ->add('HeureRendezVous', TimeType::class, [
-                'attr' => ['class' => 'form-control border-black text-center','placeholder' => 'Heure du rendez-vous',],
-                'input'  => 'datetime',
+                'attr' => ['class' => 'form-control border-black text-center', 'placeholder' => 'Heure du rendez-vous',
+                ],
+                'input' => 'datetime',
                 'widget' => 'single_text',
                 'label' => ' ',
                 'required' => true,
             ])
             ->add('DureeEstimee', TimeType::class, [
-                'attr' => ['class' => 'form-control border-black text-center','placeholder' => 'Durée estimée du rendez-vous'],
-                'input'  => 'datetime',
+                'attr' => ['class' => 'form-control border-black text-center', 'placeholder' => 'Durée estimée du rendez-vous'],
+                'input' => 'datetime',
                 'widget' => 'single_text',
                 'label' => ' ',
                 'required' => false,
@@ -108,13 +112,13 @@ class AppointmentType extends AbstractType
                 'label' => ' ',
                 'required' => false,
             ])
-                ->add('Motif', ChoiceType::class, [
-                    'choices' => [
-                        'Consultation' => 'Consultation',
-                'Examen' => 'Examen',
-                'Hôspitalisation' => 'Hôspitalisation',
-                'Hôspitalisation de jour' => 'Hôspitalisation de jour',
-                'Autre' => 'Autre',
+            ->add('Motif', ChoiceType::class, [
+                'choices' => [
+                    'Consultation' => 'Consultation',
+                    'Examen' => 'Examen',
+                    'Hôspitalisation' => 'Hôspitalisation',
+                    'Hôspitalisation de jour' => 'Hôspitalisation de jour',
+                    'Autre' => 'Autre',
                 ],
                 'attr' => ['class' => 'form-control border-black form-select'],
                 'label' => ' ',
@@ -145,15 +149,18 @@ class AppointmentType extends AbstractType
                 'required' => false,
                 'label' => ' ',
             ])
+            // Bouton d'envoi ( submit )
             ->add('envoyer', SubmitType::class, [
                 'attr' => ['class' => 'form-control btn btn-primary'],
             ])
         ;
     }
 
+    // Fonction pour configurer les options du formulaire
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
+            // Configure your form options here
         ]);
     }
 }
