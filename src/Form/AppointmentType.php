@@ -92,14 +92,14 @@ class AppointmentType extends AbstractType
             ])
 
             ->add('LieuxRendezVous', TextType::class, [
-                'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Lieux du rendez-vous *'],
+                'attr' => ['class' => 'form-control border-black', 'placeholder' => 'Lieu du rendez-vous *'],
                 'label' => ' ',
                 'required' => true,
             ])
 
             ->add('TypeEtablissement', ChoiceType::class, [
                 'choices' => [
-                    'Hopital' => 'Hôpital',
+                    'Hôpital' => 'Hôpital',
                     'Medecin Généraliste' => 'Medecin Généraliste',
                     'Medecin Spécialiste' => 'Medecin Spécialiste',
                     'Autre' => 'Autre',
