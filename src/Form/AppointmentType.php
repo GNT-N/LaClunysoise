@@ -152,7 +152,7 @@ class AppointmentType extends AbstractType
                 'label' => ' ',
             ])
             ->add('agreement', CheckboxType::class, [
-                'attr' => ['class' => 'mt-4 border-black'],
+                'attr' => ['class' => 'border-black'],
                 'label' => 'J\'autorise l\'utilisation des données transmises via ce formulaire exclusivement aux fins de traitement de ma demande et conformément à la politique de confidentialité en vigueur.',
                 'required' => true,
             ])
