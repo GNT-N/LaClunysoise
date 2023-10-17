@@ -47,7 +47,7 @@ class HomeController extends AbstractController
     }
 
     // Définition de la route '/joinUs' avec le nom 'joinUs'
-    #[Route('/nous-rejoindre', name: 'joinUs')]
+    #[Route('/rejoignez-nous', name: 'joinUs')]
     public function joinUs(PostRepository $postRepository): Response
     {
 
