@@ -72,7 +72,7 @@ class JoinController extends AbstractController
                 // Créer un nouvel e-mail sans le fichier
                 $email = (new Email())
                     ->from($email)
-                    ->to('admin@admin.com')
+                    ->to('mguillard@laclunysoise.fr')
                     ->subject('Candidature')
                     ->text($message);
             } else {
@@ -82,7 +82,7 @@ class JoinController extends AbstractController
                 // Créer un nouvel e-mail avec le fichier
                 $email = (new Email())
                     ->from($email)
-                    ->to('admin@admin.com')
+                    ->to('mguillard@laclunysoise.fr', 'la.clunysoise@orange.fr')
                     ->subject('Candidature')
                     ->addPart(new DataPart($fileObject, 'Contract', 'application/msword'))
                     ->text($message);

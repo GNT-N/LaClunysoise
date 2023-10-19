@@ -52,7 +52,7 @@ class ContactController extends AbstractController
 
             $email = (new Email())
                 ->from($email)
-                ->to('admin@admin.com')
+                ->to('contact@laclunysoise.fr', 'la.clunysoise@orange.fr')
                 ->subject('Demande de Rendez-vous')
                 ->text($message);
 

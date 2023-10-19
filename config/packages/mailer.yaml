@@ -1,10 +1,17 @@
 framework:
     mailer:
-        dsn: '%env(MAILER_DSN)%'
+        dsn: "%env(MAILER_DSN)%"
         # sender_address: 'votre_email@example.com'
-
 # when@dev:
 #     framework:
 #         mailer:
 #             envelope:
 #                 recipients: ['youremail@example.com']
+
+# swiftmailer:
+#     transport: smtp
+#     host: smtp.your-domain.com                # Remplacez "your-domain.com" par le serveur SMTP d'OVH
+#     username: your-email@your-domain.com      # Remplacez par votre adresse e-mail OVH
+#     password: your-email-password             # Remplacez par le mot de passe de votre adresse e-mail
+#     port: 587                                 # Port SMTP d'OVH (587 est généralement utilisé)
+#     encryption: tls                           # Utilisez "tls" pour la sécurité
