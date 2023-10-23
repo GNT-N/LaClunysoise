@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /laclunysoise.fr/admin
+Disallow: /laclunysoise.fr/login
+Disallow: /laclunysoise.fr/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5CPostCrudController
+Sitemap: https://www.laclunysoise.fr/sitemap.xml
