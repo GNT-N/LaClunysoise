@@ -1,6 +1,6 @@
 framework:
     mailer:
-        dsn: "%env(MAILER_DSN)%"
+        dsn: "smtp://rh.clunysoise@gmail.com:Office2020*!@smtp.gmail.com:587?encryption=tls&auth_mode=login"
         # sender_address: 'votre_email@example.com'
 # when@dev:
 #     framework:
@@ -8,10 +8,10 @@ framework:
 #             envelope:
 #                 recipients: ['youremail@example.com']
 
-# swiftmailer:
-#     transport: smtp
-#     host: smtp.your-domain.com                # Remplacez "your-domain.com" par le serveur SMTP d'OVH
-#     username: your-email@your-domain.com      # Remplacez par votre adresse e-mail OVH
-#     password: your-email-password             # Remplacez par le mot de passe de votre adresse e-mail
-#     port: 587                                 # Port SMTP d'OVH (587 est généralement utilisé)
-#     encryption: tls                           # Utilisez "tls" pour la sécurité
+#  swiftmailer:
+#         transport: smtp
+#         host: smtp.gmail.com                # Remplacez "your-domain.com" par le serveur SMTP d'OVH
+#         username: rh.clunysoise@gmail.com      # Remplacez par votre adresse e-mail OVH
+#         password: Office2020*!            # Remplacez par le mot de passe de votre adresse e-mail
+#         port: 587                                 # Port SMTP d'OVH (587 est généralement utilisé)
+#         encryption: tls                           # Utilisez "tls" pour la sécurité
