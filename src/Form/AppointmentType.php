@@ -100,8 +100,8 @@ class AppointmentType extends AbstractType
             ->add('TypeEtablissement', ChoiceType::class, [
                 'choices' => [
                     'Hôpital' => 'Hôpital',
-                    'Medecin Généraliste' => 'Medecin Généraliste',
-                    'Medecin Spécialiste' => 'Medecin Spécialiste',
+                    'Medecin généraliste' => 'Medecin généraliste',
+                    'Medecin spécialiste' => 'Medecin spécialiste',
                     'Autre' => 'Autre',
                 ],
                 'attr' => ['class' => 'form-control border-black form-select'],
