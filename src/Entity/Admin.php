@@ -13,7 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[ORM\Table(name: '`admin`')]
 class Admin implements UserInterface, PasswordAuthenticatedUserInterface
 {
-    // Définition des propriétés de l'entité avec leurs annotations Doctrine correspondantes
+    // Définition des propriétés de l'entité 
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

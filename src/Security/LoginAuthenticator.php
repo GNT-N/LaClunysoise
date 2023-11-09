@@ -23,11 +23,10 @@ class LoginAuthenticator extends AbstractLoginFormAuthenticator
     use TargetPathTrait;
     // Déclare une constante LOGIN_ROUTE avec la valeur 'app_login'.
     public const LOGIN_ROUTE = 'app_login';
-
     public function __construct(private UrlGeneratorInterface $urlGenerator)
     {
     }
-
+    // Méthode authenticate qui prend en objet Request et renvoie l'objet Passport
     public function authenticate(Request $request): Passport
     {
         // Récupère la valeur du paramètre 'username' de la requête HTTP.
