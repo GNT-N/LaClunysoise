@@ -22,8 +22,8 @@ class JoinType extends AbstractType
         $builder
             ->add('Civilite', ChoiceType::class, [
                 'choices' => [
-                    'M.' => 'Monsieur',
                     'Mme' => 'Madame',
+                    'M.' => 'Monsieur',
                 ],
                 'attr' => ['class' => 'form-control mt-4 border-black form-select'],
                 'label' => ' ',
@@ -50,7 +50,7 @@ class JoinType extends AbstractType
                 'required' => true,
             ])
             ->add('content', TextareaType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Contenu *'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Exprimer en quelques lignes vos motivations *'],
                 'label' => ' ',
                 'required' => true,
             ])

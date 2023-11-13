@@ -3,76 +3,141 @@
 <section class="pages-section" style="background-image: url('{{ asset("croixGrey.png") }}');">
     <h1 class="titles-top fst-italic fw-bolder text-center">Notre identité</h1>
 
+
     <div class="container-fluid fade-in-up" id="about-desc">
         <div class="content">
             <div class="row col-lg-12 sub-content">
-                <div class="col-12">
+                
+                <div class="row col-12">
                     <h2 class="text-center">Nos engagements</h2></br>
-                    <h4 class="text-center">Nous vous proposons des transports médicalisés sur Cluny et ses environs pour tous vos besoins et transferts.</h4></br>
-                    <p>En effet, dans différentes situations (accidents ou hospitalisation urgente mais encore transport médical sur rendez - vous), les particuliers peuvent bénéficier de nos services.</p>
-                    <p>Sur chacune de nos prestations et nos véhicules, nous garantissons :</p>
-                </div>
-                <div class="col-lg-3 col-sm-12 ps-2 pe-2">
-                    <i aria-hidden="true" class="fas fa-snowflake" id="about_i"></i>
-                    <h4>Le confort et l’hygiène :</h4>
-                    <p>Nos ambulances sont climatisées, issues de la dernière génération et désinfectées quotidiennement.</p>
+                    <h4 class="text-center">Depuis 1999, nous nous engageons à fournir des services de transport sûrs, fiables et efficaces à nos clients.</h4>
+
+                    <div class="col-lg-6 col-sm-12 ps-2 pe-2">
+                        <p>Nos chauffeurs sont formés pour s'occuper des patients avec attention et professionnalisme. Nous utilisons des véhicules modernes, confortable et équipés pour assurer le transport en toute sécurité et dans les meilleures conditions.<p>
+                        <p>Nous opérons dans près de 75 communes.</p>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-12 ps-2 pe-2 d-flex justify-content-center align-items-center">
+                        <img class="rounded-5" id="about_img" src="{{ asset("MAP_Zone.png") }}">
+                    </div>
                 </div>
 
                 <div class="col-lg-3 col-sm-12 ps-2 pe-2">
-                    <i aria-hidden="true" class="fas fa-user-nurse" id="about_i"></i>
-                    <h4>Le professionnalisme :</h4>
-                    <p>Nos ambulanciers et chauffeurs sont tous diplômés d’État et mettront leur savoir-faire à votre disposition.</p>
+                    <h4><i aria-hidden="true" class="fas fa-snowflake" id="about_i"></i> RESPECT ET BIENVEILLANCE :</h4>
+                    <p>Nous valorisons chaque individu, en accordant une attention particulière à leurs besoins et en traitant chacun avec respect, empathie et courtoisie.</p>
                 </div>
 
                 <div class="col-lg-3 col-sm-12 ps-2 pe-2">
-                    <i aria-hidden="true" class="fas fa-shield-virus" id="about_i"></i>
-                    <h4>La sécurité :</h4>
-                    <p>Nos véhicules sont équipés d’oxygène ainsi que du matériel de premier secours et de réanimation dernier cri. De plus, nous disposons de bonne humeur à bord.</p>
+                    <h4><i aria-hidden="true" class="fas fa-user-nurse" id="about_i"></i> PROFESSIONNALISME :</h4>
+                    <p>Notre personnel est formé pour offrir des prestations de haute qualité et se comporte de manière exemplaire en toutes circonstances.</p>
                 </div>
 
                 <div class="col-lg-3 col-sm-12 ps-2 pe-2">
-                    <i aria-hidden="true" class="fas fa-stopwatch" id="about_i"></i>
-                    <h4>Une intervention 7j/7 et 24h/24 :</h4>
-                    <p>Nos véhicules sont disponible tous les jours à n'importe quel moment.</p>
+                    <h4><i aria-hidden="true" class="fas fa-shield-virus" id="about_i"></i> SECURITE :</h4>
+                    <p>Nous prenons toutes les mesures nécessaires pour assurer la sécurité. Cela comprend des contrôles rigoureux, une maintenance régulière de nos véhicules et le respect des normes de sécurité.</p>
                 </div>
+
+                <div class="col-lg-3 col-sm-12 ps-2 pe-2">
+                    <h4><i aria-hidden="true" class="fas fa-stopwatch" id="about_i"></i> PONCTUALITE :</h4>
+                    <p>Nous planifions nos trajets avec soin et nous nous assurons d’arriver à destination à temps, en minimisant les retards autant que possible.</p>
+                </div>
+
             </div>
         </div>
     </div>
 
-    {# initialise une variable counter à 0. Ce compteur sera utilisé pour suivre le nombre d'itérations dans la boucle et déterminer si l'élément actuel doit être affiché à gauche ou à droite. #}
-    {% set counter = 0 %}
-    {% for posts in post %}
+    <section>
+        {# initialise une variable counter à 0. Ce compteur sera utilisé pour suivre le nombre d'itérations dans la boucle et déterminer si l'élément actuel doit être affiché à gauche ou à droite. #}
+        {% set counter = 0 %}
+        {% for posts in post %}
 
-        {# vérifie si la valeur de counter est divisible par 2. Si c'est le cas, cela signifie que nous sommes en train d'itérer sur un élément pair dans la liste. Le contenu à l'intérieur de cette condition sera affiché du côté gauche. #}
-        {% if counter is divisible by(2) %}
-            <div class="container-fluid pt-5 pb-5">
-                <div class="row content">
-                    <div class="col-lg-12 sub-content">
-                        <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
-                        {% if posts.mediaUrl is not null %}
-                        <img class="img-fluid rounded-5 img-left fade-in-left" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                        {% endif %}
-                        <div class="fade-in-right" id="about_content">{{ posts.content|raw }}</div>
+            {# vérifie si la valeur de counter est divisible par 2. Si c'est le cas, cela signifie que nous sommes en train d'itérer sur un élément pair dans la liste. Le contenu à l'intérieur de cette condition sera affiché du côté gauche. #}
+            {% if counter is divisible by(2) %}
+                <div class="container-fluid pt-5 pb-5">
+                    <div class="row content">
+                        <div class="col-lg-12 sub-content">
+                            <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
+                            {% if posts.mediaUrl is not null %}
+                            <img class="img-fluid rounded-5 img-left fade-in-left" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                            {% endif %}
+                            <div class="fade-in-right" id="about_content">{{ posts.content|raw }}</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            {% else %}
-            <div class="container-fluid pt-5 pb-5">
-                <div class="row content">
-                    <div class="col-lg-12 sub-content">
-                        <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
-                        {% if posts.mediaUrl is not null %}
-                        <img class="img-fluid rounded-5 img-right fade-in-right" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                        {% endif %}
-                        <div class="fade-in-right" id="about_content">{{ posts.content|raw }}</div>
+                {% else %}
+                <div class="container-fluid pt-5 pb-5">
+                    <div class="row content">
+                        <div class="col-lg-12 sub-content">
+                            <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
+                            {% if posts.mediaUrl is not null %}
+                            <img class="img-fluid rounded-5 img-right fade-in-right" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                            {% endif %}
+                            <div class="fade-in-right" id="about_content">{{ posts.content|raw }}</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endif %}
+            {% endif %}
+            {# À la fin de chaque itération de la boucle, le compteur est incrémenté de 1 pour passer à l'élément suivant. #}
+            {% set counter = counter + 1 %}
+        {% endfor %}
+    </section>
 
-        {# À la fin de chaque itération de la boucle, le compteur est incrémenté de 1 pour passer à l'élément suivant. #}
-        {% set counter = counter + 1 %}
-    {% endfor %}
+    <section id="become">
+        <div class="container-fluid fade-in-up">
+            <div class="content">
+                <div class="row col-lg-12">
+                    <div class="col-12 text-center">
+                        <h2>Avez-vous déjà envisagé de devenir chauffeur de taxi ou ambulancier ?</h2></br>
+                        <h4>Nos chauffeurs sont formés pour s'occuper des patients avec attention et professionnalisme. Nous utilisons des véhicules modernes, confortable et équipés pour assurer le transport en toute sécurité et dans les meilleures conditions.
+                        </h4></br>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 ps-2 pe-2">
+                        <h4 class="text-center">TAXI</h4>
+                        <p>En tant que chauffeur de taxi, vous jouerez un rôle crucial en aidant les clients à effectuer des trajets sécurisés et confortables.</br></br>
+                        Il est indispensable d'avoir votre permis de conduire, une attestation médicale, une formation aux 1ers secours et un casier judiciaire vierge. Vous devez réussir un examen, le certificat de capacité professionnelle (CCPCT), puis demander une carte professionnelle.</br></br>
+                        Pour en savoir plus, vous pouvez contacter : 
+                        </p></br>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-12 ps-2 pe-2">
+                        <h4>Ambulancier</h4>
+                        <p>En tant qu'ambulancier, vous pourriez avoir un impact significatif en fournissant des soins vitaux lors de situations d'urgence. Pour exercer cette profession, il est impératif d'être titulaire du Diplôme d'État d'Ambulancier (DEA) et de 'Attestation de Formation aux Gestes et Soins d'Urgence de niveau 2 (AFGSU 2).</br></br> 
+                        Si vous aspirez à devenir auxiliaire ambulancier, vous devrez suivre une formation spécifique dans un établissement agréé par le ministère de la Santé. Cette formation dure généralement 18 semaines, et à son terme, vous devrez réussir un examen pour obtenir le diplôme d'auxiliaire ambulancier.</br></br> 
+                        Pour plus d'informations, je vous invite à contacter les centres de formation suivants :</br></br>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-12 ps-2 pe-2 text-center">
+                        <h4>PROT'ACTION :</h4>
+                        <a href="mailto:protactionformation@yahoo.fr" class="nav-link p-0 text-body-secondary">protactionformation@yahoo.fr</a></br></br>
+                        <h4>ABC TAXI :</h4>
+                        <a href="mailto:abcdef.taxi@sfr.fr" class="nav-link p-0 text-body-secondary">abcdef.taxi@sfr.fr</a></br>
+                        <p class="text-center">Lien utile : <a href="https://entreprendre.service-public.fr//" target="_blank">entreprendre.service-public.fr</a></p>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-12 ps-2 pe-2 text-center">
+                        <h4>IFA CHU DIJON</h4>
+                        12 Bd Maréchal de Lattre de Tassigny</br> 
+                        21000 DIJON</br> 
+                        <a href="tel:+33380293770" class="nav-link p-0 text-body-secondary">03.80.29.37.70</a></br></br>
+
+                        <h4>IFCS Esquirol HCL</h4> 
+                        5 avenue Esquirol</br> 
+                        69003 LYON</br> 
+                        <a href="tel:+33472116715" class="nav-link p-0 text-body-secondary">04.72.11.67.15</a></br></br> 
+                        
+                        <h4>IRFSS Croix Rouge</h4> 
+                        Auvergne Rhône Alpe</br> 
+                        Site de LYON</br> 
+                        115 avenue Lacassagne</br> 
+                        69003 LYON</br> 
+                        <a href="tel:+33472115560" class="nav-link p-0 text-body-secondary">04.72.11.55.60</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 </section>
 
 {% endblock %}

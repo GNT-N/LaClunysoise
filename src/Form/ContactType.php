@@ -19,8 +19,8 @@ class ContactType extends AbstractType
         $builder
             ->add('Civilite', ChoiceType::class, [
                 'choices' => [
-                    'M.' => 'Monsieur',
                     'Mme' => 'Madame',
+                    'M.' => 'Monsieur',
                 ],
                 'attr' => ['class' => 'form-control mt-4 border-black form-select'],
                 'label' => ' ',
@@ -42,7 +42,7 @@ class ContactType extends AbstractType
                 'required' => true,
             ])
             ->add('email', EmailType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'email'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Email'],
                 'label' => ' ',
                 'required' => true,
             ])
@@ -52,7 +52,7 @@ class ContactType extends AbstractType
                 'required' => true,
             ])
             ->add('content', TextareaType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Contenu'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Message'],
                 'label' => ' ',
                 'required' => true,
             ])
