@@ -27,32 +27,32 @@ class ContactType extends AbstractType
                 'required' => true,
             ])
             ->add('Nom',TextType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Nom'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Nom *'],
                 'label' => ' ',
                 'required' => true,
             ])
             ->add('Prenom', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Prénom'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Prénom *'],
                 'label' => ' ',
                 'required' => true,
             ])
             ->add('Telephone', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Téléphone'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Téléphone *'],
                 'label' => ' ',
                 'required' => true,
             ])
             ->add('email', EmailType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Email'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Email *'],
                 'label' => ' ',
                 'required' => true,
             ])
             ->add('sujet', TextType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Objet'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Objet *'],
                 'label' => ' ',
                 'required' => true,
             ])
             ->add('content', TextareaType::class, [
-                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Message'],
+                'attr' => ['class' => 'form-control mt-4 border-black', 'placeholder' => 'Message *'],
                 'label' => ' ',
                 'required' => true,
             ])
