@@ -56,11 +56,18 @@
                 <div class="container-fluid pt-5 pb-5">
                     <div class="row content">
                         <div class="col-lg-12 sub-content">
+                        
                             <h1 class="pb-5 text-center">{{ posts.title }}</h1> 
-                            {% if posts.mediaUrl is not null %}
-                            <img class="img-fluid rounded-5 img-left fade-in-left" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
-                            {% endif %}
-                            <div class="fade-in-right" id="about_content">{{ posts.content|raw }}</div>
+                            
+                            {# <div style="display: flex; align-items: center;"> #}
+                            
+                                {% if posts.mediaUrl is not null %}
+                                <img class="img-fluid rounded-5 img-left fade-in-left" id="about_img" src="upload/images/{{ asset(posts.mediaUrl) }}">
+                                {% endif %}
+                                <div class="fade-in-right" id="about_content">{{ posts.content|raw }}</div>
+                                
+                            {# </div> #}
+
                         </div>
                     </div>
                 </div>
